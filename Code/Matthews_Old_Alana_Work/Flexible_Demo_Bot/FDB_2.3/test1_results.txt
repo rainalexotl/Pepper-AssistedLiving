@@ -1,0 +1,198 @@
+▣A
+▣▣1:   0.04246926307678223
+▣▣
+▣▣2-1: 0.04881596565246582
+▣▣2-2: 0.05576181411743164
+▣▣2-3: 0.004186391830444336
+▣▣2-4: 0.0036597251892089844
+▣▣
+▣▣3-1: 6.9141387939453125e-06 (this value is larger because the program runs through a longer process to deternime that questions haven't properly started yet)
+▣▣3-2: 6.198883056640625e-06
+▣▣3-3: 6.4373016357421875e-06
+▣▣3:4: 6.198883056640625e-06
+▣▣
+▣▣4-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣4-2: 0.00017142295837402344
+▣▣4-3: 9.131431579589844e-05
+▣▣4-4: 3.647804260253906e-05
+▣▣
+▣▣5-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣5-2: 2.9802322387695312e-05
+▣▣5-3: 3.4332275390625e-05
+▣▣5-4: 1.7881393432617188e-05
+▣▣
+▣▣6-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣6-2: 0.05016303062438965
+▣▣6-3: 8.440017700195312e-05
+▣▣6-4: 8.130073547363281e-05
+▣▣
+▣▣7-1: 1.430511474609375e-06 (this was the initial stage, so most of the user input evaluation was essentially skipped, hence the low value)
+▣▣7-2: 0.05041170120239258
+▣▣7-3: 0.0002396106719970703
+▣▣7-4: 0.00015974044799804688
+▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
+▣B
+▣▣1:   0.00011682510375976562
+▣▣
+▣▣2-1: 0.00834345817565918
+▣▣2-2: 0.0047228336334228516
+▣▣2-3: 0.004476785659790039
+▣▣2-4: 0.003975868225097656
+▣▣
+▣▣3-1: 1.2636184692382812e-05 (this value is larger because the program runs through a longer process to deternime that questions haven't properly started yet)
+▣▣3-2: 6.4373016357421875e-06
+▣▣3-3: 6.67572021484375e-06
+▣▣3:4: 5.9604644775390625e-06
+▣▣
+▣▣4-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣4-2: 0.0008635520935058594
+▣▣4-3: 4.982948303222656e-05
+▣▣4-4: 3.767894260112245e-05
+▣▣
+▣▣5-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣5-2: 5.269050598144531e-05
+▣▣5-3: 3.4332275390625e-05
+▣▣5-4: 1.811981201171875e-05
+▣▣
+▣▣6-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣6-2: 0.00017547607421875
+▣▣6-3: 9.298324584960938e-05
+▣▣6-4: 8.106231689453125e-05
+▣▣
+▣▣7-1: 6.198883056640625e-06 (this was the initial stage, so most of the user input evaluation was essentially skipped, hence the low value)
+▣▣7-2: 0.0011324882507324219
+▣▣7-3: 0.00020313262939453125
+▣▣7-4: 0.00015997886657714844
+▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
+▣C
+▣▣1:   0.0002732276916503906
+▣▣
+▣▣2-1: 0.013132810592651367
+▣▣2-2: 0.0046062469482421875
+▣▣2-3: 0.0031180381774902344
+▣▣2-4: 0.004204988479614258
+▣▣
+▣▣3-1: 8.368492126464844e-05 (this value is slightly larger because the program runs through a longer process to deternime that questions haven't properly started yet)
+▣▣3-2: 5.9604644775390625e-06
+▣▣3-3: 5.9604644775390625e-06
+▣▣3:4: 6.198883056640625e-06
+▣▣
+▣▣4-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣4-2: 0.0001285076141357422
+▣▣4-3: 4.482269287109375e-05
+▣▣4-4: 3.600120544433594e-05
+▣▣
+▣▣5-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣5-2: 2.9802322387695312e-05
+▣▣5-3: 3.457069396972656e-05
+▣▣5-4: 1.8358230590820312e-05
+▣▣
+▣▣6-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣6-2: 0.0008766651153564453
+▣▣6-3: 8.177757263183594e-05
+▣▣6-4: 7.915496826171875e-05
+▣▣
+▣▣7-1: 4.76837158203125e-06 (this was the initial stage, so most of the user input evaluation was essentially skipped, hence the low value)
+▣▣7-2: 0.0010683536529541016
+▣▣7-3: 0.0001862049102783203
+▣▣7-4: 0.00015807151794433594
+▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
+▣D
+▣▣1:   7.081031799316406e-05
+▣▣
+▣▣2-1: 0.005861043930053711
+▣▣2-2: 0.00437164306640625
+▣▣2-3: 0.004089832305908203
+▣▣2-4: 0.003631591796875
+▣▣
+▣▣3-1: 5.4836273193359375e-05 (this value is slightly larger because the program runs through a longer process to deternime that questions haven't properly started yet)
+▣▣3-2: 6.198883056640625e-06
+▣▣3-3: 6.9141387939453125e-06
+▣▣3:4: 6.4373016357421875e-06
+▣▣
+▣▣4-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣4-2: 0.00012087821960449219
+▣▣4-3: 6.437301635742188e-05
+▣▣4-4: 3.647804260253906e-05
+▣▣
+▣▣5-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣5-2: 2.9802322387695312e-05
+▣▣5-3: 0.00011658668518066406
+▣▣5-4: 1.8835067749023438e-05
+▣▣
+▣▣6-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣6-2: 0.00013256072998046875
+▣▣6-3: 0.00014781951904296875
+▣▣6-4: 7.987022399902344e-05
+▣▣
+▣▣7-1: 1.1920928955078125e-06 (this was the initial stage, so most of the user input evaluation was essentially skipped, hence the low value)
+▣▣7-2: 0.0003151893615722656
+▣▣7-3: 0.0003693103790283203
+▣▣7-4: 0.0001609325408935547
+▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
+▣E
+▣▣1:   8.606910705566406e-05
+▣▣
+▣▣2-1: 0.008344650268554688
+▣▣2-2: 0.005167722702026367
+▣▣2-3: 0.003815174102783203
+▣▣2-4: 0.003839254379272461
+▣▣
+▣▣3-1: 9.5367431640625e-05 (this value is slightly larger because the program runs through a longer process to deternime that questions haven't properly started yet)
+▣▣3-2: 1.1920928955078125e-05
+▣▣3-3: 6.9141387939453125e-06
+▣▣3:4: 6.4373016357421875e-06
+▣▣
+▣▣4-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣4-2: 0.00014543533325195312
+▣▣4-3: 4.482269287109375e-05
+▣▣4-4: 3.62396240234375e-05
+▣▣
+▣▣5-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣5-2: 5.364418029785156e-05
+▣▣5-3: 3.409385681152344e-05
+▣▣5-4: 1.8835067749023438e-05
+▣▣
+▣▣6-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣6-2: 0.00028395652770996094
+▣▣6-3: 8.082389831542969e-05
+▣▣6-4: 9.202957153320312e-05
+▣▣
+▣▣7-1: 1.6689300537109375e-06 (this was the initial stage, so most of the user input evaluation was essentially skipped, hence the low value)
+▣▣7-2: 0.0005276203155517578
+▣▣7-3: 0.0001842975616455078
+▣▣7-4: 0.00017213821411132812
+▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
+▣F     (average)
+▣▣1:   0.0090
+▣▣
+▣▣2-1: 0.0140
+▣▣2-2: 0.0150
+▣▣2-3: 0.0040
+▣▣2-4: 0.0040
+▣▣
+▣▣3-1: 0.0001 (this value is slightly larger because the program runs through a longer process to deternime that questions haven't properly started yet)
+▣▣3-2: 0.0000 (negligible time)
+▣▣3-3: 0.0000 (negligible time)
+▣▣3:4: 0.0000 (negligible time)
+▣▣
+▣▣4-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣4-2: 0.0003
+▣▣4-3: 0.0000 (negligible time)
+▣▣4-4: 0.0000 (negligible time)
+▣▣
+▣▣5-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣5-2: 0.0000 (negligible time)
+▣▣5-3: 0.0000 (negligible time)
+▣▣5-4: 0.0000 (negligible time)
+▣▣
+▣▣6-1: N/A (this was the initial stage, no question had been asked, so no user input was available for evaluation, just a placeholder string which was ignored)
+▣▣6-2: 0.0010
+▣▣6-3: 0.0000 (negligible time)
+▣▣6-4: 0.0000 (negligible time)
+▣▣
+▣▣7-1: 0.0000 (negligible time) (this was the initial stage, so most of the user input evaluation was essentially skipped, hence the low value)
+▣▣7-2: 0.0101
+▣▣7-3: 0.0002
+▣▣7-4: 0.0008
+

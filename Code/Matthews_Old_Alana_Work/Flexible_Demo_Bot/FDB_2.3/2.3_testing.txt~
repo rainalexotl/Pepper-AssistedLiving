@@ -1,0 +1,62 @@
+This testing took place on a single-core ubuntu virtual machine, so parellalism isn't a factor.
+The process of this testing is to determine which parts of the process take more time, so the print commands have been placed around only the sections not requiring user input.
+Thus, this testing should only evaluate program efficiency.
+
+The following was run to verify that the virual machine was single-core.
+
+----cybersmith@cybersmith-VirtualBox:~/Python3/Alana/Flexible_Demo_Bot/FDB_2.3$ lscpu
+----Architecture:          i686
+----CPU op-mode(s):        32-bit, 64-bit
+----Byte Order:            Little Endian
+----CPU(s):                1
+----On-line CPU(s) list:   0
+----Thread(s) per core:    1
+----Core(s) per socket:    1
+----Socket(s):             1
+----Vendor ID:             GenuineIntel
+----CPU family:            6
+----Model:                 142
+----Stepping:              9
+----CPU MHz:               2712.160
+----BogoMIPS:              5424.32
+----L1d cache:             32K
+----L1i cache:             32K
+----L2 cache:              256K
+----L3 cache:              3072K
+
+test1.txt, test2.txt, and sample.txt
+
+These were chosen to exhibit the flexibility of the version 2.2 code (which was the foundation for the version 2.3) when it comes to file reading, when compared to the older, more rigid version 2.0 version.
+
+User-first, program first, program-last, user-last, and multiple consecutive heterogenous lines are all shown here.
+
+The cosine similarity process is already verified to work, as is the length comparison. For the first round of testing, only TOTALLY script-accurate user responses will be given.
+
+The time values measured will be:
+
+1--The file-reading process (this only happens once).
+2--Overall I/O cycle time (basically, the entire while loop from the POV of the testbot, excepting the user input prompt, which is dependant on user reaction speed).
+3--The program's context-evaluation process (how it works out what stage of the process it is in, and which question -if any- to ask).
+4--The program's sentence-simplification and listification process (part of input-evaluation).
+5--The program's sentence vectorisation process (part of input-evaluation).
+6--The program's cosine simularity and length comparison process (part of input-evaluation).
+7--The entire input-evaluation process (this will probably be longer than the sum of 4, 5, and 6)
+
+2 to 7 will obviously have multiple run thoughs for each script, so they will be denoted below as 2-1, 2-2, 2-3, etc.
+
+To get useful averages, five tests will be made with each script, "A"-"E", with a final average table, "F" (some rounding will be used, for simplicity).
+
+(please note that the data shown in the files is best viewed with a monspace font)
+
+(all values will be given in seconds)
+
+The files containing the results will be named after the scripts.
+
+
+
+
+
+
+
+
+
