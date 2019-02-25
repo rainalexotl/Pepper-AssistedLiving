@@ -1,6 +1,0 @@
-User: This is the opening statement.
-Program: This is my first Question?
-Program: So answer it, or die!
-User: I fear neither man nor god.
-User: Do as you will.
-Program: Then perish.

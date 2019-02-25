@@ -1,2 +1,0 @@
-Testing on this script had to be aborted. It seems the process of peading in multi-line expected answers from file is not yet perfect.
-This will need adjustment.
