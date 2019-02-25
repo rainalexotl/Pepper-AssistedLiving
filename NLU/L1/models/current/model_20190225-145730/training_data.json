@@ -1,0 +1,841 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "Bye", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "Goodbye", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "See you later", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "Bye bot", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "Goodbye friend", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "bye", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "bye for now", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "catch you later", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "gotta go", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "See you", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "goodnight", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "have a nice day", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "i'm off", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "see you later alligator", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "we'll speak soon", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "Hi", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Hey", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Hi bot", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Hey bot", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Hello", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Good morning", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hi again", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hi folks", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hi Mister", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hi pal!", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hi there", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "greetings", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hello everybody", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hello is anybody there", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hello robot", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Thanks", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "Thank you", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "Thank you so much", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "Thanks bot", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "Thanks for that", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "cheers", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "cheers bro", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "ok thanks!", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "perfect thank you", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "thanks a bunch for everything", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "thanks for the help", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "thanks a lot", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "amazing, thanks", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "cool, thanks", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "cool thank you", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "yes", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "yes sure", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "absolutely", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "for sure", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "yes yes yes", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "definitely", 
+        "intent": "affirm"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 22, 
+            "end": 27, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "remember my favourite thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 17, 
+            "end": 22, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "remind me I like thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 16, 
+            "end": 21, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "remember I like thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 0, 
+            "end": 5, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "thing is something I like"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 7, 
+            "end": 12, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "I love thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 16, 
+            "end": 21, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "is my favourite thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 7, 
+            "end": 12, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "I like thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 25, 
+            "end": 30, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "did you know that I like thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 24, 
+            "end": 29, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "do you know that I like thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 13, 
+            "end": 22, 
+            "value": "thingtype", 
+            "entity": "THINGTYPE"
+          }, 
+          {
+            "start": 26, 
+            "end": 31, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "my favourite thingtype is thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 15, 
+            "end": 20, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "I love it when thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 14, 
+            "end": 19, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "I really like thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 13, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "I adore thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 20, 
+            "end": 25, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "don't forget I hate thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 20, 
+            "end": 25, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "remind me I dislike thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 19, 
+            "end": 24, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "remember I dislike thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 13, 
+            "end": 18, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "I don't like thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 14, 
+            "end": 19, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "I can't stand thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 7, 
+            "end": 12, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "I hate thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 17, 
+            "end": 22, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "I'm not a fan of thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 13, 
+            "end": 18, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "I can't hack thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 10, 
+            "end": 15, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "I dislike thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 28, 
+            "end": 33, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "Did you know that I dislike thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 27, 
+            "end": 32, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "Do you know that I dislike thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 19, 
+            "end": 28, 
+            "value": "thingtype", 
+            "entity": "THINGTYPE"
+          }, 
+          {
+            "start": 32, 
+            "end": 37, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "My least favourite thingtype is thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 20, 
+            "end": 25, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "I really don't like thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 10, 
+            "end": 15, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "I despite thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 14, 
+            "end": 19, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "I can't stand thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 20, 
+            "end": 25, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "How can anyone like thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 18, 
+            "end": 23, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_forget_like", 
+        "text": "erase my favorite thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 13, 
+            "end": 18, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_forget_like", 
+        "text": "I don't like thing any more"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 51, 
+            "end": 56, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_forget_like", 
+        "text": "forget what I just told you, I actually don't like thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 14, 
+            "end": 19, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_forget_like", 
+        "text": "forget I like thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 22, 
+            "end": 27, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_forget_like", 
+        "text": "scrap that, I do like thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 19, 
+            "end": 24, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_forget_like", 
+        "text": "forget that I like thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 7, 
+            "end": 12, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_forget_dislike", 
+        "text": "I like thing now"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 54, 
+            "end": 59, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_forget_dislike", 
+        "text": "forget what I just told you, I actually don't dislike thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 17, 
+            "end": 22, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_forget_dislike", 
+        "text": "forget I dislike thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 25, 
+            "end": 30, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_forget_dislike", 
+        "text": "scrap that, I don't like thing"
+      }, 
+      {
+        "text": "remind us of our favourite", 
+        "intent": "matchmaking_matchmake"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 26, 
+            "end": 31, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_matchmake", 
+        "text": "do any of my friends like thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 15, 
+            "end": 20, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_matchmake", 
+        "text": "who else likes thing"
+      }, 
+      {
+        "text": "what do my friends and I both like", 
+        "intent": "matchmaking_matchmake"
+      }, 
+      {
+        "text": "what do my friends and I like", 
+        "intent": "matchmaking_matchmake"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 18, 
+            "end": 24, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "matchmaking_matchmake", 
+        "text": "is there anything friend and I both enjoy"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 10, 
+            "end": 16, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "matchmaking_matchmake", 
+        "text": "what does friend like that I also like"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 14, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "matchmaking_matchmake", 
+        "text": "what do friend and I both like"
+      }, 
+      {
+        "text": "tell me about our common interests", 
+        "intent": "matchmaking_matchmake"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 5, 
+            "end": 11, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }, 
+          {
+            "start": 17, 
+            "end": 22, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_matchmake", 
+        "text": "does friend like thing too"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 10, 
+            "end": 15, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_matchmake", 
+        "text": "who likes thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 15, 
+            "end": 20, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_matchmake", 
+        "text": "who also likes thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 16, 
+            "end": 21, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_matchmake", 
+        "text": "do we both like thing"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 20, 
+            "end": 26, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }, 
+          {
+            "start": 37, 
+            "end": 42, 
+            "value": "thing", 
+            "entity": "THING"
+          }
+        ], 
+        "intent": "matchmaking_matchmake", 
+        "text": "did you know me and friend both like thing"
+      }
+    ], 
+    "entity_synonyms": [], 
+    "regex_features": [], 
+    "lookup_tables": []
+  }
+}
