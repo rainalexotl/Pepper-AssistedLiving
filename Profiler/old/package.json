@@ -1,0 +1,26 @@
+{
+  "name": "server.interface",
+  "version": "1.0.0",
+  "description": "Database component of BLE positioning Server",
+  "main": "server.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronsm/Advanced-Reading.git"
+  },
+  "author": "Ronnie Smith <ras35@hw.ac.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ronsm/Advanced-Reading/issues"
+  },
+  "homepage": "https://github.com/ronsm/Advanced-Reading#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "http": "0.0.0",
+    "mongodb": "^2.2.34",
+    "path": "^0.12.7"
+  }
+}

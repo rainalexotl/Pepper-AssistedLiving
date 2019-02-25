@@ -1,0 +1,26 @@
+{
+  "name": "profiler",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.1.1",
+    "mongodb": "^3.0.5",
+    "mongoose": "^5.0.5",
+    "mongoose-unique-validator": "^2.0.0",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.12"
+  }
+}
