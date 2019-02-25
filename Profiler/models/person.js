@@ -15,30 +15,19 @@ var BackgroundSchema = new Schema({
   birthplace: { type: String, required: false }
 })
 
-var LikesSchema = new Schema({
+var LikesDislikesSchema = new Schema({
   type: { type: String, required: false },
-  name: { type: String, required: false }
+  likeDislike: { type: Boolean, required: false },
+  thing: { type: String, required: false }
 })
 
 var PersonSchema = new Schema({
   name: { type: String, required: true },
   background: [BackgroundSchema],
-  likes: [LikesSchema]
+  likesDislikes: [LikesDislikesSchema]
 })
 
 PersonSchema.plugin(uniqueValidator)
-
-PersonSchema.pre('save', function (next) {
-  var person = this
-
-  PersonModel.findOne({name: person.name}, function (err, personExists) {
-    if (personExists) {
-        return next(new Error('A person with this name already exists.'))
-      } else {
-        next()
-      }
-  })
-})
 
 var PersonModel = mongoose.model('Person', PersonSchema)
 

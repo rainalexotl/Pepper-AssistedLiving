@@ -19,7 +19,7 @@ router.get('/test', function (req, res, next) {
 })
 
 // Create new user
-router.post('/add', function (req, res, next) {
+router.post('/', function (req, res, next) {
   const p = new Person()
 
   p.name = req.body.name
@@ -33,7 +33,7 @@ router.post('/add', function (req, res, next) {
       })
     }
 
-    res.header('Location', `/api/person/add`)
+    res.header('Location', `/api/person/addPerson`)
     res.status(201)
     res.json({
       success: true,
@@ -41,6 +41,36 @@ router.post('/add', function (req, res, next) {
       person: newPerson.toJSON()
     })
   })
+})
+
+// Add likes
+router.post('/likeDislike', function (req, res, next) {
+
+  Person.findOne({ name: req.body.name }, function (err, person){
+    var newLikeDislike = { likeDislike: req.body.likeDislike, thing: req.body.thing}
+    
+    person.likesDislikes.push(newLikeDislike)
+
+    console.log(person)
+    person.save(function (err, p) {
+      if (err) {
+        res.status(400)
+        return res.json({
+          success: false,
+          message: err.message
+        })
+      }
+  
+      res.header('Location', `/api/person/likeDislike`)
+      res.status(201)
+      res.json({
+        success: true,
+        message: 'New Like/Dislike Added',
+        person: p.toJSON()
+      })
+    })
+  });
+
 })
 
 module.exports = router
