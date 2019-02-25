@@ -1,0 +1,1571 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "Bye", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "Goodbye", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "See you later", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "Bye bot", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "Goodbye friend", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "bye", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "bye for now", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "catch you later", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "gotta go", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "See you", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "goodnight", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "have a nice day", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "i'm off", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "see you later alligator", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "we'll speak soon", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "Hi", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Hey", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Hi bot", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Hey bot", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Hello", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Good morning", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hi again", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hi folks", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hi Mister", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hi pal!", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hi there", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "greetings", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hello everybody", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hello is anybody there", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hello robot", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Thanks", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "Thank you", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "Thank you so much", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "Thanks for that", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "cheers", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "ok thanks!", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "thanks for the help", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "thanks a lot", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "amazing, thanks", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "cool, thanks", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "cool thank you", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "yes", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "yes sure", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "absolutely", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "for sure", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "yes yes yes", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "definitely", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "remember my favourite", 
+        "intent": "matchmaking_like"
+      }, 
+      {
+        "text": "remind me I like", 
+        "intent": "matchmaking_like"
+      }, 
+      {
+        "text": "remember I like", 
+        "intent": "matchmaking_like"
+      }, 
+      {
+        "text": "is something I like", 
+        "intent": "matchmaking_like"
+      }, 
+      {
+        "text": "I love", 
+        "intent": "matchmaking_like"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 7, 
+            "end": 13, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "I love friend"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 7, 
+            "end": 13, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "I like friend"
+      }, 
+      {
+        "text": "is my favourite", 
+        "intent": "matchmaking_like"
+      }, 
+      {
+        "text": "I like", 
+        "intent": "matchmaking_like"
+      }, 
+      {
+        "text": "did you know that I like", 
+        "intent": "matchmaking_like"
+      }, 
+      {
+        "text": "do you know that I like", 
+        "intent": "matchmaking_like"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 13, 
+            "end": 22, 
+            "value": "thingtype", 
+            "entity": "THINGTYPE"
+          }
+        ], 
+        "intent": "matchmaking_like", 
+        "text": "my favourite thingtype is"
+      }, 
+      {
+        "text": "I love it when", 
+        "intent": "matchmaking_like"
+      }, 
+      {
+        "text": "I really like", 
+        "intent": "matchmaking_like"
+      }, 
+      {
+        "text": "I adore", 
+        "intent": "matchmaking_like"
+      }, 
+      {
+        "text": "don't forget I hate", 
+        "intent": "matchmaking_dislike"
+      }, 
+      {
+        "text": "remind me I dislike", 
+        "intent": "matchmaking_dislike"
+      }, 
+      {
+        "text": "remember I dislike", 
+        "intent": "matchmaking_dislike"
+      }, 
+      {
+        "text": "I don't like", 
+        "intent": "matchmaking_dislike"
+      }, 
+      {
+        "text": "I can't stand", 
+        "intent": "matchmaking_dislike"
+      }, 
+      {
+        "text": "I hate", 
+        "intent": "matchmaking_dislike"
+      }, 
+      {
+        "text": "I'm not a fan of", 
+        "intent": "matchmaking_dislike"
+      }, 
+      {
+        "text": "I can't hack", 
+        "intent": "matchmaking_dislike"
+      }, 
+      {
+        "text": "I dislike", 
+        "intent": "matchmaking_dislike"
+      }, 
+      {
+        "text": "Did you know that I dislike", 
+        "intent": "matchmaking_dislike"
+      }, 
+      {
+        "text": "Do you know that I dislike", 
+        "intent": "matchmaking_dislike"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 19, 
+            "end": 28, 
+            "value": "thingtype", 
+            "entity": "THINGTYPE"
+          }
+        ], 
+        "intent": "matchmaking_dislike", 
+        "text": "My least favourite thingtype is"
+      }, 
+      {
+        "text": "I really don't like", 
+        "intent": "matchmaking_dislike"
+      }, 
+      {
+        "text": "I despite", 
+        "intent": "matchmaking_dislike"
+      }, 
+      {
+        "text": "I can't stand", 
+        "intent": "matchmaking_dislike"
+      }, 
+      {
+        "text": "How can anyone like", 
+        "intent": "matchmaking_dislike"
+      }, 
+      {
+        "text": "erase my favorite", 
+        "intent": "matchmaking_forget_like"
+      }, 
+      {
+        "text": "I don't like  any more", 
+        "intent": "matchmaking_forget_like"
+      }, 
+      {
+        "text": "forget what I just told you, I actually don't like", 
+        "intent": "matchmaking_forget_like"
+      }, 
+      {
+        "text": "forget I like", 
+        "intent": "matchmaking_forget_like"
+      }, 
+      {
+        "text": "scrap that, I do like", 
+        "intent": "matchmaking_forget_like"
+      }, 
+      {
+        "text": "forget that I like", 
+        "intent": "matchmaking_forget_like"
+      }, 
+      {
+        "text": "forget that I like", 
+        "intent": "matchmaking_forget_like"
+      }, 
+      {
+        "text": "I don't like", 
+        "intent": "matchmaking_forget_like"
+      }, 
+      {
+        "text": "I no longer like", 
+        "intent": "matchmaking_forget_like"
+      }, 
+      {
+        "text": "forget that I said I like", 
+        "intent": "matchmaking_forget_like"
+      }, 
+      {
+        "text": "forget my like of", 
+        "intent": "matchmaking_forget_like"
+      }, 
+      {
+        "text": "I like  now", 
+        "intent": "matchmaking_forget_dislike"
+      }, 
+      {
+        "text": "forget what I just told you, I actually don't dislike", 
+        "intent": "matchmaking_forget_dislike"
+      }, 
+      {
+        "text": "forget I dislike", 
+        "intent": "matchmaking_forget_dislike"
+      }, 
+      {
+        "text": "scrap that, I don't like", 
+        "intent": "matchmaking_forget_dislike"
+      }, 
+      {
+        "text": "forget my dislike of", 
+        "intent": "matchmaking_forget_dislike"
+      }, 
+      {
+        "text": "I no longer dislike", 
+        "intent": "matchmaking_forget_dislike"
+      }, 
+      {
+        "text": "forget that I said I dislike", 
+        "intent": "matchmaking_forget_dislike"
+      }, 
+      {
+        "text": "remind us of our favourite", 
+        "intent": "matchmaking_matchmake"
+      }, 
+      {
+        "text": "do any of my friends like", 
+        "intent": "matchmaking_matchmake"
+      }, 
+      {
+        "text": "who else likes", 
+        "intent": "matchmaking_matchmake"
+      }, 
+      {
+        "text": "what do my friends and I both like", 
+        "intent": "matchmaking_matchmake"
+      }, 
+      {
+        "text": "what do my friends and I like", 
+        "intent": "matchmaking_matchmake"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 18, 
+            "end": 24, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "matchmaking_matchmake", 
+        "text": "is there anything friend and I both enjoy"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 10, 
+            "end": 16, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "matchmaking_matchmake", 
+        "text": "what does friend like that I also like"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 14, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "matchmaking_matchmake", 
+        "text": "what do friend and I both like"
+      }, 
+      {
+        "text": "tell me about our common interests", 
+        "intent": "matchmaking_matchmake"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 5, 
+            "end": 11, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "matchmaking_matchmake", 
+        "text": "does friend like  too"
+      }, 
+      {
+        "text": "who likes", 
+        "intent": "matchmaking_matchmake"
+      }, 
+      {
+        "text": "who also likes", 
+        "intent": "matchmaking_matchmake"
+      }, 
+      {
+        "text": "do we both like", 
+        "intent": "matchmaking_matchmake"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 20, 
+            "end": 26, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "matchmaking_matchmake", 
+        "text": "did you know me and friend both like"
+      }, 
+      {
+        "text": "what's on my schedule?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what's happening in the care home today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what events are on today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what can I do today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what is there to do today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "is there anything on today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what do I have on today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what am I doing today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what is on my calendar today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "do I have any events today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "am I doing anything today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what do I have to remember to do today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "remind me of today's itinerary", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "remimd me of my personal itinerary", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what events happen today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what do I do today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what events do I have today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what is happening today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what are we doing today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "am I doing anything today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what's the plan?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "are we going out today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what is going on?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "what are we doing?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "are there any appointments today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "do I have any appointments today?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "do I have any appointments this week?", 
+        "intent": "calendar_events_today"
+      }, 
+      {
+        "text": "is there one scheduled to visit?", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "text": "is there one scheduled to visit me today?", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "text": "is anyone coming to see me?", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "text": "is anyone coming to see me today?", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "text": "is anyone coming to see me this week?", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "text": "who is coming over today?", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "text": "am I having any visitors?", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "text": "is anyone coming over?", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "text": "who is coming round today?", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "text": "is anyone coming round today?", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "text": "will I receive visitors today", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "text": "who is coming to visit?", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "text": "is my family coming?", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "text": "when is my friend coming?", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "text": "is my friend coming?", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "text": "any visitors today?", 
+        "intent": "calendar_upcoming_visitors"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 5, 
+            "end": 11, 
+            "value": "doctor", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_doctor", 
+        "text": "find doctor on my schedule?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 5, 
+            "end": 11, 
+            "value": "doctor", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_doctor", 
+        "text": "find doctor on my schedule today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 19, 
+            "end": 25, 
+            "value": "doctor", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_doctor", 
+        "text": "when am I going to doctor?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 14, 
+            "value": "doctor", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_doctor", 
+        "text": "when is doctor?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 12, 
+            "end": 18, 
+            "value": "doctor", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_doctor", 
+        "text": "what day is doctor?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 13, 
+            "end": 19, 
+            "value": "doctor", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_doctor", 
+        "text": "what time is doctor?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 53, 
+            "end": 59, 
+            "value": "doctor", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_doctor", 
+        "text": "return all calendar entries mentioning the keyphrase doctor"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 39, 
+            "end": 45, 
+            "value": "doctor", 
+            "entity": "BINGO"
+          }
+        ], 
+        "intent": "calendar_event_search_doctor", 
+        "text": "is there any event containing the word doctor?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 5, 
+            "end": 10, 
+            "value": "bingo", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_bingo", 
+        "text": "find bingo on my schedule?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 5, 
+            "end": 10, 
+            "value": "bingo", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_bingo", 
+        "text": "find bingo on my schedule today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 19, 
+            "end": 24, 
+            "value": "bingo", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_bingo", 
+        "text": "when am I going to bingo?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 13, 
+            "value": "bingo", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_bingo", 
+        "text": "when is bingo?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 12, 
+            "end": 17, 
+            "value": "bingo", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_bingo", 
+        "text": "what day is bingo?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 13, 
+            "end": 18, 
+            "value": "bingo", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_bingo", 
+        "text": "what time is bingo?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 53, 
+            "end": 58, 
+            "value": "bingo", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_bingo", 
+        "text": "return all calendar entries mentioning the keyphrase bingo"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 39, 
+            "end": 44, 
+            "value": "bingo", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_bingo", 
+        "text": "is there any event containing the word bingo?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 3, 
+            "end": 8, 
+            "value": "bingo", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_bingo", 
+        "text": "is bingo on today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 5, 
+            "end": 10, 
+            "value": "lunch", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_lunch", 
+        "text": "find lunch on my schedule?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 5, 
+            "end": 10, 
+            "value": "lunch", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_lunch", 
+        "text": "find lunch on my schedule today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 13, 
+            "end": 18, 
+            "value": "lunch", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_lunch", 
+        "text": "what time is lunch?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 13, 
+            "value": "lunch", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_lunch", 
+        "text": "when is lunch?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 13, 
+            "value": "lunch", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_lunch", 
+        "text": "when is lunch today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 53, 
+            "end": 58, 
+            "value": "lunch", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_lunch", 
+        "text": "return all calendar entries mentioning the keyphrase lunch"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 39, 
+            "end": 44, 
+            "value": "lunch", 
+            "entity": "BINGO"
+          }
+        ], 
+        "intent": "calendar_event_search_lunch", 
+        "text": "is there any event containing the word lunch?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 3, 
+            "end": 8, 
+            "value": "lunch", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_lunch", 
+        "text": "is lunch on today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 5, 
+            "end": 11, 
+            "value": "dinner", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_dinner", 
+        "text": "find dinner on my schedule?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 5, 
+            "end": 11, 
+            "value": "dinner", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_dinner", 
+        "text": "find dinner on my schedule today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 13, 
+            "end": 19, 
+            "value": "dinner", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_dinner", 
+        "text": "what time is dinner?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 14, 
+            "value": "dinner", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_dinner", 
+        "text": "when is dinner?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 14, 
+            "value": "dinner", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_dinner", 
+        "text": "when is dinner today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 53, 
+            "end": 59, 
+            "value": "dinner", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_dinner", 
+        "text": "return all calendar entries mentioning the keyphrase dinner"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 39, 
+            "end": 45, 
+            "value": "dinner", 
+            "entity": "BINGO"
+          }
+        ], 
+        "intent": "calendar_event_search_dinner", 
+        "text": "is there any event containing the word dinner?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 3, 
+            "end": 9, 
+            "value": "dinner", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_dinner", 
+        "text": "is dinner on today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 5, 
+            "end": 9, 
+            "value": "film", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_film", 
+        "text": "find film on my schedule?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 5, 
+            "end": 9, 
+            "value": "film", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_film", 
+        "text": "find film on my schedule today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 10, 
+            "end": 14, 
+            "value": "film", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_film", 
+        "text": "what time film on today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 13, 
+            "end": 17, 
+            "value": "film", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_film", 
+        "text": "what time is film on today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 21, 
+            "end": 25, 
+            "value": "film", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_film", 
+        "text": "what time is there a film on today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 14, 
+            "end": 18, 
+            "value": "film", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_film", 
+        "text": "what time are film on?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 10, 
+            "end": 14, 
+            "value": "film", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_film", 
+        "text": "what time film on?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 13, 
+            "end": 17, 
+            "value": "film", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_film", 
+        "text": "what time is film on?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 21, 
+            "end": 25, 
+            "value": "film", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_film", 
+        "text": "what time is there a film on?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 14, 
+            "end": 18, 
+            "value": "film", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_film", 
+        "text": "what time are film on?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 53, 
+            "end": 57, 
+            "value": "film", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_film", 
+        "text": "return all calendar entries mentioning the keyphrase film"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 39, 
+            "end": 43, 
+            "value": "film", 
+            "entity": "BINGO"
+          }
+        ], 
+        "intent": "calendar_event_search_film", 
+        "text": "is there any event containing the word film?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 3, 
+            "end": 7, 
+            "value": "film", 
+            "entity": "EVENT"
+          }
+        ], 
+        "intent": "calendar_event_search_film", 
+        "text": "is film on today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 18, 
+            "end": 24, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "calendar_event_friend_today", 
+        "text": "what is my friend friend doing today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 14, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "calendar_event_friend_today", 
+        "text": "what is friend doing today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 14, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "calendar_event_friend_today", 
+        "text": "what is friend's schedule?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 3, 
+            "end": 9, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "calendar_event_friend_today", 
+        "text": "is friend free today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 14, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "calendar_event_friend_today", 
+        "text": "what is friend up to today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 3, 
+            "end": 9, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "calendar_event_friend_today", 
+        "text": "is friend busy today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 11, 
+            "end": 17, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "calendar_event_friend_today", 
+        "text": "what is on friend's daily itinerary"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 11, 
+            "end": 17, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "calendar_event_friend_today", 
+        "text": "what is on friend's itinerary"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 10, 
+            "end": 16, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "calendar_event_friend_today", 
+        "text": "what does friend do today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 17, 
+            "end": 23, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "calendar_event_friend_today", 
+        "text": "what events does friend have today?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 9, 
+            "end": 15, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "calendar_event_friend_today", 
+        "text": "where is friend?"
+      }, 
+      {
+        "entities": [
+          {
+            "start": 8, 
+            "end": 14, 
+            "value": "friend", 
+            "entity": "FRIEND"
+          }
+        ], 
+        "intent": "calendar_event_friend_today", 
+        "text": "what is friend doing?"
+      }, 
+      {
+        "text": "play memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "start memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "can we play a memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "play a memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "quiz my memory", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "I want to play memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "take memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "take the memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "play recall quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "start recall quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "quiz time", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "are we playing a quiz?", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "engage memory test program", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "let's play a memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "I want to play a quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "I want to stop a quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "I want to play a game", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "stop playing memory quiz", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "stop memory quiz", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "stop recall quiz", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "end the quiz", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "end memory quiz", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "stop recall quiz", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "I'm finished with the quiz", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "the quiz is finished", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "no more questions", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "I don't want to play this any more", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "stop the quiz please", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "stop asking questions", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "no more questions please", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "I don't want to play this any more", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "I don't want to play any more", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "I beg of you, please stop asking me questions", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "make it stop", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "terminate memory test program", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "I'm done playing", 
+        "intent": "recall_escape"
+      }
+    ], 
+    "entity_synonyms": [
+      {
+        "synonyms": [
+          "movies", 
+          "movie", 
+          "films", 
+          "talkies"
+        ], 
+        "value": "film"
+      }, 
+      {
+        "synonyms": [
+          "film", 
+          "food", 
+          "object", 
+          "colour", 
+          "person", 
+          "place", 
+          "tvshow"
+        ], 
+        "value": "thingtype"
+      }, 
+      {
+        "synonyms": [
+          "beata", 
+          "abubaker", 
+          "florence", 
+          "bakry", 
+          "victor", 
+          "mark", 
+          "matthew", 
+          "ronnie", 
+          "rain", 
+          "jack", 
+          "alex"
+        ], 
+        "value": "friend"
+      }
+    ], 
+    "regex_features": [], 
+    "lookup_tables": []
+  }
+}

@@ -57,12 +57,14 @@
 
 <!-- BOT 1: MATCHMAKING -->
 
-<!-- ## intent:matchmaking_like
+## intent:matchmaking_like
 - remember my favourite 
 - remind me I like 
 - remember I like 
 -  is something I like
 - I love 
+- I love [friend](FRIEND)
+- I like [friend](FRIEND)
 - is my favourite 
 - I like 
 - did you know that I like 
@@ -126,7 +128,7 @@
 - who likes
 - who also likes
 - do we both like
-- did you know me and [friend](FRIEND) both like -->
+- did you know me and [friend](FRIEND) both like
 
 <!-- BOT 2: CALENDAR -->
 
@@ -147,6 +149,21 @@ We will make distinctions between the two at the next layer, and in speech.
 - do I have any events today?
 - am I doing anything today?
 - what do I have to remember to do today?
+- remind me of today's itinerary
+- remimd me of my personal itinerary
+- what events happen today?
+- what do I do today?
+- what events do I have today?
+- what is happening today?
+- what are we doing today?
+- am I doing anything today?
+- what's the plan?
+- are we going out today?
+- what is going on?
+- what are we doing?
+- are there any appointments today?
+- do I have any appointments today?
+- do I have any appointments this week?
 
 ## intent:calendar_upcoming_visitors
 - is there one scheduled to visit?
@@ -159,7 +176,84 @@ We will make distinctions between the two at the next layer, and in speech.
 - is anyone coming over?
 - who is coming round today?
 - is anyone coming round today?
+- will I receive visitors today
+- who is coming to visit?
+- is my family coming?
+- when is my friend coming?
+- is my friend coming?
+- any visitors today?
 
+## intent:calendar_event_search_doctor
+- find [doctor](EVENT) on my schedule?
+- find [doctor](EVENT) on my schedule today?
+- when am I going to [doctor](EVENT)?
+- when is [doctor](EVENT)?
+- what day is [doctor](EVENT)?
+- what time is [doctor](EVENT)?
+- return all calendar entries mentioning the keyphrase [doctor](EVENT)
+- is there any event containing the word [doctor](BINGO)?
+
+## intent:calendar_event_search_bingo
+- find [bingo](EVENT) on my schedule?
+- find [bingo](EVENT) on my schedule today?
+- when am I going to [bingo](EVENT)?
+- when is [bingo](EVENT)?
+- what day is [bingo](EVENT)?
+- what time is [bingo](EVENT)?
+- return all calendar entries mentioning the keyphrase [bingo](EVENT)
+- is there any event containing the word [bingo](EVENT)?
+- is [bingo](EVENT) on today?
+
+## intent:calendar_event_search_lunch
+- find [lunch](EVENT) on my schedule?
+- find [lunch](EVENT) on my schedule today?
+- what time is [lunch](EVENT)?
+- when is [lunch](EVENT)?
+- when is [lunch](EVENT) today?
+- return all calendar entries mentioning the keyphrase [lunch](EVENT)
+- is there any event containing the word [lunch](BINGO)?
+- is [lunch](EVENT) on today?
+
+## intent:calendar_event_search_dinner
+- find [dinner](EVENT) on my schedule?
+- find [dinner](EVENT) on my schedule today?
+- what time is [dinner](EVENT)?
+- when is [dinner](EVENT)?
+- when is [dinner](EVENT) today?
+- return all calendar entries mentioning the keyphrase [dinner](EVENT)
+- is there any event containing the word [dinner](BINGO)?
+- is [dinner](EVENT) on today?
+
+## intent:calendar_event_search_film
+- find [film](EVENT) on my schedule?
+- find [film](EVENT) on my schedule today?
+- what time [film](EVENT) on today?
+- what time is [film](EVENT) on today?
+- what time is there a [film](EVENT) on today?
+- what time are [film](EVENT) on?
+- what time [film](EVENT) on?
+- what time is [film](EVENT) on?
+- what time is there a [film](EVENT) on?
+- what time are [film](EVENT) on?
+- return all calendar entries mentioning the keyphrase [film](EVENT)
+- is there any event containing the word [film](BINGO)?
+- is [film](EVENT) on today?
+
+## intent:calendar_event_friend_today
+- what is my friend [friend](FRIEND) doing today?
+- what is [friend](FRIEND) doing today?
+- what is [friend](FRIEND)'s schedule?
+- is [friend](FRIEND) free today?
+- what is [friend](FRIEND) up to today?
+- is [friend](FRIEND) busy today?
+- what is on [friend](FRIEND)'s daily itinerary
+- what is on [friend](FRIEND)'s itinerary
+- what does [friend](FRIEND) do today?
+- what events does [friend](FRIEND) have today?
+- where is [friend](FRIEND)?
+- what is [friend](FRIEND) doing?
+
+<!-- NOT USED -->
 <!--
 ## intent:calendar_event_search
 - find on my schedule
@@ -170,49 +264,49 @@ We will make distinctions between the two at the next layer, and in speech.
 - when is
 -->
 
-## intent:calendar_event_search_bingo
-- find [bingo](EVENT) on my schedule
-- find [bingo](EVENT) on my schedule today
-- when am I going to [bingo](EVENT)
-- when is [bingp](EVENT)
-- what day is [bingo](EVENT)
-- what time is [bingp](EVENT)
-
-## intent:calendar_event_search_lunch
-- find [lunch](EVENT) on my schedule
-- find [lunch](EVENT) on my schedule today
-- what time is [lunch](EVENT)
-- when is [lunch](EVENT)
-- when is [lunch](EVENT) today
-
-## intent:calendar_event_search_dinner
-- find [dinner](EVENT) on my schedule
-- find [dinner](EVENT) on my schedule today
-- what time is [dinner](EVENT)
-- when is [dinner](EVENT)
-- when is [dinner](EVENT) today
-
-## intent:calendar_event_search_film
-- find [film](EVENT) on my schedule
-- find [film](EVENT) on my schedule today
-- what time [film](EVENT) on today
-- what time is [film](EVENT) on today
-- what time is there a [film](EVENT) on today
-- what time are [film](EVENT) on
-- what time [film](EVENT) on
-- what time is [film](EVENT) on
-- what time is there a [film](EVENT) on
-- what time are [film](EVENT) on
-
-## intent:calendar_event_friend_today
-- what is my friend [friend](FRIEND) doing today
-- what is [friend](FRIEND) doing today
-- what is [friend](FRIEND)'s schedule
-- is [friend](FRIEND) free today
-- what is [frient](FRIEND) up to today
-- is [friend](FRIEND) busy today
-
 <!-- BOT 3: RECALL QUIZ -->
+
+<!-- Only start and end are handled by the first level. -->
+## intent:recall_start
+- play memory quiz
+- start memory quiz
+- can we play a memory quiz
+- play a memory quiz
+- quiz my memory
+- I want to play memory quiz
+- take memory quiz
+- take the memory quiz
+- play recall quiz
+- ask me questions
+- start recall quiz
+- quiz time
+- are we playing a quiz?
+- engage memory test program
+- let's play a memory quiz
+- I want to play a quiz
+- I want to stop a quiz
+- I want to play a game
+
+## intent:recall_escape
+- stop playing memory quiz
+- stop memory quiz
+- stop recall quiz
+- end the quiz
+- end memory quiz
+- stop recall quiz
+- I'm finished with the quiz
+- the quiz is finished
+- no more questions
+- I don't want to play this any more
+- stop the quiz please
+- stop asking questions
+- no more questions please
+- I don't want to play this any more
+- I don't want to play any more
+- I beg of you, please stop asking me questions
+- make it stop
+- terminate memory test program
+- I'm done playing
 
 <!-- SYNONYMS -->
 
@@ -235,3 +329,12 @@ We will make distinctions between the two at the next layer, and in speech.
 - film
 - films
 - talkies
+
+## synonym:thingtype
+- object
+- colour
+- food
+- person
+- tvshow
+- film
+- place

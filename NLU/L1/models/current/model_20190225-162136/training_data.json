@@ -1,0 +1,347 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "Bye", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "Goodbye", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "See you later", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "Bye bot", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "Goodbye friend", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "bye", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "bye for now", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "catch you later", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "gotta go", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "See you", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "goodnight", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "have a nice day", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "i'm off", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "see you later alligator", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "we'll speak soon", 
+        "intent": "bye"
+      }, 
+      {
+        "text": "Hi", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Hey", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Hi bot", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Hey bot", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Hello", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Good morning", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hi again", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hi folks", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hi Mister", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hi pal!", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hi there", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "greetings", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hello everybody", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hello is anybody there", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "hello robot", 
+        "intent": "greet"
+      }, 
+      {
+        "text": "Thanks", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "Thank you", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "Thank you so much", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "Thanks for that", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "cheers", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "ok thanks!", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "thanks for the help", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "thanks a lot", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "amazing, thanks", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "cool, thanks", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "cool thank you", 
+        "intent": "thank"
+      }, 
+      {
+        "text": "yes", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "yes sure", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "absolutely", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "for sure", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "yes yes yes", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "definitely", 
+        "intent": "affirm"
+      }, 
+      {
+        "text": "play memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "start memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "can we play a memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "play a memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "quiz my memory", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "I want to play memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "take memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "take the memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "play recall quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "start recall quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "quiz time", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "are we playing a quiz?", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "engage memory test program", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "let's play a memory quiz", 
+        "intent": "recall_start"
+      }, 
+      {
+        "text": "stop playing memory quiz", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "stop memory quiz", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "stop recall quiz", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "end the quiz", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "end memory quiz", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "stop recall quiz", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "I'm finished with the quiz", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "the quiz is finished", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "no more questions", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "stop asking questions", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "no more questions please", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "I don't want to play this any more", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "I don't want to play any more", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "I beg of you, please stop asking me questions", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "make it stop", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "terminate memory test program", 
+        "intent": "recall_escape"
+      }, 
+      {
+        "text": "I'm done playing", 
+        "intent": "recall_escape"
+      }
+    ], 
+    "entity_synonyms": [
+      {
+        "synonyms": [
+          "movies", 
+          "movie", 
+          "talkies", 
+          "films"
+        ], 
+        "value": "film"
+      }, 
+      {
+        "synonyms": [
+          "beata", 
+          "alex", 
+          "abubaker", 
+          "rain", 
+          "mark", 
+          "matthew", 
+          "jack", 
+          "bakry", 
+          "florence", 
+          "ronnie", 
+          "victor"
+        ], 
+        "value": "friend"
+      }
+    ], 
+    "regex_features": [], 
+    "lookup_tables": []
+  }
+}
