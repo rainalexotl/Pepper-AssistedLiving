@@ -16,8 +16,10 @@ import sys
 chit_chat_strings   = {"greet", "thank", "affirm", "bye"}
 matchmaking_strings = {"matchmaking_like", "matchmaking_dislike", "matchmaking_forget_like",
                         "matchmaking_forget_dislike", "matchmaking_matchmake"}
-calendar_strings    = {""}
-recall_strings      = {""}
+calendar_strings    = {"calendar_events_today", "calendar_upcoming_visitors", "calendar_event_search_doctor",
+                        "calendar_event_search_bingo", "calendar_event_search_lunch", "calendar_event_search_dinner",
+                        "calendar_event_search_film", "calendar_event_friend_today"}
+recall_strings      = {"recall_start", "recall_escape"}
 
 class bot:
     def __init__(self):
