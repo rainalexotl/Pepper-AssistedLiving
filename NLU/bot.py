@@ -10,6 +10,8 @@ from rasa_nlu import config
 from bots.matchmaking import matchmaking
 
 import json
+import socket
+import sys
 
 chit_chat_strings   = {"greet", "thank", "affirm", "bye"}
 matchmaking_strings = {"matchmaking_like", "matchmaking_dislike", "matchmaking_forget_like",
@@ -22,6 +24,12 @@ class bot:
         self.interpreter = Interpreter.load('./models/default')
         self.matchmaking = matchmaking.matchmaking()
 
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+        self.server_address = ('localhost', 3002)
+        print('[PRIMARY BOT] Starting up on %s port %s' % self.server_address)
+        self.sock.bind(self.server_address)
+
     def train (self, data, config_file, model_dir):
         training_data = load_data(data)
         configuration = config.load(config_file)
@@ -30,7 +38,28 @@ class bot:
         #model_directory = trainer.persist(model_dir, fixed_model_name = 'chat')
 
     def run(self):
-        result = self.interpreter.parse('I like oranges')
+        self.sock.listen(1)
+
+        while True:
+            print('[PRIMARY BOT] Waiting for request...')
+            connection, client_address = self.sock.accept()
+            try:
+                print('[PRIMARY BOT] Connection from: ', client_address)
+
+                while True:
+                    data = connection.recv(16)
+                    if data:
+                        self.parse(data)
+                    else:
+                        break             
+            finally:
+                connection.close()
+                print('[PRIMARY BOT] Connection closed.')
+
+    def parse(self, text):
+        unicodedString = unicode(text, "utf-8")
+
+        result = self.interpreter.parse(unicodedString)
 
         self.routing(result)
 
