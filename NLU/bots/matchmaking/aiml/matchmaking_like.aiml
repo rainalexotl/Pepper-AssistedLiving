@@ -1,0 +1,95 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+    <category>
+        <pattern>SAVE LIKE *</pattern>
+        <template>
+            <think>
+                <set name="like"><star/></set>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>REMEMBER MY FAVOURITE *</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>REMIND ME I LIKE *</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>REMEMBER I LIKE *</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* IS SOMETHING I LIKE</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I LOVE *</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I LIKE *</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* IS MY FAVOURITE</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>DID YOU KNOW THAT I LIKE *</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>DO YOU KNOW THAT I LIKE *</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY FAVOURITE IS</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I REALLY LIKE *</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I ADORE *</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+</aiml>

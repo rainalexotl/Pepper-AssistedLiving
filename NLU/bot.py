@@ -17,43 +17,45 @@ matchmaking_strings = {"matchmaking_like", "matchmaking_dislike", "matchmaking_f
 calendar_strings    = {""}
 recall_strings      = {""}
 
-def train (data, config_file, model_dir):
-    training_data = load_data(data)
-    configuration = config.load(config_file)
-    trainer = Trainer(configuration)
-    trainer.train(training_data)
-    #model_directory = trainer.persist(model_dir, fixed_model_name = 'chat')
+class bot:
+    def __init__(self):
+        self.interpreter = Interpreter.load('./models/default')
+        self.matchmaking = matchmaking.matchmaking()
 
-def run():
-    interpreter = Interpreter.load('./models/default')
+    def train (self, data, config_file, model_dir):
+        training_data = load_data(data)
+        configuration = config.load(config_file)
+        trainer = Trainer(configuration)
+        trainer.train(training_data)
+        #model_directory = trainer.persist(model_dir, fixed_model_name = 'chat')
 
-    result = interpreter.parse('I love Mark')
+    def run(self):
+        result = self.interpreter.parse('I like oranges')
 
-    routing(result)
+        self.routing(result)
 
-def routing(result):
-    intent = result["intent"]
-    intent_name = intent["name"]
-    intent_conf = intent["confidence"]
+    def routing(self, result):
+        intent = result["intent"]
+        intent_name = intent["name"]
+        intent_conf = intent["confidence"]
 
-    print('')
-    print('*** INTENT ***')
-    print('Intent: ', intent_name)
-    print('Conf.: ', intent_conf)
-    print('')
+        print('')
+        print('*** INTENT ***')
+        print('Intent: ', intent_name)
+        print('Conf.: ', intent_conf)
+        print('')
 
-    if intent_name in chit_chat_strings:
-        print('Selecting... Bot 0: Chit Chat')
-    elif intent_name in matchmaking_strings:
-        print('Selecting... Bot 1: Matchmaking')
-        matchmaking.run()
-    elif intent_name in calendar_strings:
-        print('Selecting... Bot 2: Calendar')
-    elif intent_name in recall_strings:
-        print('Selecting... Bot 3: Recall Quiz')
+        if intent_name in chit_chat_strings:
+            print('Selecting... Bot 0: Chit Chat')
+        elif intent_name in matchmaking_strings:
+            print('Selecting... Bot 1: Matchmaking')
+            self.matchmaking.check(intent_name)
+        elif intent_name in calendar_strings:
+            print('Selecting... Bot 2: Calendar')
+        elif intent_name in recall_strings:
+            print('Selecting... Bot 3: Recall Quiz')
 
-    print('')
+        print('')
 
-if __name__ == '__main__':
-    #train('./data/nlu_data.md', 'nlu_config.yml', './models/default')
-    run()
+foo = bot()
+foo.run()
