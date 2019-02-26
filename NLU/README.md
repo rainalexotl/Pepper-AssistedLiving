@@ -9,7 +9,7 @@ Secondary bots may 'lock' te conversation so that subsequent responses from the 
 ## Dependencies
 
 You will require RASA NLU to run the primary bot, along with Spacy, for Python 2 and 3. The most notable python dependencies are:
-``aiml==0.9.2
+```aiml==0.9.2
 future==0.17.1
 rasa-nlu==0.14.3
 sklearn-crfsuite==0.3.6
