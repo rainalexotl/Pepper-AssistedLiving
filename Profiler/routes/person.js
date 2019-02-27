@@ -10,7 +10,7 @@ const handleError = error => {
 
 // Test
 router.get('/test', function (req, res, next) {
-  res.header('Location', `/api/person/test`)
+  res.header('CALL', `/api/person/test`)
   res.status(201)
   res.json({
     success: true,
@@ -49,7 +49,7 @@ router.post('/add/person', function (req, res, next) {
           })
         }
     
-        res.header('Location', `/api/person/addPerson`)
+        res.header('CALL', `/api/person/add/Person`)
         res.status(201)
         res.json({
           success: true,
@@ -76,12 +76,11 @@ router.post('/add/person', function (req, res, next) {
  */
 router.post('/add/likeDislike', function (req, res, next) {
 
-  Person.findOne({ name: req.body.forename }, function (err, person){
+  Person.findOne({ forename: req.body.forename }, function (err, person){
     var newLikeDislike = { likeDislike: req.body.likeDislike, thing: req.body.thing}
 
     person.likesDislikes.push(newLikeDislike)
 
-    console.log(person)
     person.save(function (err, p) {
       if (err) {
         res.status(400)
@@ -91,7 +90,7 @@ router.post('/add/likeDislike', function (req, res, next) {
         })
       }
   
-      res.header('Location', `/api/person/likeDislike`)
+      res.header('CALL', `/api/person/add/likeDislike`)
       res.status(201)
       res.json({
         success: true,
@@ -104,13 +103,40 @@ router.post('/add/likeDislike', function (req, res, next) {
 })
 
 /* 
- * Method: GET
+ * Method: POST
  * Behav.: Gets all likes for a given user
  * 
  * Params: forename (req.body.forename)
  */
-router.get('/person/likes', function (req, res, next) {
+router.post('/likes', function (req, res, next) {
+
+  Person.findOne({ forename: req.body.forename }, function (err, person){
+
+    Person.aggregate([{ $project: { likesDislikes: 1 } }, { $unwind: '$likesDislikes' }, { $match: { "likesDislikes.likeDislike": true } }]).exec((err, likes) => {
+      if(err) {
+        res.status(400)
+        return res.json({
+          success: false,
+          message: err.message
+        })
+      }
   
+      var arrayLikes = []
+      for(i = 0; i < likes.length; i++){
+        arrayLikes.push({"thing":likes[i].likesDislikes.thing});
+      }
+
+      res.header('CALL', '/api/person/likes')
+      res.status(201)
+      res.json({
+        success: true,
+        message: 'User Likes Retrieved',
+        likes: arrayLikes
+      }) 
+
+    })
+  })
+
 })
 
 module.exports = router
