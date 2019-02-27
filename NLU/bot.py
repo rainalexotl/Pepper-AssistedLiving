@@ -7,7 +7,10 @@ from rasa_nlu.config import RasaNLUModelConfig
 from rasa_nlu.model import Trainer, Metadata, Interpreter
 from rasa_nlu import config
 
+# from bots.chit_chat import chit_chat
 from bots.matchmaking import matchmaking
+# from bots.calendar import calendar
+# from bots.recall import recall
 
 import json
 import socket
@@ -23,6 +26,8 @@ recall_strings      = {"recall_start", "recall_escape"}
 
 class bot:
     def __init__(self):
+        self.lock = -1
+
         self.interpreter = Interpreter.load('./models/default')
         self.matchmaking = matchmaking.matchmaking()
 
@@ -61,7 +66,10 @@ class bot:
     def parse(self, text):
         unicodedString = unicode(text, "utf-8")
 
-        result = self.interpreter.parse(unicodedString)
+        if self.lock == -1:
+            result = self.interpreter.parse(unicodedString)
+        else:
+            result = unicodedString
 
         self.routing(result)
 
@@ -75,16 +83,31 @@ class bot:
         print('Intent: ', intent_name)
         print('Conf.: ', intent_conf)
         print('')
-
-        if intent_name in chit_chat_strings:
-            print('Selecting... Bot 0: Chit Chat')
-        elif intent_name in matchmaking_strings:
-            print('Selecting... Bot 1: Matchmaking')
-            self.matchmaking.check(intent_name)
-        elif intent_name in calendar_strings:
-            print('Selecting... Bot 2: Calendar')
-        elif intent_name in recall_strings:
-            print('Selecting... Bot 3: Recall Quiz')
+            
+        if self.lock == -1:
+            if intent_name in chit_chat_strings:
+                print('Selecting... Bot 0: Chit Chat')
+                #self.lock = self.chit_chat.check(intent_name)
+            elif intent_name in matchmaking_strings:
+                print('Selecting... Bot 1: Matchmaking')
+                self.lock = self.matchmaking.check(intent_name)
+            elif intent_name in calendar_strings:
+                print('Selecting... Bot 2: Calendar')
+                #self.lock = self.calendar.check(intent_name)
+            elif intent_name in recall_strings:
+                print('Selecting... Bot 3: Recall Quiz')
+                #self.lock = self.recall.check(intent_name)
+        else:
+            if self.lock == 1:
+                self.matchmaking.check(intent_name)
+            # if self.lock == 0:
+            #     self.chit_chat.check(intent_name)
+            # elif self.lock == 1:
+            #     self.matchmaking.check(intent_name)
+            # elif self.lock == 2:
+            #     self.calendar.check(intent_name)
+            # elif self.lock == 3:
+            #     self.recall.check(intent_name)
 
         print('')
 

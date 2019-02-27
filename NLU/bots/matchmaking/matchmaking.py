@@ -16,8 +16,10 @@ class matchmaking():
         self.aiml = aiml.Kernel()
         self.aiml.learn("bots/matchmaking/std-startup.xml")
         self.aiml.respond("load aiml b")
-        
+
         self.test = -1
+
+        self.lockcode = 0
 
     def check(self, intent):
         print('[BOTS/MATCHMAKING] Responding...')
@@ -25,20 +27,29 @@ class matchmaking():
         if intent == "matchmaking_like":
             print("[BOTS/MATCHMAKING] matchmaking_like")
             self.matchmaking_like()
+            return self.lockcode
+
         elif intent == "matchmaking_dislike":
             print("[BOTS/MATCHMAKING] matchmaking_dislike")
             self.matchmaking_dislike()
+            return self.lockcode
+
         elif intent == "matchmaking_forget_like":
             print("[BOTS/MATCHMAKING] matchmaking_forget_like")
             self.matchmaking_forget_like()
+            return self.lockcode
+
         elif intent == "matchmaking_forget_dislike":
             print("[BOTS/MATCHMAKING] matchmaking_forget_dislike")
             self.matchmaking_forget_dislike()
+            return self.lockcode
+
         elif intent == "matchmaking_matchmake":
             print("[BOTS/MATCHMAKING] matchmaking_matchmake")
             self.matchmaking_matchmake()
+            return self.lockcode
 
-        #print(self.test)
+        print(self.test)
 
     def matchmaking_like(self):
         self.test = 0
