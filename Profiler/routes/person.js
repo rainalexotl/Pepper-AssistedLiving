@@ -139,4 +139,36 @@ router.post('/likes', function (req, res, next) {
 
 })
 
+/* 
+ * Method: POST
+ * Behav.: Gets all background information for a given user
+ * 
+ * Params: forename (req.body.forename)
+ */
+router.post('/background', function (req, res, next) {
+
+  Person.findOne({ forename: req.body.forename }, function (err, person){
+
+    Person.aggregate([{ $project: { background: 1 } }, { $unwind: '$background' } ]).exec((err, background) => {
+      if(err) {
+        res.status(400)
+        return res.json({
+          success: false,
+          message: err.message
+        })
+      }
+
+      res.header('CALL', '/api/person/background')
+      res.status(201)
+      res.json({
+        success: true,
+        message: 'User Background Retrieved',
+        background: background[0].background
+      }) 
+
+    })
+  })
+
+})
+
 module.exports = router
