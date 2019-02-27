@@ -72,34 +72,44 @@ router.post('/add/person', function (req, res, next) {
  * Method: POST
  * Behav.: Adds a new like for an existing person
  * 
- * Params: forename (req.body.forename)
+ * Params: forename    (req.body.forename)
+ *         likeDislike (req.body.likeDislike)
+ *         thing       (req.body.thing)
  */
 router.post('/add/likeDislike', function (req, res, next) {
 
   Person.findOne({ forename: req.body.forename }, function (err, person){
-    var newLikeDislike = { likeDislike: req.body.likeDislike, thing: req.body.thing}
 
-    person.likesDislikes.push(newLikeDislike)
+    if(req.body.likeDislike && req.body.thing){
+      var newLikeDislike = { likeDislike: req.body.likeDislike, thing: req.body.thing}
+      person.likesDislikes.push(newLikeDislike)
 
-    person.save(function (err, p) {
-      if (err) {
-        res.status(400)
-        return res.json({
-          success: false,
-          message: err.message
+      person.save(function (err, p) {
+        if (err) {
+          res.status(400)
+          return res.json({
+            success: false,
+            message: err.message
+          })
+        }
+    
+        res.header('CALL', `/api/person/add/likeDislike`)
+        res.status(201)
+        res.json({
+          success: true,
+          message: 'New Like/Dislike Added',
+          person: p.toJSON()
         })
-      }
-  
-      res.header('CALL', `/api/person/add/likeDislike`)
-      res.status(201)
-      res.json({
-        success: true,
-        message: 'New Like/Dislike Added',
-        person: p.toJSON()
       })
-    })
-  });
-
+    }
+    else{
+      res.status(400)
+      return res.json({
+        success: false,
+        message: "Params: forename (req.body.forename), likeDislike (req.body.likeDislike), thing (req.body.thing)"
+      })
+    }
+  })
 })
 
 /* 
@@ -112,7 +122,7 @@ router.post('/likes', function (req, res, next) {
 
   Person.findOne({ forename: req.body.forename }, function (err, person){
 
-    Person.aggregate([{ $project: { likesDislikes: 1 } }, { $unwind: '$likesDislikes' }, { $match: { "likesDislikes.likeDislike": true } }]).exec((err, likes) => {
+    Person.aggregate([{ $match: { "forename": req.body.forename } }, { $project: { likesDislikes: 1 } }, { $unwind: '$likesDislikes' }, { $match: { "likesDislikes.likeDislike": true } }]).exec((err, likes) => {
       if(err) {
         res.status(400)
         return res.json({
@@ -123,7 +133,7 @@ router.post('/likes', function (req, res, next) {
   
       var arrayLikes = []
       for(i = 0; i < likes.length; i++){
-        arrayLikes.push({"thing":likes[i].likesDislikes.thing});
+        arrayLikes.push({"thing":likes[i].likesDislikes.thing})
       }
 
       res.header('CALL', '/api/person/likes')
@@ -133,10 +143,8 @@ router.post('/likes', function (req, res, next) {
         message: 'User Likes Retrieved',
         likes: arrayLikes
       }) 
-
     })
   })
-
 })
 
 /* 
@@ -165,10 +173,77 @@ router.post('/background', function (req, res, next) {
         message: 'User Background Retrieved',
         background: background[0].background
       }) 
-
     })
   })
+})
 
+/* 
+ * Method: POST
+ * Behav.: Gets common likes between two users
+ * 
+ * Params: forename of first person  (req.body.forename_1)
+ *         forename of second person (req.body.forename_1)
+ */
+router.post('/commonlikes', function (req, res, next) {
+
+  Person.findOne({ forename: req.body.forename_1 }, function (err, person){
+
+    Person.aggregate([{ $match: { "forename": req.body.forename_1 } }, { $project: { likesDislikes: 1 } }, { $unwind: '$likesDislikes' }, { $match: { "likesDislikes.likeDislike": true } }]).exec((err, likesP1) => {
+      if(err) {
+        res.status(400)
+        return res.json({
+          success: false,
+          message: err.message
+        })
+      }
+
+      var arrayLikesP1 = []
+      for(i = 0; i < likesP1.length; i++){
+        arrayLikesP1.push({"thing":likesP1[i].likesDislikes.thing})
+      }
+
+      Person.findOne({ forename: req.body.forename_2 }, function (err, person){
+
+        Person.aggregate([{ $match: { "forename": req.body.forename_2 } }, { $project: { likesDislikes: 1 } }, { $unwind: '$likesDislikes' }, { $match: { "likesDislikes.likeDislike": true } }]).exec((err, likesP2) => {
+          if(err) {
+            res.status(400)
+            return res.json({
+              success: false,
+              message: err.message
+            })
+          }
+      
+          var arrayLikesP2 = []
+          for(i = 0; i < likesP2.length; i++){
+            arrayLikesP2.push({"thing":likesP2[i].likesDislikes.thing})
+          }
+
+          console.log(arrayLikesP1)
+          console.log(arrayLikesP2)
+
+          var commonLikes = []
+
+          for(i = 0; i < arrayLikesP1.length; i++){
+            for(j = 0; j < arrayLikesP2.length; j++){
+              if(arrayLikesP1[i].thing == arrayLikesP2[j].thing){
+                commonLikes.push(arrayLikesP1[i].thing)
+              }
+            }
+          }
+
+          console.log(commonLikes)
+
+          res.header('CALL', '/api/person/commonlikes')
+          res.status(201)
+          res.json({
+            success: true,
+            message: 'User Likes Retrieved',
+            commonLikes: commonLikes
+          })
+        })
+      })
+    })
+  })
 })
 
 module.exports = router
