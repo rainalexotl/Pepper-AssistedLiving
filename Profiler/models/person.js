@@ -8,11 +8,11 @@ var Schema = mongoose.Schema
  */
 
 var BackgroundSchema = new Schema({
-  eyeColour: { type: String, required: false },
-  formerProfession: { type: String, required: false },
-  favouriteAnimal: { type: String, required: false },
-  wearsGlasses: { type: String, required: false },
-  birthplace: { type: String, required: false }
+  eyeColour: { type: String, required: false, default: "unknown" },
+  formerProfession: { type: String, required: false, default: "unknown" },
+  favouriteAnimal: { type: String, required: false, default: "unknown" },
+  numChildren: { type: String, required: false, default: "unknown" },
+  birthplace: { type: String, required: false, default: "unknown" }
 })
 
 var LikesDislikesSchema = new Schema({
@@ -22,8 +22,9 @@ var LikesDislikesSchema = new Schema({
 })
 
 var PersonSchema = new Schema({
-  name: { type: String, required: true },
-  background: [BackgroundSchema],
+  forename: { type: String, required: true },
+  surname: { type: String, required: true },
+  background: {type: BackgroundSchema, default: BackgroundSchema },
   likesDislikes: [LikesDislikesSchema]
 })
 
