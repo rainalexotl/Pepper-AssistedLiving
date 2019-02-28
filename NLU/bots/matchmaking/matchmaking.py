@@ -6,6 +6,7 @@ import os
 import json
 import aiml
 import pkg_resources
+import requests
 
 matchmaking_strings = {"matchmaking_like", "matchmaking_dislike", "matchmaking_forget_like",
                         "matchmaking_forget_dislike", "matchmaking_matchmake"}
@@ -54,8 +55,23 @@ class matchmaking():
     def matchmaking_like(self):
         self.test = 0
 
-        self.aiml.respond("I love oranges")
+        self.aiml.respond("I love coffee")
         predicate = self.aiml.getPredicate('like')
+
+        url = "http://localhost:3000/api/person/add/likeDislike"
+
+        #payload = "likeDislike=true&thing=apples&forename=Frasier&surname=Crane"
+        payload = "likeDislike=true&thing=" + predicate + "&forename=Frasier&surname=Crane"
+        print(payload)
+        headers = {
+            'Content-Type': "application/x-www-form-urlencoded",
+            'cache-control': "no-cache",
+            'Postman-Token': "c4a150d4-eb1a-431d-b68a-1fc99aecf28d"
+        }
+
+        response = requests.request("POST", url, data=payload, headers=headers)
+
+        print(response.text)
 
         print(predicate)
 
