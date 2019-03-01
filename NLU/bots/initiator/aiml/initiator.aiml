@@ -1,5 +1,7 @@
 <aiml version="1.0.1" encoding="UTF-8">
 
+    <!-- ROOT CASES -->
+
     <category>
         <pattern>*</pattern>
         <template>
@@ -12,6 +14,17 @@
         <template>
             <think>
                 <set name="responder">initiator_request_forename_1</set>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>FORENAME ONE IS * AND FORENAME TWO IS *</pattern>
+        <template>
+            <think>
+                <set name="forename_1"><star index="1"/></set>
+                <set name="forename_2"><star index="2"/></set>
+                <set name="responder">initiator_get_forename_1_and_forename_2</set>
             </think>
         </template>
     </category>
@@ -53,5 +66,9 @@
             </think>
         </template>
     </category>
+
+    <!-- SYNONYMOUS CASES -->
+
+    
 
 </aiml>
