@@ -1,3 +1,3 @@
 ## System Overview
 
-![alt text](https://imgur.com/XgJ67If)
+![alt text](https://i.imgur.com/XgJ67If.png)
