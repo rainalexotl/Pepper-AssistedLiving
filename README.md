@@ -1,3 +1,3 @@
-## System Diagram
+## System Overview
 
-![alt text](https://raw.githubusercontent.com/RainAlexandra/Pepper-AssistedLiving/master/system.png)
+![alt text](https://imgur.com/XgJ67If)
