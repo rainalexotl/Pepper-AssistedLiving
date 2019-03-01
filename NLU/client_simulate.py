@@ -8,7 +8,7 @@ print ('[CLIENT_SIMULATE] Connecting to %s port %s' % server_address)
 sock.connect(server_address)
 
 try:
-    message = 'I like oranges'
+    message = 'FORENAME TWO IS VICTOR'
     sock.sendall(message)
 
 finally:

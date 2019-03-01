@@ -14,41 +14,42 @@ matchmaking_strings = {"matchmaking_like", "matchmaking_dislike", "matchmaking_f
 class matchmaking():
     def __init__(self):
         print('[BOTS/MATCHMAKING] Starting...')
+
         self.aiml = aiml.Kernel()
         self.aiml.learn("bots/matchmaking/std-startup.xml")
         self.aiml.respond("load aiml b")
 
         self.test = -1
 
-        self.lockcode = 0
+        self.lockcode = 1
 
-    def check(self, intent):
+    def check(self, intent, utterance):
         print('[BOTS/MATCHMAKING] Responding...')
 
         if intent == "matchmaking_like":
             print("[BOTS/MATCHMAKING] matchmaking_like")
             self.matchmaking_like()
-            return self.lockcode
+            return -1
 
         elif intent == "matchmaking_dislike":
             print("[BOTS/MATCHMAKING] matchmaking_dislike")
             self.matchmaking_dislike()
-            return self.lockcode
+            return -1
 
         elif intent == "matchmaking_forget_like":
             print("[BOTS/MATCHMAKING] matchmaking_forget_like")
             self.matchmaking_forget_like()
-            return self.lockcode
+            return -1
 
         elif intent == "matchmaking_forget_dislike":
             print("[BOTS/MATCHMAKING] matchmaking_forget_dislike")
             self.matchmaking_forget_dislike()
-            return self.lockcode
+            return -1
 
         elif intent == "matchmaking_matchmake":
             print("[BOTS/MATCHMAKING] matchmaking_matchmake")
             self.matchmaking_matchmake()
-            return self.lockcode
+            return -1
 
         print(self.test)
 
@@ -60,7 +61,6 @@ class matchmaking():
 
         url = "http://localhost:3000/api/person/add/likeDislike"
 
-        #payload = "likeDislike=true&thing=apples&forename=Frasier&surname=Crane"
         payload = "likeDislike=true&thing=" + predicate + "&forename=Frasier&surname=Crane"
         print(payload)
         headers = {

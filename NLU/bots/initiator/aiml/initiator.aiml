@@ -1,0 +1,57 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+    <category>
+        <pattern>*</pattern>
+        <template>
+            You should not see this response.
+        </template>
+    </category>
+
+    <category>
+        <pattern>HELLO</pattern>
+        <template>
+            <think>
+                <set name="responder">initiator_request_forename_1</set>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>FORENAME ONE IS *</pattern>
+        <template>
+            <think>
+                <set name="forename_1"><star/></set>
+                <set name="responder">initiator_get_forename_1</set>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>SECOND PERSON PRESENT</pattern>
+        <template>
+            <think>
+                <set name="responder">initiator_request_forename_2</set>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>ENTER INDIVIDUAL MODE</pattern>
+        <template>
+            <think>
+                <set name="responder">initator_enter_individual_mode</set>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>FORENAME TWO IS *</pattern>
+        <template>
+            <think>
+                <set name="forename_2"><star/></set>
+                <set name="responder">initiator_get_forename_2</set>
+            </think>
+        </template>
+    </category>
+
+</aiml>
