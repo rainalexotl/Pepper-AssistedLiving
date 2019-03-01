@@ -91,6 +91,10 @@ class bot:
         print('*** INTENT ***')
         print('Intent: ', intent_name)
         print('Conf.: ', intent_conf)
+        if self.lock == -1:
+            print('[PRIMARY BOT] Using intent to select appropriate bot...')
+        else:
+            print('[PRIMARY BOT] Conversation is locked. Intent ignored.')
         print('')
             
         if self.lock == -1:

@@ -10,6 +10,15 @@
     </category>
 
     <category>
+        <pattern>EXIT</pattern>
+        <template>
+            <think>
+                <set name="responder">initator_unlock_conversation</set>
+            </think>
+        </template>
+    </category>
+
+    <category>
         <pattern>HELLO</pattern>
         <template>
             <think>
@@ -69,6 +78,6 @@
 
     <!-- SYNONYMOUS CASES -->
 
-    
+
 
 </aiml>

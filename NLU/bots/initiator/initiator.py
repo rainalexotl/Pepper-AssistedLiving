@@ -50,6 +50,8 @@ class initiator():
         elif responder == "initiator_get_forename_2":
             self.initiator_get_forename_2()
             return -1, 2, self.forename_1, self.forename_2
+        elif responder == "initator_unlock_conversation":
+            return -1, 0, self.forename_1, self.forename_2
         else:
             print('[BOTS/INITIATOR] Invalid responder value. Check bots/initiator/aiml/initiator.aiml')
             return -1, 0, self.forename_1, self.forename_2
