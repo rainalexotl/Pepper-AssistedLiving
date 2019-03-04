@@ -76,8 +76,136 @@
         </template>
     </category>
 
-    <!-- SYNONYMOUS CASES -->
+    <!-- SYNONYMOUS CASES FOR PERSON 1 -->
 
+    <category>
+        <pattern>MY NAME IS *</pattern>
+        <template>
+            <think>
+                <srai> Forename one is <star/></srai>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I AM CALLED *</pattern>
+        <template>
+            <think>
+                <srai> Forename one is <star/></srai>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY FRIENDS CALL ME *</pattern>
+        <template>
+            <think>
+                <srai> Forename one is <star/></srai>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY FAMILY CALLS ME *</pattern>
+        <template>
+            <think>
+                <srai> Forename one is <star/></srai>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>YOU CAN CALL ME *</pattern>
+        <template>
+            <think>
+                <srai> Forename one is <star/></srai>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>PEOPLE CALL ME *</pattern>
+        <template>
+            <think>
+                <srai> Forename one is <star/></srai>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY FIRST NAME IS *</pattern>
+        <template>
+            <think>
+                <srai> Forename one is <star/></srai>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>YOU ARE TALKING WITH *</pattern>
+        <template>
+            <think>
+                <srai> Forename one is <star/></srai>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>YOU ARE TALKING WITH *</pattern>
+        <template>
+            <think>
+                <srai> Forename one is <star/></srai>
+            </think>
+        </template>
+    </category>
+
+
+    <!-- SYNONYMOUS CASES FOR PERSON 2 -->
+
+    <category>
+        <pattern>MY FRIEND *</pattern>
+        <template>
+            <think>
+                <srai> Forename two is <star/></srai>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY FRIEND IS CALLED *</pattern>
+        <template>
+            <think>
+                <srai> Forename two is <star/></srai>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ IS CALLED *</pattern>
+        <template>
+            <think>
+                <srai> Forename two is <star/></srai>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* IS WITH ME</pattern>
+        <template>
+            <think>
+                <srai> Forename two is <star/></srai>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>YES * IS WITH ME</pattern>
+        <template>
+            <think>
+                <srai> Forename two is <star/></srai>
+            </think>
+        </template>
+    </category>
 
 
 </aiml>
