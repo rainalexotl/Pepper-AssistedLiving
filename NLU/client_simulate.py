@@ -9,7 +9,7 @@ sock.connect(server_address)
 
 try:
     #message = 'exit'
-    message = 'hello'
+    message = 'IS THERE ANYTHING BEBE AND I BOTH LIKE'
     sock.sendall(message)
 
 finally:

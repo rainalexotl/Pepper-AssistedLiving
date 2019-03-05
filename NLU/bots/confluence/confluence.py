@@ -29,7 +29,6 @@ class confluence():
 
         self.lockcode = 0
 
-
     def check(self, intent, utterance):
         print('[BOTS/CONFLUENCE] Responding...')
 
@@ -51,7 +50,6 @@ class confluence():
         elif responder == "leave_conversation":
             self.leave_conversation()
 
-
     def initiate_introduction(self):
         print("Hi", self.forename_1, "and", self.forename_2)
 
@@ -66,12 +64,4 @@ class confluence():
 
     def leave_conversation(self):
         print("Im leaving for now", self.forename_1, self.forename_2, "bye for now")
-
-
-
-    
-    
-
-
-
     

@@ -1,10 +1,136 @@
 <aiml version="1.0.1" encoding="UTF-8">
-    
+
     <category>
-        <pattern>WHAT ARE YOU</pattern>
+        <pattern>MATCHMAKE GENERAL</pattern>
         <template>
-            I'm a bot, silly!
+            <think>
+                <set name="matchmake">GENERAL</set>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>MATCHMAKE SPECIFIC FRIEND *</pattern>
+        <template>
+            <think>
+                <set name="matchmake">SPECIFIC FRIEND</set>
+                <set name="friend"><star index="1"/></set>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>MATCHMAKE SPECIFIC THING *</pattern>
+        <template>
+            <think>
+                <set name="matchmake">SPECIFIC THING</set>
+                <set name="thing"><star index="1"/></set>
+            </think>
+        </template>
+    </category>
+
+    <!-- GENERAL CASES -->
+
+    <category>
+        <pattern>WHAT DO MY FRIENDS AND I BOTH LIKE</pattern>
+        <template>
+            <srai>MATCHMAKE GENERAL</srai>
         </template>
     </category>
     
+    <category>
+        <pattern>WHAT DO MY FRIENDS AND I LIKE</pattern>
+        <template>
+            <srai>MATCHMAKE GENERAL</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME ABOUT COMMON INTERESTS</pattern>
+        <template>
+            <srai>MATCHMAKE GENERAL</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT DO I HAVE IN COMMON WITH MY FRIENDS</pattern>
+        <template>
+            <srai>MATCHMAKE GENERAL</srai>
+        </template>
+    </category>
+
+    <!-- SPECIFIC CASES: FRIEND -->
+
+    <category>
+        <pattern>IS THERE ANYTHING * AND I BOTH LIKE</pattern>
+        <template>
+            <srai>MATCHMAKE SPECIFIC FRIEND <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT DO * AND I BOTH LIKE</pattern>
+        <template>
+            <srai>MATCHMAKE SPECIFIC THING <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>ANYTHING * AND I BOTH LIKE</pattern>
+        <template>
+            <srai>MATCHMAKE SPECIFIC THING <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>DOES * LIKE ANYTHING THAT I DO</pattern>
+        <template>
+            <srai>MATCHMAKE SPECIFIC THING <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT DO * AND I HAVE IN COMMON</pattern>
+        <template>
+            <srai>MATCHMAKE SPECIFIC THING <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT DO I HAVE IN COMMON WITH *</pattern>
+        <template>
+            <srai>MATCHMAKE SPECIFIC THING <star index="1"/></srai>
+        </template>
+    </category>
+
+    <!-- SPECIFIC CASES: THING -->
+
+    <category>
+        <pattern>WHO ELSE LIKES *</pattern>
+        <template>
+            <srai>MATCHMAKE SPECIFIC THING <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>DO ANY OF MY FRIENDS LIKE *</pattern>
+        <template>
+            <srai>MATCHMAKE SPECIFIC THING <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHO LIKES *</pattern>
+        <template>
+            <srai>MATCHMAKE SPECIFIC THING <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHO ELSE LIKES *</pattern>
+        <template>
+            <srai>MATCHMAKE SPECIFIC THING <star index="1"/></srai>
+        </template>
+    </category>
+
 </aiml>

@@ -1,13 +1,6 @@
 <aiml version="1.0.1" encoding="UTF-8">
 
     <category>
-        <pattern>*</pattern>
-        <template>
-            You should not see this response.
-        </template>
-    </category>
-
-    <category>
         <pattern>SAVE LIKE *</pattern>
         <template>
             <think>

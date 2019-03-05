@@ -186,64 +186,79 @@ router.post('/background', function (req, res, next) {
  */
 router.post('/commonlikes', function (req, res, next) {
 
-  Person.findOne({ forename: req.body.forename_1 }, function (err, person){
+  if(req.body.type == "general"){
+    Person.find({ }, function (err, people){
 
-    Person.aggregate([{ $match: { "forename": req.body.forename_1 } }, { $project: { likesDislikes: 1 } }, { $unwind: '$likesDislikes' }, { $match: { "likesDislikes.likeDislike": true } }]).exec((err, likesP1) => {
-      if(err) {
-        res.status(400)
-        return res.json({
-          success: false,
-          message: err.message
-        })
-      }
+      res.header('CALL', '/api/person/commonlikes')
+      res.status(201)
+      res.json({
+        success: true,
+        message: 'User Likes Retrieved (Thing)',
+        allPeople: people
+      })
 
-      var arrayLikesP1 = []
-      for(i = 0; i < likesP1.length; i++){
-        arrayLikesP1.push({"thing":likesP1[i].likesDislikes.thing})
-      }
+    })
+  }
+  else if(req.body.type == "specific_friend") {
+    Person.findOne({ forename: req.body.forename_1 }, function (err, person){
 
-      Person.findOne({ forename: req.body.forename_2 }, function (err, person){
-
-        Person.aggregate([{ $match: { "forename": req.body.forename_2 } }, { $project: { likesDislikes: 1 } }, { $unwind: '$likesDislikes' }, { $match: { "likesDislikes.likeDislike": true } }]).exec((err, likesP2) => {
-          if(err) {
-            res.status(400)
-            return res.json({
-              success: false,
-              message: err.message
-            })
-          }
-      
-          var arrayLikesP2 = []
-          for(i = 0; i < likesP2.length; i++){
-            arrayLikesP2.push({"thing":likesP2[i].likesDislikes.thing})
-          }
-
-          console.log(arrayLikesP1)
-          console.log(arrayLikesP2)
-
-          var commonLikes = []
-
-          for(i = 0; i < arrayLikesP1.length; i++){
-            for(j = 0; j < arrayLikesP2.length; j++){
-              if(arrayLikesP1[i].thing == arrayLikesP2[j].thing){
-                commonLikes.push(arrayLikesP1[i].thing)
+      Person.aggregate([{ $match: { "forename": req.body.forename_1 } }, { $project: { likesDislikes: 1 } }, { $unwind: '$likesDislikes' }, { $match: { "likesDislikes.likeDislike": true } }]).exec((err, likesP1) => {
+        if(err) {
+          res.status(400)
+          return res.json({
+            success: false,
+            message: err.message
+          })
+        }
+  
+        var arrayLikesP1 = []
+        for(i = 0; i < likesP1.length; i++){
+          arrayLikesP1.push({"thing":likesP1[i].likesDislikes.thing})
+        }
+  
+        Person.findOne({ forename: req.body.forename_2 }, function (err, person){
+  
+          Person.aggregate([{ $match: { "forename": req.body.forename_2 } }, { $project: { likesDislikes: 1 } }, { $unwind: '$likesDislikes' }, { $match: { "likesDislikes.likeDislike": true } }]).exec((err, likesP2) => {
+            if(err) {
+              res.status(400)
+              return res.json({
+                success: false,
+                message: err.message
+              })
+            }
+        
+            var arrayLikesP2 = []
+            for(i = 0; i < likesP2.length; i++){
+              arrayLikesP2.push({"thing":likesP2[i].likesDislikes.thing})
+            }
+  
+            console.log(arrayLikesP1)
+            console.log(arrayLikesP2)
+  
+            var commonLikes = []
+  
+            for(i = 0; i < arrayLikesP1.length; i++){
+              for(j = 0; j < arrayLikesP2.length; j++){
+                if(arrayLikesP1[i].thing == arrayLikesP2[j].thing){
+                  commonLikes.push(arrayLikesP1[i].thing)
+                }
               }
             }
-          }
-
-          console.log(commonLikes)
-
-          res.header('CALL', '/api/person/commonlikes')
-          res.status(201)
-          res.json({
-            success: true,
-            message: 'User Likes Retrieved',
-            commonLikes: commonLikes
+  
+            console.log(commonLikes)
+  
+            res.header('CALL', '/api/person/commonlikes')
+            res.status(201)
+            res.json({
+              success: true,
+              message: 'User Likes Retrieved',
+              commonLikes: commonLikes
+            })
           })
         })
       })
     })
-  })
+  }
 })
 
 module.exports = router

@@ -1,9 +1,95 @@
 <aiml version="1.0.1" encoding="UTF-8">
-    
+
     <category>
-        <pattern>WHAT ARE YOU</pattern>
+        <pattern>SAVE DISLIKE *</pattern>
         <template>
-            I'm a bot, silly!
+            <think>
+                <set name="dislike"><star/></set>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>REMEMBER I DISLIKE *</pattern>
+        <template>
+            <srai>SAVE DISLIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>DONT FORGET I HATE *</pattern>
+        <template>
+            <srai>SAVE DISLIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I DONT LIKE *</pattern>
+        <template>
+            <srai>SAVE DISLIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I CANT STAND *</pattern>
+        <template>
+            <srai>SAVE DISLIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I DISLIKE *</pattern>
+        <template>
+            <srai>SAVE DISLIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>DID YOU KNOW THAT I DISLIKE *</pattern>
+        <template>
+            <srai>SAVE DISLIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>DO YOU KNOW THAT I DISLIKE *</pattern>
+        <template>
+            <srai>SAVE DISLIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY LEAST FAVOURITE THING IS*</pattern>
+        <template>
+            <srai>SAVE DISLIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I REALLY DONT LIKE *</pattern>
+        <template>
+            <srai>SAVE DISLIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I DESPISE *</pattern>
+        <template>
+            <srai>SAVE DISLIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I CANT HACK *</pattern>
+        <template>
+            <srai>SAVE DISLIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>REMIND ME I DISLIKE *</pattern>
+        <template>
+            <srai>SAVE DISLIKE <star index="1"/></srai>
         </template>
     </category>
     
