@@ -63,7 +63,7 @@ class initiator():
         self.aiml.respond(self.utterance)
         self.forename_1 = self.aiml.getPredicate('forename_1')
 
-        print('Ok,', self.forename_1, ' is there anyone else there with you?')
+        print('Ok,', self.forename_1, 'is there anyone else there with you?')
 
         self.checkPerson(self.forename_1)
 
@@ -91,5 +91,3 @@ class initiator():
 
         response = requests.request("POST", url, data=payload, headers=headers)
         response = json.loads(str(response.text))
-
-        print(response)

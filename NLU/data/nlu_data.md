@@ -129,6 +129,7 @@
 - who also likes
 - do we both like
 - did you know me and [friend](FRIEND) both like
+- what do i have in common with [friend](FRIEND)
 
 <!-- BOT 2: CALENDAR -->
 

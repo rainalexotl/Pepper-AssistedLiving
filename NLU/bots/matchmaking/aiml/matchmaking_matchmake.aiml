@@ -32,6 +32,13 @@
     <!-- GENERAL CASES -->
 
     <category>
+        <pattern>COMMON INTERESTS</pattern>
+        <template>
+            <srai>MATCHMAKE GENERAL</srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>WHAT DO MY FRIENDS AND I BOTH LIKE</pattern>
         <template>
             <srai>MATCHMAKE GENERAL</srai>
@@ -71,35 +78,35 @@
     <category>
         <pattern>WHAT DO * AND I BOTH LIKE</pattern>
         <template>
-            <srai>MATCHMAKE SPECIFIC THING <star index="1"/></srai>
+            <srai>MATCHMAKE SPECIFIC FRIEND <star index="1"/></srai>
         </template>
     </category>
 
     <category>
         <pattern>ANYTHING * AND I BOTH LIKE</pattern>
         <template>
-            <srai>MATCHMAKE SPECIFIC THING <star index="1"/></srai>
+            <srai>MATCHMAKE SPECIFIC FRIEND <star index="1"/></srai>
         </template>
     </category>
 
     <category>
         <pattern>DOES * LIKE ANYTHING THAT I DO</pattern>
         <template>
-            <srai>MATCHMAKE SPECIFIC THING <star index="1"/></srai>
+            <srai>MATCHMAKE SPECIFIC FRIEND <star index="1"/></srai>
         </template>
     </category>
 
     <category>
         <pattern>WHAT DO * AND I HAVE IN COMMON</pattern>
         <template>
-            <srai>MATCHMAKE SPECIFIC THING <star index="1"/></srai>
+            <srai>MATCHMAKE SPECIFIC FRIEND <star index="1"/></srai>
         </template>
     </category>
 
     <category>
         <pattern>WHAT DO I HAVE IN COMMON WITH *</pattern>
         <template>
-            <srai>MATCHMAKE SPECIFIC THING <star index="1"/></srai>
+            <srai>MATCHMAKE SPECIFIC FRIEND <star index="1"/></srai>
         </template>
     </category>
 

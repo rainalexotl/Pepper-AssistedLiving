@@ -37,7 +37,7 @@ class matchmaking():
 
         if driver == 1:
             self.drivers()
-            return -1
+            return self.lockcode
         else:
             if intent == "matchmaking_like":
                 print("[BOTS/MATCHMAKING] matchmaking_like")
@@ -63,8 +63,10 @@ class matchmaking():
                 print("[BOTS/MATCHMAKING] matchmaking_matchmake")
                 self.matchmaking_matchmake()
                 return -1
-
-        print(self.test)
+            
+            else:
+                self.drivers()
+                return -1
 
     def matchmaking_like(self):
         self.aiml.respond(self.utterance)
@@ -82,9 +84,13 @@ class matchmaking():
 
         response = requests.request("POST", url, data=payload, headers=headers)
 
-        print(response.text)
+        print('Ok, I will remember that you like this.')
 
-        print(predicate)
+        sufficientLikes = self.checkLikes()
+        if sufficientLikes == True:
+            self.driversMatchmaking()
+        else:
+            self.drivers()
 
     def matchmaking_dislike(self):
         self.aiml.respond(self.utterance)
@@ -93,7 +99,6 @@ class matchmaking():
         url = "http://localhost:3000/api/person/add/likeDislike"
 
         payload = "likeDislike=false&thing=" + predicate + "&forename=" + self.forename
-        print(payload)
         headers = {
             'Content-Type': "application/x-www-form-urlencoded",
             'cache-control': "no-cache",
@@ -102,21 +107,25 @@ class matchmaking():
 
         response = requests.request("POST", url, data=payload, headers=headers)
 
-        print(response.text)
-
-        print(predicate)
+        print('Ok, I will remember that you dislike this.')
+        self.drivers()
 
     def matchmaking_forget_like(self):
-        self.test = 2
+        print('Sorry, I am not able to modify your likes and dislikes yet.')
 
     def matchmaking_forget_dislike(self):
-        self.test = 3
+        print('Sorry, I am not able to modify your likes and dislikes yet.')
 
     def matchmaking_matchmake(self):
         self.aiml.respond(self.utterance)
         friend = self.aiml.getPredicate('friend')
         thing = self.aiml.getPredicate('thing')
         matchmake = self.aiml.getPredicate('matchmake')
+
+        sufficientLikes = self.checkLikes()
+        if sufficientLikes == False:
+            self.promptLikes()
+            return
 
         if matchmake == "GENERAL":
             url = "http://localhost:3000/api/person/commonlikes"
@@ -146,9 +155,14 @@ class matchmaking():
                         friends.append(person["forename"])
                         things.append(like["thing"])
 
-            rand = random.randint(0, len(friends))
+            print('Friends:', len(friends))
 
-            print('It looks like you and', friends[rand], 'both like', things[rand])
+            if len(friends) < 2:
+                print('Sorry, I cant find any common interests for you just now. Try telling me more about what you like.')
+            else:
+                rand = random.randint(0, len(friends)-1)
+                print('It looks like you and', friends[rand], 'both like', things[rand])
+                self.driversMatchmaking()
 
         elif matchmake == "SPECIFIC FRIEND":
             self.forename_2 = friend.title()
@@ -165,7 +179,7 @@ class matchmaking():
             likes = requests.request("POST", url, data=payload, headers=headers)
             likes = json.loads(str(likes.text))
 
-            rand = random.randint(0, len(likes["commonLikes"]))
+            rand = random.randint(0, len(likes["commonLikes"])-1)
 
             print('It looks like you and', self.forename_2, 'both like', likes["commonLikes"][rand])
             
@@ -202,11 +216,50 @@ class matchmaking():
 
     def drivers(self):
         individual_drivers = []
-        individual_drivers.append("Why don't you tell me about some things you like?")
-        individual_drivers.append("Can you tell me a bit about what you like?")
+        individual_drivers.append("Why don't you tell me about some of the things you like?")
+        individual_drivers.append("Why don't you tell me about some of the things you do not like?")
+        individual_drivers.append("Can you tell me a bit more about what you like?")
         individual_drivers.append("I need to get to know you a bit better. Tell me about something you like or dislike.")
         individual_drivers.append("If you tell me a bit about what you like, I can match you up with other people who like the same things.")
 
-        rand = random.randint(0, len(individual_drivers))
-        print(rand)
+        rand = random.randint(0, len(individual_drivers)-1)
         print(individual_drivers[rand])
+
+    def driversMatchmaking(self):
+        matchmaking_drivers = []
+        matchmaking_drivers.append("You know, I can tell you what you have in common with a specific friend, if you ask.")
+        matchmaking_drivers.append("I would be happy to tell you which of your friends also likes a certain thing that you like, if you ask.")
+        matchmaking_drivers.append("Why not try asking me about what you and a certain friend both like?")
+
+        rand = random.randint(0, len(matchmaking_drivers)-1)
+        print(matchmaking_drivers[rand])
+
+    def checkLikes(self):
+        url = "http://localhost:3000/api/person/likes"
+
+        payload = "forename=" + self.forename
+        headers = {
+            'Content-Type': "application/x-www-form-urlencoded",
+            'cache-control': "no-cache",
+            'Postman-Token': "c29574dd-a784-474d-8c8f-ba83177e0448"
+            }
+
+        likes = requests.request("POST", url, data=payload, headers=headers)
+        likes = json.loads(str(likes.text))
+
+        count = 0
+        for likes in likes["likes"]:
+            count = count + 1
+        
+        if count > 2:
+            return True
+        else:
+            return False
+
+    def promptLikes(self):
+        likes_prompts = []
+        likes_prompts.append("Sorry, I don't have enough information about what you like to answer that. Please tell me some things you like.")
+        likes_prompts.append("Hmm... I need you to tell me a bit more about what you like first.")
+
+        rand = random.randint(0, len(likes_prompts)-1)
+        print(likes_prompts[rand])
