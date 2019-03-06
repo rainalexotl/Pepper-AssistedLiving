@@ -16,6 +16,7 @@ from bots.matchmaking import matchmaking
 import json
 import socket
 import sys
+import random
 
 initiator_strings   = {"greet", "thank", "affirm", "bye"}
 matchmaking_strings = {"matchmaking_like", "matchmaking_dislike", "matchmaking_forget_like",
@@ -28,7 +29,7 @@ confluence_strings  = {}
 
 class bot:
     def __init__(self):
-        self.lock = -1
+        self.lock = 0 # 0 directs to initator, -1 will unlock
 
         self.interpreter = Interpreter.load('./models/default')
 
@@ -37,7 +38,7 @@ class bot:
 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-        self.server_address = ('localhost', 3002)
+        self.server_address = ('localhost', 3030)
         print('[PRIMARY BOT] Starting up on %s port %s' % self.server_address)
         self.sock.bind(self.server_address)
 
@@ -45,6 +46,8 @@ class bot:
         self.forename_2 = ''
 
         self.mode = 0
+
+        self.init = 1
 
     def train (self, data, config_file, model_dir):
         training_data = load_data(data)
@@ -77,53 +80,60 @@ class bot:
 
         result = self.interpreter.parse(unicodedString)
 
-        self.routing(result)
+        self.routing(result, 0)
 
-    def routing(self, result):
-        intent = result["intent"]
-        intent_name = intent["name"]
-        intent_conf = intent["confidence"]
-        utterance = result["text"]
+    def routing(self, result, internal):
+        if internal == 1:
+            intent = 'null'
+            intent_name = 'null'
+            intent_conf = 'null'
+            utterance = result
+        else:
+            intent = result["intent"]
+            intent_name = intent["name"]
+            intent_conf = intent["confidence"]
+            utterance = result["text"]
 
-        print('Utterance:', utterance)
+            print('Utterance:', utterance)
 
-        print('')
-        print('*** INTENT ***')
-        print('Intent: ', intent_name)
-        print('Conf.: ', intent_conf)
+            print('')
+            print('*** INTENT ***')
+            print('Intent: ', intent_name)
+            print('Conf.: ', intent_conf)
+
         if self.lock == -1:
             print('[PRIMARY BOT] Using intent to select appropriate bot...')
         else:
             print('[PRIMARY BOT] Conversation is locked. Intent ignored.')
         print('')
             
-        if self.lock == -1:
-            if intent_name in initiator_strings:
-                print('Selecting... Bot 0: Initiator')
-                self.lock, self.mode, self.forename_1, self.forename_2 = self.initiator.check(intent_name, utterance)
-            elif intent_name in matchmaking_strings:
-                print('Selecting... Bot 1: Matchmaking')
-                self.lock = self.matchmaking.check(intent_name, utterance)
-            elif intent_name in calendar_strings:
-                print('Selecting... Bot 2: Calendar')
-                #self.lock = self.calendar.check(intent_name)
-            elif intent_name in recall_strings:
-                print('Selecting... Bot 3: Recall Quiz')
-                #self.lock = self.recall.check(intent_name, utterance)
-            elif intent_name in confluence_strings:
-                print('Selecting... Bot 4: Confluence')
-                #self.lock = self.confluence.check(intent_name, utterance)
+        if self.init == 1:
+            print('[PRIMARY BOT][INIT] Selecting... Bot 0: Initiator')
+            self.lock, self.mode, self.forename_1, self.forename_2 = self.initiator.check(intent_name, utterance)
+            if self.lock == -1:
+                self.init = 0
+                self.routing('init matchmaking', 1)
         else:
-            if self.lock == 0:
-                self.lock, self.mode, self.forename_1, self.forename_2 = self.initiator.check(intent_name, utterance)
-            elif self.lock == 1:
-                self.matchmaking.check(intent_name, utterance)
-            # elif self.lock == 1:
-            #     self.matchmaking.check(intent_name)
-            # elif self.lock == 2:
-            #     self.calendar.check(intent_name)
-            # elif self.lock == 3:
-            #     self.recall.check(intent_name)
+            if self.mode == 1:
+                if self.lock == -1:
+                    if intent_name in initiator_strings:
+                        print('[PRIMARY BOT] Selecting... Bot 0: Initiator')
+                        self.lock, self.mode, self.forename_1, self.forename_2 = self.initiator.check(intent_name, utterance)
+                    elif intent_name in matchmaking_strings or utterance == 'init matchmaking':
+                        if utterance == 'init matchmaking':
+                            print('[PRIMARY BOT] Selecting... Bot 1: Matchmaking')
+                            self.lock = self.matchmaking.check(intent_name, utterance, self.forename_1, 1)
+                        else:
+                            print('[PRIMARY BOT] Selecting... Bot 1: Matchmaking')
+                            self.lock = self.matchmaking.check(intent_name, utterance, self.forename_1, 0)
+                else:
+                    if self.lock == 0:
+                        self.lock, self.mode, self.forename_1, self.forename_2 = self.initiator.check(intent_name, utterance)
+                    elif self.lock == 1:
+                        self.lock = self.matchmaking.check(intent_name, utterance, self.forename_1, 0)
+            elif self.mode == 2:
+                print('[PRIMARY BOT] Selecting... Bot 4: Confluence')
+                #self.lock = self.confluence.check(intent_name, utterance)
 
         print('')
 

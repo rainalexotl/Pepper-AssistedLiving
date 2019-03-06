@@ -20,46 +20,49 @@ class matchmaking():
         self.aiml.learn("bots/matchmaking/std-startup.xml")
         self.aiml.respond("load aiml b")
 
-        self.test = -1
-
         self.utterance = ''
         self.mode = 0
+
         self.forename = 'Frasier'
-        self.surname = ''
         self.forename_1 = self.forename
         self.forename_2 = 'unknown'
 
         self.lockcode = 1
 
-    def check(self, intent, utterance):
+    def check(self, intent, utterance, forename, driver):
         print('[BOTS/MATCHMAKING] Responding...')
 
+        self.forename = forename
         self.utterance = utterance
 
-        if intent == "matchmaking_like":
-            print("[BOTS/MATCHMAKING] matchmaking_like")
-            self.matchmaking_like()
+        if driver == 1:
+            self.drivers()
             return -1
+        else:
+            if intent == "matchmaking_like":
+                print("[BOTS/MATCHMAKING] matchmaking_like")
+                self.matchmaking_like()
+                return -1
 
-        elif intent == "matchmaking_dislike":
-            print("[BOTS/MATCHMAKING] matchmaking_dislike")
-            self.matchmaking_dislike()
-            return -1
+            elif intent == "matchmaking_dislike":
+                print("[BOTS/MATCHMAKING] matchmaking_dislike")
+                self.matchmaking_dislike()
+                return -1
 
-        elif intent == "matchmaking_forget_like":
-            print("[BOTS/MATCHMAKING] matchmaking_forget_like")
-            self.matchmaking_forget_like()
-            return -1
+            elif intent == "matchmaking_forget_like":
+                print("[BOTS/MATCHMAKING] matchmaking_forget_like")
+                self.matchmaking_forget_like()
+                return -1
 
-        elif intent == "matchmaking_forget_dislike":
-            print("[BOTS/MATCHMAKING] matchmaking_forget_dislike")
-            self.matchmaking_forget_dislike()
-            return -1
+            elif intent == "matchmaking_forget_dislike":
+                print("[BOTS/MATCHMAKING] matchmaking_forget_dislike")
+                self.matchmaking_forget_dislike()
+                return -1
 
-        elif intent == "matchmaking_matchmake":
-            print("[BOTS/MATCHMAKING] matchmaking_matchmake")
-            self.matchmaking_matchmake()
-            return -1
+            elif intent == "matchmaking_matchmake":
+                print("[BOTS/MATCHMAKING] matchmaking_matchmake")
+                self.matchmaking_matchmake()
+                return -1
 
         print(self.test)
 
@@ -69,7 +72,7 @@ class matchmaking():
 
         url = "http://localhost:3000/api/person/add/likeDislike"
 
-        payload = "likeDislike=true&thing=" + predicate + "&forename=" + self.forename + "&surname=" + self.surname
+        payload = "likeDislike=true&thing=" + predicate + "&forename=" + self.forename
         print(payload)
         headers = {
             'Content-Type': "application/x-www-form-urlencoded",
@@ -89,7 +92,7 @@ class matchmaking():
 
         url = "http://localhost:3000/api/person/add/likeDislike"
 
-        payload = "likeDislike=false&thing=" + predicate + "&forename=" + self.forename + "&surname=" + self.surname
+        payload = "likeDislike=false&thing=" + predicate + "&forename=" + self.forename
         print(payload)
         headers = {
             'Content-Type': "application/x-www-form-urlencoded",
@@ -159,8 +162,6 @@ class matchmaking():
                 'Postman-Token': "5777f647-b96b-4f17-8d71-906e1e3ae6b2"
             }
 
-            response = requests.request("POST", url, data=payload, headers=headers)
-
             likes = requests.request("POST", url, data=payload, headers=headers)
             likes = json.loads(str(likes.text))
 
@@ -198,3 +199,14 @@ class matchmaking():
 
         else:
             print('[BOTS/MATCHMAKING] Invalid responder value. Check bots/matchmaking/aiml/*.aiml')
+
+    def drivers(self):
+        individual_drivers = []
+        individual_drivers.append("Why don't you tell me about some things you like?")
+        individual_drivers.append("Can you tell me a bit about what you like?")
+        individual_drivers.append("I need to get to know you a bit better. Tell me about something you like or dislike.")
+        individual_drivers.append("If you tell me a bit about what you like, I can match you up with other people who like the same things.")
+
+        rand = random.randint(0, len(individual_drivers))
+        print(rand)
+        print(individual_drivers[rand])

@@ -41,7 +41,7 @@ class initiator():
         elif responder == "initiator_get_forename_1":
             self.initiator_get_forename_1()
             return self.lockcode, 0, self.forename_1, self.forename_2
-        elif responder == "enter_individual_mode":
+        elif responder == "initator_enter_individual_mode":
             self.initator_enter_individual_mode()
             return -1, 1, self.forename_1, self.forename_2
         elif responder == "initiator_request_forename_2":
@@ -63,7 +63,9 @@ class initiator():
         self.aiml.respond(self.utterance)
         self.forename_1 = self.aiml.getPredicate('forename_1')
 
-        print('Ok, ', self.forename_1, ' is there anyone else there with you?')
+        print('Ok,', self.forename_1, ' is there anyone else there with you?')
+
+        self.checkPerson(self.forename_1)
 
     def initator_enter_individual_mode(self):
         print('No? Ok, lets see what the two of us can talk about.')
@@ -72,7 +74,22 @@ class initiator():
         print('Ok. Who is it that is with you?')
         
     def initiator_get_forename_2(self):
-        print('Ok, ill be glad to talk to both of you.')
-
         self.aiml.respond(self.utterance)
         self.forename_2 = self.aiml.getPredicate('forename_2')
+
+        print('Ok, I will be glad to talk to you and', self.forename_2)
+
+    def checkPerson(self, forename):
+        url = "http://localhost:3000/api/person/add/person"
+
+        payload = "forename=" + forename + "&surname=unknown"
+        headers = {
+            'Content-Type': "application/x-www-form-urlencoded",
+            'cache-control': "no-cache",
+            'Postman-Token': "cb84a184-2e07-4769-b09a-6fd09a1658d3"
+            }
+
+        response = requests.request("POST", url, data=payload, headers=headers)
+        response = json.loads(str(response.text))
+
+        print(response)
