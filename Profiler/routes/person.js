@@ -261,4 +261,34 @@ router.post('/commonlikes', function (req, res, next) {
   }
 })
 
+/* 
+ * Method: POST
+ * Behav.: Shuts down the profile system.
+ * 
+ * Params: command ("SHUTDOWN")
+ */
+router.post('/shutdown', function (req, res, next) {
+
+  if (req.body.command == "SHUTDOWN"){
+
+    res.header('CALL', '/api/shutdown')
+    res.status(201)
+    res.json({
+      success: true,
+      message: 'OK. Shutting down...',
+    })
+
+    console.log('[PROFILER] Shutting down...')
+    process.exit(1)
+  }
+
+  res.header('CALL', '/api/shutdown')
+  res.status(201)
+  res.json({
+    success: false,
+    message: 'Invalid Command',
+  })
+
+})
+
 module.exports = router

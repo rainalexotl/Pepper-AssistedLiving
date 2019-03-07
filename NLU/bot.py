@@ -16,6 +16,7 @@ from bots.matchmaking import matchmaking
 import json
 import socket
 import sys
+import requests
 import random
 
 initiator_strings   = {"greet", "thank", "affirm", "bye"}
@@ -38,7 +39,7 @@ class bot:
 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-        self.server_address = ('localhost', 3600)
+        self.server_address = ('localhost', 3003)
         print('[PRIMARY BOT] Starting up on %s port %s' % self.server_address)
         self.sock.bind(self.server_address)
 
@@ -61,24 +62,27 @@ class bot:
 
         while True:
             print('[PRIMARY BOT] Waiting for request...')
-            connection, client_address = self.sock.accept()
+            self.connection, self.client_address = self.sock.accept()
             try:
-                print('[PRIMARY BOT] Connection from: ', client_address)
+                print('[PRIMARY BOT] Connection from: ', self.client_address)
 
                 while True:
-                    data = connection.recv(64)
+                    data = self.connection.recv(64)
                     if data:
                         self.parse(data)
                     else:
                         break             
             finally:
-                connection.close()
+                self.connection.close()
                 print('[PRIMARY BOT] Connection closed.')
 
     def parse(self, text):
         unicodedString = unicode(text, "utf-8")
 
         result = self.interpreter.parse(unicodedString)
+
+        if result["text"] == "@SHUTDOWN@":
+            self.shutdown()
 
         self.routing(result, 0)
 
@@ -136,6 +140,26 @@ class bot:
                 #self.lock = self.confluence.check(intent_name, utterance)
 
         print('')
+
+    def shutdown(self):
+        print('[PRIMARY BOT] Shutting down...')
+
+        self.connection.close()
+
+        url = "http://localhost:3000/api/person/shutdown"
+
+        payload = "command=SHUTDOWN"
+        headers = {
+            'Content-Type': "application/x-www-form-urlencoded",
+            'cache-control': "no-cache",
+            'Postman-Token': "aac3ca7d-400c-41f6-a1dc-0f660364ffcf"
+            }
+
+        response = requests.request("POST", url, data=payload, headers=headers)
+
+        raise SystemExit
+
+        print('[PRIMARY BOT] Goodbye.')
 
 foo = bot()
 foo.run()

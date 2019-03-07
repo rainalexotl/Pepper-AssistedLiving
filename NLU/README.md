@@ -20,4 +20,14 @@ virtualenv==16.2.0
 
 ## Interfacing with the Primary Bot
 
-The main bot listens on Port 3002 for text strings. Sample code to send messages to the main bot is in ``client_simulate.py``.
+The main bot listens on Port 3003 for text strings. Sample code to send messages to the main bot is in ``client_simulate.py``.
+
+## Starting Up
+
+Assuming dependencies are already installed, the main bot can be started simply with ``python bot.pyy``. Python 2 is preferable, and so if it is not your default, start with ``python2 bot.py`` instead.
+
+Note that the profile system MUST be running for the bot to start, so make sure you run that from the ``Profiler`` directory with ``npm start``.
+
+## Shutting Down
+
+The main program, ``bot.py`` and its sub-programs, as well as the profile system, can be shutdown by sending ``@SHUTDOWN@`` to its input socket.
