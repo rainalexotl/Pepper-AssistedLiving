@@ -13,6 +13,8 @@ from bots.matchmaking import matchmaking
 # from bots.recall import recall
 # from bots.confluence import confluence
 
+from responder import responder
+
 import json
 import socket
 import sys
@@ -36,6 +38,8 @@ class bot:
 
         self.matchmaking = matchmaking.matchmaking()
         self.initiator = initiator.initiator()
+
+        self.responder = responder()
 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -155,11 +159,13 @@ class bot:
             'Postman-Token': "aac3ca7d-400c-41f6-a1dc-0f660364ffcf"
             }
 
-        response = requests.request("POST", url, data=payload, headers=headers)
+        requests.request("POST", url, data=payload, headers=headers)
 
-        raise SystemExit
+        self.responder.shutdown()
 
         print('[PRIMARY BOT] Goodbye.')
+
+        raise SystemExit
 
 foo = bot()
 foo.run()
