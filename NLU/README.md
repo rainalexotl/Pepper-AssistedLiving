@@ -1,6 +1,6 @@
 # NLU
 
-This is the main NLU and primary bot that runs when the robot is idling (i.e. not in proactive mode).
+This is the main NLU and primary bot that responds to user queries within its purview.
 
 Intents are determined via a trained RASA NLU neural network, with intents forwarded to the correct secondary bot so that they can respond appropriately.
 
