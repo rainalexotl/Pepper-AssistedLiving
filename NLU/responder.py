@@ -10,8 +10,12 @@ class responder:
 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-        self.server_address = ('localhost', 3004) # Change to Alana response input
-        self.sock.connect(self.server_address)
+        self.server_address = ('localhost', 4000) # Change to Alana response input
+        try:
+            self.sock.connect(self.server_address)
+            print('[RESPONDER] Successfully connected to Alana.')
+        except:
+            print('[RESPONDER] Unable to connect to Alana.')
 
     def respond(self, response):
         try:

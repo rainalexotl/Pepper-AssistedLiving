@@ -43,7 +43,7 @@ class bot:
 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-        self.server_address = ('localhost', 3003)
+        self.server_address = ('localhost', 3100)
         print('[PRIMARY BOT] Starting up on %s port %s' % self.server_address)
         self.sock.bind(self.server_address)
 
@@ -71,7 +71,7 @@ class bot:
                 print('[PRIMARY BOT] Connection from: ', self.client_address)
 
                 while True:
-                    data = self.connection.recv(64)
+                    data = self.connection.recv(256)
                     if data:
                         self.parse(data)
                     else:

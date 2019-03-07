@@ -7,12 +7,18 @@ import json
 import aiml
 import pkg_resources
 import requests
+import sys
+
+sys.path.append("...")
+from responder import responder
 
 matchmaking_strings = {"greet", "bye", "thank", "affirm"}
 
 class initiator():
     def __init__(self):
         print('[BOTS/INITIATOR] Starting...')
+
+        self.responder = responder()
 
         self.aiml = aiml.Kernel()
         self.aiml.learn("bots/initiator/std-startup.xml")
@@ -33,7 +39,7 @@ class initiator():
         self.aiml.respond(self.utterance)
         responder = self.aiml.getPredicate('responder')
 
-        print(responder)
+        print('[BOTS/INITIATOR] Routing:', responder)
 
         if responder == "initiator_request_forename_1":
             self.initiator_request_forename_1()
@@ -57,27 +63,32 @@ class initiator():
             return -1, 0, self.forename_1, self.forename_2
 
     def initiator_request_forename_1(self):
-        print("Hi there, who am I talking with?")
+        response = "Hi there, who am I talking with?"
+        self.responder.respond(response)
 
     def initiator_get_forename_1(self):
         self.aiml.respond(self.utterance)
         self.forename_1 = self.aiml.getPredicate('forename_1')
 
-        print('Ok,', self.forename_1, 'is there anyone else there with you?')
+        response = "Ok, " + self.forename_1 + " is there anyone else there with you?"
+        self.responder.respond(response)
 
         self.checkPerson(self.forename_1)
 
     def initator_enter_individual_mode(self):
-        print('No? Ok, lets see what the two of us can talk about.')
+        response = "No? Ok, lets see what the two of us can talk about."
+        self.responder.respond(response)
 
     def initiator_request_forename_2(self):
-        print('Ok. Who is it that is with you?')
+        response = "Ok. Who is it that is with you?"
+        self.responder.respond(response)
         
     def initiator_get_forename_2(self):
         self.aiml.respond(self.utterance)
         self.forename_2 = self.aiml.getPredicate('forename_2')
 
-        print('Ok, I will be glad to talk to you and', self.forename_2)
+        response = "'Ok, I will be glad to talk to you and " + self.forename_2
+        self.responder.respond(response)
 
     def checkPerson(self, forename):
         url = "http://localhost:3000/api/person/add/person"
