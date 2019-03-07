@@ -30,4 +30,4 @@ Note that the profile system MUST be running for the bot to start, so make sure 
 
 ## Shutting Down
 
-The main program, ``bot.py`` and its sub-programs, as well as the profile system, can be shutdown by sending ``@SHUTDOWN@`` to its input socket.
+The main program, ``bot.py`` and its sub-programs, can be shutdown by sending ``@SHUTDOWN@`` to its input socket. This will also automatically shutdown the profile system using an internal message from the bot to the API.
