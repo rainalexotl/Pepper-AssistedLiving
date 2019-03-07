@@ -24,7 +24,7 @@ The main bot listens on Port 3003 for text strings. Sample code to send messages
 
 ## Starting Up
 
-Assuming dependencies are already installed, the main bot can be started simply with ``python bot.pyy``. Python 2 is preferable, and so if it is not your default, start with ``python2 bot.py`` instead.
+Assuming dependencies are already installed, the main bot can be started simply with ``python bot.pyy``. Python 2 is preferable, and so if it is not the default in your environment, start with ``python2 bot.py`` instead.
 
 Note that the profile system MUST be running for the bot to start, so make sure you run that from the ``Profiler`` directory with ``npm start``.
 
