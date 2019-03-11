@@ -43,7 +43,7 @@ class bot:
 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-        self.server_address = ('localhost', 3100)
+        self.server_address = ('localhost', 3200)
         print('[PRIMARY BOT] Starting up on %s port %s' % self.server_address)
         self.sock.bind(self.server_address)
 
