@@ -4,4 +4,7 @@ Platform: Darwin-18.0.0-x86_64-i386-64bit
 Version: Darwin Kernel Version 18.0.0: Wed Aug 22 20:13:40 PDT 2018; root:xnu-4903.201.2~1/RELEASE_X86_64
 MacVersion: ('10.14', ('', '', ''), 'x86_64')
 
-[2019-03-11 19:54:09][UTTERANCE] hello
+[2019-03-11 21:45:30][UTTERANCE] hello
+[2019-03-11 21:45:30][RESPONSE]  Hi there, who am I talking with?
+[2019-03-11 21:45:37][UTTERANCE] My name is Jack
+[2019-03-11 21:45:37][RESPONSE]  Ok, Jack is there anyone else there with you?

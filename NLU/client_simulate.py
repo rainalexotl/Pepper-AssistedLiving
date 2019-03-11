@@ -13,6 +13,14 @@ sock.connect(server_address)
 
 f = open('log.txt', 'a', os.O_NONBLOCK)
 
+logString = '* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n'
+f.write(logString)
+ts = time.time()
+st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+logString = '[' + st + '][SYSTEM] Starting new session... \n'
+f.write(logString)
+f.write('\n')
+
 system = 'System: ' + platform.system() + '\n'
 f.write(system)
 machine = 'Machine: ' + platform.machine() + '\n'

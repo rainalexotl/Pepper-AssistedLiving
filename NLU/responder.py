@@ -3,6 +3,9 @@ import socket
 import sys
 import requests
 import random
+import time
+import datetime
+import os
 
 class responder:
     def __init__(self):
@@ -20,9 +23,20 @@ class responder:
     def respond(self, response):
         try:
             self.sock.sendall(response)
+            self.log(response)
         except:
             print('[RESPONDER] Socket connection exception. Unable to connect to Alana.')
 
     def shutdown(self):
         print('[RESPONDER] Shutting down...')
         self.sock.close()
+
+    def log(self, response):
+        ts = time.time()
+        st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+        logString = '[' + st + '] [RESPONSE] ' + response + '\n'
+
+        f = open('log.txt', 'a', os.O_NONBLOCK)
+        f.write(logString)
+        f.flush()
+        f.close()
