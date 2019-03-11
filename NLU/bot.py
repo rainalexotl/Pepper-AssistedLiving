@@ -21,7 +21,7 @@ import sys
 import requests
 import random
 
-initiator_strings   = {"greet", "thank", "affirm", "bye"}
+initiator_strings   = {"greet", "thank", "affirm"}
 matchmaking_strings = {"matchmaking_like", "matchmaking_dislike", "matchmaking_forget_like",
                         "matchmaking_forget_dislike", "matchmaking_matchmake"}
 calendar_strings    = {"calendar_events_today", "calendar_upcoming_visitors", "calendar_event_search_doctor",
@@ -29,6 +29,7 @@ calendar_strings    = {"calendar_events_today", "calendar_upcoming_visitors", "c
                         "calendar_event_search_film", "calendar_event_friend_today"}
 recall_strings      = {"recall_start", "recall_escape"}
 confluence_strings  = {}
+reset_strings = {"bye"}
 
 class bot:
     def __init__(self):
@@ -115,6 +116,10 @@ class bot:
             print('[PRIMARY BOT] Conversation is locked. Intent ignored.')
         print('')
             
+        if intent_name in reset_strings:
+            self.reset()
+            return
+
         if self.init == 1:
             print('[PRIMARY BOT][INIT] Selecting... Bot 0: Initiator')
             self.lock, self.mode, self.forename_1, self.forename_2 = self.initiator.check(intent_name, utterance)
@@ -144,6 +149,23 @@ class bot:
                 #self.lock = self.confluence.check(intent_name, utterance)
 
         print('')
+
+    def reset(self):
+        self.lock = 0 # 0 directs to initator, -1 will unlock
+
+        self.interpreter = Interpreter.load('./models/default')
+
+        self.matchmaking = matchmaking.matchmaking()
+        self.initiator = initiator.initiator()
+
+        self.responder = responder()
+
+        self.forename_1 = ''
+        self.forename_2 = ''
+
+        self.mode = 0
+
+        self.init = 1
 
     def shutdown(self):
         print('[PRIMARY BOT] Shutting down...')
