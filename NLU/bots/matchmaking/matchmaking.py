@@ -24,6 +24,10 @@ class matchmaking():
         self.aiml.learn("bots/matchmaking/std-startup.xml")
         self.aiml.respond("load aiml b")
 
+        self.aiml_affirm = aiml.Kernel()
+        self.aiml_affirm.learn("bots/matchmaking/std-startup-affirm.xml")
+        self.aiml_affirm.respond("load aiml b")
+
         self.responder = responder
 
         self.utterance = ''
@@ -331,15 +335,8 @@ class matchmaking():
         self.responder.respond(resp)
 
     def matchmaking_like_process_2(self):
-        # Check if response is yay or nay
-        # If yay, pass to matchmaking_like_process_3 to pass to Alana
-
-        self.aiml_local = aiml.Kernel()
-        self.aiml_local.learn("bots/matchmaking/std-startup-local.xml")
-        self.aiml_local.respond("load aiml b")
-
-        self.aiml_local.respond(self.utterance)
-        predicate = self.aiml_local.getPredicate('affirm')
+        self.aiml_affirm.respond(self.utterance)
+        predicate = self.aiml_affirm.getPredicate('affirm')
 
         if predicate == "YES":
             print('they want to know more')
@@ -352,7 +349,7 @@ class matchmaking():
 
     def matchmaking_like_process_3(self):
         self.handoffStatus = 0
-        print('sending to Alana')
+        self.responder.handoff(self.handoffLike)
 
     def promptLikes(self):
         likes_prompts = []

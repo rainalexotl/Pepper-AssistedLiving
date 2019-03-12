@@ -4,7 +4,7 @@
 
         <pattern>LOAD AIML B</pattern>
         <template>
-            <learn>bots/matchmaking/aiml/matchmaking_affirm</learn>
+            <learn>bots/matchmaking/aiml/matchmaking_affirm.aiml</learn>
         </template>
 
     </category>
