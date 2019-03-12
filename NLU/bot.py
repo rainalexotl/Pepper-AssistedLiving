@@ -37,14 +37,14 @@ class bot:
 
         self.interpreter = Interpreter.load('./models/default')
 
-        self.matchmaking = matchmaking.matchmaking()
-        self.initiator = initiator.initiator()
-
         self.responder = responder()
+
+        self.matchmaking = matchmaking.matchmaking(self.responder)
+        self.initiator = initiator.initiator(self.responder)
 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-        self.server_address = ('localhost', 3200)
+        self.server_address = ('localhost', 3001)
         print('[PRIMARY BOT] Starting up on %s port %s' % self.server_address)
         self.sock.bind(self.server_address)
 
@@ -155,10 +155,8 @@ class bot:
 
         self.interpreter = Interpreter.load('./models/default')
 
-        self.matchmaking = matchmaking.matchmaking()
-        self.initiator = initiator.initiator()
-
-        self.responder = responder()
+        self.matchmaking = matchmaking.matchmaking(self.responder)
+        self.initiator = initiator.initiator(self.responder)
 
         self.forename_1 = ''
         self.forename_2 = ''

@@ -17,17 +17,20 @@ matchmaking_strings = {"matchmaking_like", "matchmaking_dislike", "matchmaking_f
                         "matchmaking_forget_dislike", "matchmaking_matchmake"}
 
 class matchmaking():
-    def __init__(self):
+    def __init__(self, responder):
         print('[BOTS/MATCHMAKING] Starting...')
 
         self.aiml = aiml.Kernel()
         self.aiml.learn("bots/matchmaking/std-startup.xml")
         self.aiml.respond("load aiml b")
 
-        self.responder = responder()
+        self.responder = responder
 
         self.utterance = ''
         self.mode = 0
+
+        self.handoffLike = ''
+        self.handoffStatus = 0
 
         self.forename = 'Frasier'
         self.forename_1 = self.forename
@@ -41,38 +44,42 @@ class matchmaking():
         self.forename = forename
         self.utterance = utterance
 
-        if driver == 1:
-            self.drivers()
-            return self.lockcode
+        if self.handoffStatus == 1:
+            self.matchmaking_like_process_2()
+            return -1
         else:
-            if intent == "matchmaking_like":
-                print("[BOTS/MATCHMAKING] matchmaking_like")
-                self.matchmaking_like()
-                return -1
-
-            elif intent == "matchmaking_dislike":
-                print("[BOTS/MATCHMAKING] matchmaking_dislike")
-                self.matchmaking_dislike()
-                return -1
-
-            elif intent == "matchmaking_forget_like":
-                print("[BOTS/MATCHMAKING] matchmaking_forget_like")
-                self.matchmaking_forget_like()
-                return -1
-
-            elif intent == "matchmaking_forget_dislike":
-                print("[BOTS/MATCHMAKING] matchmaking_forget_dislike")
-                self.matchmaking_forget_dislike()
-                return -1
-
-            elif intent == "matchmaking_matchmake":
-                print("[BOTS/MATCHMAKING] matchmaking_matchmake")
-                self.matchmaking_matchmake()
-                return -1
-            
-            else:
+            if driver == 1:
                 self.drivers()
-                return -1
+                return self.lockcode
+            else:
+                if intent == "matchmaking_like":
+                    print("[BOTS/MATCHMAKING] matchmaking_like")
+                    self.matchmaking_like()
+                    return self.lockcode
+
+                elif intent == "matchmaking_dislike":
+                    print("[BOTS/MATCHMAKING] matchmaking_dislike")
+                    self.matchmaking_dislike()
+                    return -1
+
+                elif intent == "matchmaking_forget_like":
+                    print("[BOTS/MATCHMAKING] matchmaking_forget_like")
+                    self.matchmaking_forget_like()
+                    return -1
+
+                elif intent == "matchmaking_forget_dislike":
+                    print("[BOTS/MATCHMAKING] matchmaking_forget_dislike")
+                    self.matchmaking_forget_dislike()
+                    return -1
+
+                elif intent == "matchmaking_matchmake":
+                    print("[BOTS/MATCHMAKING] matchmaking_matchmake")
+                    self.matchmaking_matchmake()
+                    return -1
+                
+                else:
+                    self.drivers()
+                    return -1
 
     def matchmaking_like(self):
         self.aiml.respond(self.utterance)
@@ -93,12 +100,16 @@ class matchmaking():
         resp = 'Ok, I will remember that you like this.'
         self.responder.respond(resp)
 
-        if self.quickCheck(predicate)
+        # Check if this is a common like, discusses if true
+        self.quickCheck(predicate)
+
+        # Check is user wants to know more
+        self.matchmaking_like_process_1(predicate)
 
         sufficientLikes = self.checkLikes()
-        if sufficientLikes == True:
+        if sufficientLikes == True and self.handoffStatus == 0:
             self.driversMatchmaking()
-        else:
+        elif sufficientLikes == False and self.handoffStatus == 0:
             self.drivers()
 
     def matchmaking_dislike(self):
@@ -304,7 +315,44 @@ class matchmaking():
             rand = random.randint(0, len(friends)-1)
             resp = 'It looks like you and ' + friends[rand] + ' both like ' + things[rand]
             self.responder.respond(resp)
-            self.driversMatchmaking()
+
+    def matchmaking_like_process_1(self, like):
+        self.handoffLike = like
+        self.handoffStatus = 1
+
+        affirmations = []
+        affirmation = 'Would you like to tell me more about ' + like + '?'
+        affirmations.append(affirmation)
+        affirmation = 'Should I talk some more about ' + like + '?'
+        affirmations.append(affirmation)
+
+        rand = random.randint(0, len(affirmations)-1)
+        resp = affirmations[rand]
+        self.responder.respond(resp)
+
+    def matchmaking_like_process_2(self):
+        # Check if response is yay or nay
+        # If yay, pass to matchmaking_like_process_3 to pass to Alana
+
+        self.aiml_local = aiml.Kernel()
+        self.aiml_local.learn("bots/matchmaking/std-startup-local.xml")
+        self.aiml_local.respond("load aiml b")
+
+        self.aiml_local.respond(self.utterance)
+        predicate = self.aiml_local.getPredicate('affirm')
+
+        if predicate == "YES":
+            print('they want to know more')
+            self.matchmaking_like_process_3()
+        elif predicate == "NO":
+            print('they do not want to be told any more')
+            self.handoffStatus = 0
+        else:
+            print('invalid case')
+
+    def matchmaking_like_process_3(self):
+        self.handoffStatus = 0
+        print('sending to Alana')
 
     def promptLikes(self):
         likes_prompts = []

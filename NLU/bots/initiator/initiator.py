@@ -15,10 +15,10 @@ from responder import responder
 matchmaking_strings = {"greet", "bye", "thank", "affirm"}
 
 class initiator():
-    def __init__(self):
+    def __init__(self, responder):
         print('[BOTS/INITIATOR] Starting...')
 
-        self.responder = responder()
+        self.responder = responder
 
         self.aiml = aiml.Kernel()
         self.aiml.learn("bots/initiator/std-startup.xml")

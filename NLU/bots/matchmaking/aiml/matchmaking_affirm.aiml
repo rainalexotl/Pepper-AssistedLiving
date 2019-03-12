@@ -1,0 +1,32 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+    <!-- ROOT CASES -->
+
+    <category>
+        <pattern>YES</pattern>
+        <template>
+            <think>
+                <set name="affirm">YES</set>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>NO</pattern>
+        <template>
+            <think>
+                <set name="affirm">NO</set>
+            </think>
+        </template>
+    </category>
+
+    <!-- SYNONYMOUS CASES -->
+
+    <category>
+        <pattern>REMEMBER MY FAVOURITE</pattern>
+        <template>
+            <srai>YES</srai>
+        </template>
+    </category>
+
+</aiml>
