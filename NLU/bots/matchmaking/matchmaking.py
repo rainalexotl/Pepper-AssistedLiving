@@ -8,6 +8,10 @@ import aiml
 import pkg_resources
 import random
 import requests
+import sys
+
+sys.path.append("...")
+from responder import responder
 
 matchmaking_strings = {"matchmaking_like", "matchmaking_dislike", "matchmaking_forget_like",
                         "matchmaking_forget_dislike", "matchmaking_matchmake"}
@@ -19,6 +23,8 @@ class matchmaking():
         self.aiml = aiml.Kernel()
         self.aiml.learn("bots/matchmaking/std-startup.xml")
         self.aiml.respond("load aiml b")
+
+        self.responder = responder()
 
         self.utterance = ''
         self.mode = 0
@@ -84,7 +90,8 @@ class matchmaking():
 
         response = requests.request("POST", url, data=payload, headers=headers)
 
-        print('Ok, I will remember that you like this.')
+        resp = 'Ok, I will remember that you like this.'
+        self.responder.respond(resp)
 
         sufficientLikes = self.checkLikes()
         if sufficientLikes == True:
@@ -107,14 +114,17 @@ class matchmaking():
 
         response = requests.request("POST", url, data=payload, headers=headers)
 
-        print('Ok, I will remember that you dislike this.')
+        resp = 'Ok, I will remember that you dislike this.'
+        self.responder.respond(resp)
         self.drivers()
 
     def matchmaking_forget_like(self):
-        print('Sorry, I am not able to modify your likes and dislikes yet.')
+        resp = 'Sorry, I am not able to modify your likes and dislikes yet.'
+        self.responder.respond(resp)
 
     def matchmaking_forget_dislike(self):
-        print('Sorry, I am not able to modify your likes and dislikes yet.')
+        resp = 'Sorry, I am not able to modify your likes and dislikes yet.'
+        self.responder.respond(resp)
 
     def matchmaking_matchmake(self):
         self.aiml.respond(self.utterance)
@@ -158,10 +168,12 @@ class matchmaking():
             print('Friends:', len(friends))
 
             if len(friends) < 2:
-                print('Sorry, I cant find any common interests for you just now. Try telling me more about what you like.')
+                resp = 'Sorry, I cant find any common interests for you just now. Try telling me more about what you like.'
+                self.responder.respond(resp)
             else:
                 rand = random.randint(0, len(friends)-1)
-                print('It looks like you and', friends[rand], 'both like', things[rand])
+                resp = 'It looks like you and ' + friends[rand] + ' both like ' + things[rand]
+                self.responder.respond(resp)
                 self.driversMatchmaking()
 
         elif matchmake == "SPECIFIC FRIEND":
@@ -181,7 +193,8 @@ class matchmaking():
 
             rand = random.randint(0, len(likes["commonLikes"])-1)
 
-            print('It looks like you and', self.forename_2, 'both like', likes["commonLikes"][rand])
+            resp = 'It looks like you and ' + self.forename_2 + ' both like ' + likes["commonLikes"][rand]
+            self.responder.respond(resp)
             
         elif matchmake == "SPECIFIC THING":
             self.thing = thing
@@ -209,7 +222,8 @@ class matchmaking():
 
             rand = random.randint(0, len(friends))
 
-            print('It looks like', friends[rand], 'also likes', things[rand])
+            resp = 'It looks like ' + friends[rand] + ' also likes ' + things[rand]
+            self.responder.respond(resp)
 
         else:
             print('[BOTS/MATCHMAKING] Invalid responder value. Check bots/matchmaking/aiml/*.aiml')
@@ -223,7 +237,8 @@ class matchmaking():
         individual_drivers.append("If you tell me a bit about what you like, I can match you up with other people who like the same things.")
 
         rand = random.randint(0, len(individual_drivers)-1)
-        print(individual_drivers[rand])
+        resp = individual_drivers[rand]
+        self.responder.respond(resp)
 
     def driversMatchmaking(self):
         matchmaking_drivers = []
@@ -232,7 +247,8 @@ class matchmaking():
         matchmaking_drivers.append("Why not try asking me about what you and a certain friend both like?")
 
         rand = random.randint(0, len(matchmaking_drivers)-1)
-        print(matchmaking_drivers[rand])
+        resp = matchmaking_drivers[rand]
+        self.responder.respond(resp)
 
     def checkLikes(self):
         url = "http://localhost:3000/api/person/likes"
@@ -262,4 +278,5 @@ class matchmaking():
         likes_prompts.append("Hmm... I need you to tell me a bit more about what you like first.")
 
         rand = random.randint(0, len(likes_prompts)-1)
-        print(likes_prompts[rand])
+        resp = likes_prompts[rand]
+        self.responder.respond(resp)
