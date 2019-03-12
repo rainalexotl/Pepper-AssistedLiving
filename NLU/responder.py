@@ -27,6 +27,9 @@ class responder:
         except:
             print('[RESPONDER] Socket connection exception. Unable to connect to Alana.')
 
+    def handoff(self, topic):
+        print('[RESPONDER] Handing off topic to Alana...')
+
     def shutdown(self):
         print('[RESPONDER] Shutting down...')
         self.sock.close()

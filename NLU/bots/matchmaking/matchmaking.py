@@ -93,6 +93,8 @@ class matchmaking():
         resp = 'Ok, I will remember that you like this.'
         self.responder.respond(resp)
 
+        if self.quickCheck(predicate)
+
         sufficientLikes = self.checkLikes()
         if sufficientLikes == True:
             self.driversMatchmaking()
@@ -164,8 +166,6 @@ class matchmaking():
                     if(like["thing"] in myLikes and person["forename"] != self.forename):
                         friends.append(person["forename"])
                         things.append(like["thing"])
-
-            print('Friends:', len(friends))
 
             if len(friends) < 2:
                 resp = 'Sorry, I cant find any common interests for you just now. Try telling me more about what you like.'
@@ -271,6 +271,40 @@ class matchmaking():
             return True
         else:
             return False
+
+    def quickCheck(self, like):
+        url = "http://localhost:3000/api/person/commonlikes"
+
+        payload = "forename_1=" + self.forename_1 + "&type=general"
+        headers = {
+            'Content-Type': "application/x-www-form-urlencoded",
+            'cache-control': "no-cache",
+            'Postman-Token': "5777f647-b96b-4f17-8d71-906e1e3ae6b2"
+        }
+
+        people = requests.request("POST", url, data=payload, headers=headers)
+        people = json.loads(str(people.text))
+
+        myLikes = []
+        friends = []
+        things = []
+
+        for person in people["allPeople"]:
+            for like in person["likesDislikes"]:
+                if(person["forename"] == self.forename):
+                    myLikes.append(like["thing"])
+
+        for person in people["allPeople"]:
+            for like in person["likesDislikes"]:
+                if(like["thing"] in myLikes and person["forename"] != self.forename):
+                    friends.append(person["forename"])
+                    things.append(like["thing"])
+
+        if len(friends) > 2:
+            rand = random.randint(0, len(friends)-1)
+            resp = 'It looks like you and ' + friends[rand] + ' both like ' + things[rand]
+            self.responder.respond(resp)
+            self.driversMatchmaking()
 
     def promptLikes(self):
         likes_prompts = []
