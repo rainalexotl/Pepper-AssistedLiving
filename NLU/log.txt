@@ -1,5 +1,5 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-[2019-03-12 18:28:35][SYSTEM] Starting new session... 
+[2019-03-15 10:52:15][SYSTEM] Starting new session... 
 
 System: Darwin
 Machine: x86_64
@@ -7,15 +7,7 @@ Platform: Darwin-18.0.0-x86_64-i386-64bit
 Version: Darwin Kernel Version 18.0.0: Wed Aug 22 20:13:40 PDT 2018; root:xnu-4903.201.2~1/RELEASE_X86_64
 MacVersion: ('10.14', ('', '', ''), 'x86_64')
 
-[2019-03-12 18:28:38][UTTERANCE] hello
-[2019-03-12 18:28:38] [RESPONSE] Hi there, who am I talking with?
-[2019-03-12 18:28:43][UTTERANCE] my name is Jack
-[2019-03-12 18:28:43] [RESPONSE] Ok, Jack is there anyone else there with you?
-[2019-03-12 18:28:46][UTTERANCE] no, i am alone
-[2019-03-12 18:28:46] [RESPONSE] No? Ok, lets see what the two of us can talk about.
-[2019-03-12 18:28:46] [RESPONSE] Why don't you tell me about some of the things you like?
-[2019-03-12 18:28:50][UTTERANCE] I like money
-[2019-03-12 18:28:50] [RESPONSE] Ok, I will remember that you like this.
-[2019-03-12 18:28:50] [RESPONSE] It looks like you and Wesley both like money
-[2019-03-12 18:28:50] [RESPONSE] Would you like to tell me more about money?
-[2019-03-12 18:28:53][UTTERANCE] yes please
+[2019-03-15 10:52:17][UTTERANCE] hello
+[2019-03-15 10:52:17] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 10:52:23][UTTERANCE] My name is Ronnie
+[2019-03-15 10:52:23] [RESPONSE] Ok, Ronnie is there anyone else there with you?
