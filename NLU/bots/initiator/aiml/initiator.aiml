@@ -3,14 +3,7 @@
     <!-- ROOT CASES -->
 
     <category>
-        <pattern>*</pattern>
-        <template>
-            You should not see this response.
-        </template>
-    </category>
-
-    <category>
-        <pattern>EXIT</pattern>
+        <pattern> EXIT </pattern>
         <template>
             <think>
                 <set name="responder">initator_unlock_conversation</set>
@@ -19,7 +12,7 @@
     </category>
 
     <category>
-        <pattern>HELLO</pattern>
+        <pattern> HELLO </pattern>
         <template>
             <think>
                 <set name="responder">initiator_request_forename_1</set>
@@ -79,7 +72,7 @@
     <!-- SYNONYMOUS CASES FOR PERSON 1 -->
 
     <category>
-        <pattern>I AM *</pattern>
+        <pattern> I AM * </pattern>
         <template>
             <think>
                 <srai>Forename one is <star/></srai>
@@ -88,7 +81,7 @@
     </category>
 
     <category>
-        <pattern>MY NAME IS *</pattern>
+        <pattern> MY NAME IS * </pattern>
         <template>
             <think>
                 <srai>Forename one is <star/></srai>
@@ -97,7 +90,7 @@
     </category>
 
     <category>
-        <pattern>I AM CALLED *</pattern>
+        <pattern> I AM CALLED * </pattern>
         <template>
             <think>
                 <srai>Forename one is <star/></srai>
@@ -106,7 +99,7 @@
     </category>
 
     <category>
-        <pattern>MY FRIENDS CALL ME *</pattern>
+        <pattern> MY FRIENDS CALL ME * </pattern>
         <template>
             <think>
                 <srai>Forename one is <star/></srai>
@@ -115,7 +108,7 @@
     </category>
 
     <category>
-        <pattern>MY FAMILY CALLS ME *</pattern>
+        <pattern> MY FAMILY CALLS ME * </pattern>
         <template>
             <think>
                 <srai>Forename one is <star/></srai>
@@ -124,7 +117,7 @@
     </category>
 
     <category>
-        <pattern>YOU CAN CALL ME *</pattern>
+        <pattern> YOU CAN CALL ME * </pattern>
         <template>
             <think>
                 <srai>Forename one is <star/></srai>
@@ -133,7 +126,7 @@
     </category>
 
     <category>
-        <pattern>PEOPLE CALL ME *</pattern>
+        <pattern> PEOPLE CALL ME * </pattern>
         <template>
             <think>
                 <srai>Forename one is <star/></srai>
@@ -142,7 +135,7 @@
     </category>
 
     <category>
-        <pattern>MY FIRST NAME IS *</pattern>
+        <pattern> MY FIRST NAME IS * </pattern>
         <template>
             <think>
                 <srai>Forename one is <star/></srai>
@@ -151,7 +144,7 @@
     </category>
 
     <category>
-        <pattern>YOU ARE TALKING WITH *</pattern>
+        <pattern> YOU ARE TALKING WITH * </pattern>
         <template>
             <think>
                 <srai>Forename one is <star/></srai>
@@ -160,7 +153,7 @@
     </category>
 
     <category>
-        <pattern>YOU ARE TALKING WITH *</pattern>
+        <pattern> YOU ARE TALKING WITH * </pattern>
         <template>
             <think>
                 <srai>Forename one is <star/></srai>
@@ -171,28 +164,28 @@
     <!-- SYNONYMOUS CASES FOR PERSON 2 -->
 
     <category>
-        <pattern>NO ONE IS HERE WITH ME</pattern>
+        <pattern> NO ONE IS HERE WITH ME </pattern>
         <template>
             <srai>ENTER INDIVIDUAL MODE</srai>
         </template>
     </category>
 
     <category>
-        <pattern>NO</pattern>
+        <pattern> NO </pattern>
         <template>
             <srai>ENTER INDIVIDUAL MODE</srai>
         </template>
     </category>
 
     <category>
-        <pattern>NO ITS JUST ME</pattern>
+        <pattern> NO ITS JUST ME </pattern>
         <template>
             <srai>ENTER INDIVIDUAL MODE</srai>
         </template>
     </category>
 
     <category>
-        <pattern>JUST ME</pattern>
+        <pattern> JUST ME </pattern>
         <template>
             <srai>ENTER INDIVIDUAL MODE</srai>
         </template>
@@ -206,21 +199,21 @@
     </category>
 
     <category>
-        <pattern>I AM ALONE</pattern>
+        <pattern> I AM ALONE </pattern>
         <template>
             <srai>ENTER INDIVIDUAL MODE</srai>
         </template>
     </category>
 
     <category>
-        <pattern>NO I AM ALONE</pattern>
+        <pattern> NO I AM ALONE </pattern>
         <template>
             <srai>ENTER INDIVIDUAL MODE</srai>
         </template>
     </category>
 
     <category>
-        <pattern>ALONE</pattern>
+        <pattern> ALONE </pattern>
         <template>
             <srai>ENTER INDIVIDUAL MODE</srai>
         </template>
@@ -229,16 +222,27 @@
     <!-- SYNONYMOUS CASES FOR SECOND PERSON PRESENT -->
 
     <category>
-        <pattern>YES</pattern>
+        <pattern> YES </pattern>
         <template>
             <srai>SECOND PERSON PRESENT</srai>
+        </template>
+    </category>
+
+    <!-- SYNONYMOUS CASES FOR BOTH NAMES AT ONCE -->
+
+    <category>
+        <pattern> ITS * AND * </pattern>
+        <template>
+            <think>
+                <srai>FORENAME ONE IS <star index="1"/> AND FORENAME TWO IS <star index="2"/></srai>
+            </think>
         </template>
     </category>
 
     <!-- SYNONYMOUS CASES FOR PERSON 2 -->
 
     <category>
-        <pattern>MY FRIEND *</pattern>
+        <pattern> MY FRIEND * </pattern>
         <template>
             <think>
                 <srai>Forename two is <star/></srai>
@@ -247,7 +251,7 @@
     </category>
 
     <category>
-        <pattern>MY FRIEND IS CALLED *</pattern>
+        <pattern> MY FRIEND IS CALLED * </pattern>
         <template>
             <think>
                 <srai>Forename two is <star/></srai>
@@ -256,7 +260,7 @@
     </category>
 
     <category>
-        <pattern>IS CALLED *</pattern>
+        <pattern> IS CALLED * </pattern>
         <template>
             <think>
                 <srai>Forename two is <star/></srai>
@@ -265,7 +269,7 @@
     </category>
 
     <category>
-        <pattern>* IS WITH ME</pattern>
+        <pattern> * IS WITH ME </pattern>
         <template>
             <think>
                 <srai>Forename two is <star/></srai>
@@ -274,7 +278,7 @@
     </category>
 
     <category>
-        <pattern>YES * IS WITH ME</pattern>
+        <pattern> YES * IS WITH ME </pattern>
         <template>
             <think>
                 <srai>Forename two is <star/></srai>
@@ -283,7 +287,7 @@
     </category>
 
     <category>
-        <pattern>YES * IS HERE WITH ME</pattern>
+        <pattern> YES * IS HERE WITH ME </pattern>
         <template>
             <think>
                 <srai>Forename two is <star/></srai>

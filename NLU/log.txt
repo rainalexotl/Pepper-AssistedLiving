@@ -1,5 +1,5 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-[2019-03-15 12:47:33][SYSTEM] Starting new session... 
+[2019-03-15 14:46:29][SYSTEM] Starting new session... 
 
 System: Darwin
 Machine: x86_64
@@ -7,28 +7,92 @@ Platform: Darwin-18.0.0-x86_64-i386-64bit
 Version: Darwin Kernel Version 18.0.0: Wed Aug 22 20:13:40 PDT 2018; root:xnu-4903.201.2~1/RELEASE_X86_64
 MacVersion: ('10.14', ('', '', ''), 'x86_64')
 
-[2019-03-15 12:47:35][UTTERANCE] hello
-[2019-03-15 12:47:35] [RESPONSE] Hi there, who am I talking with?
-[2019-03-15 12:47:41][UTTERANCE] My name is Monica
-[2019-03-15 12:47:41] [RESPONSE] Ok, Monica is there anyone else there with you?
-[2019-03-15 12:47:44][UTTERANCE] No, I am alone
-[2019-03-15 12:47:44] [RESPONSE] No? Ok, lets see what the two of us can talk about.
-[2019-03-15 12:47:44] [RESPONSE] Why don't you tell me about some of the things you like?
-[2019-03-15 12:47:47][UTTERANCE] I like pears
-[2019-03-15 12:47:47] [RESPONSE] Ok, I will remember that you like this.
-[2019-03-15 12:47:47] [RESPONSE] Should I talk some more about pears?
-[2019-03-15 12:47:50][UTTERANCE] no thanks
-[2019-03-15 12:47:50] [RESPONSE] Why don't you tell me about some of the things you like?
-[2019-03-15 12:47:52][UTTERANCE] I like mango
-[2019-03-15 12:47:52] [RESPONSE] Ok, I will remember that you like this.
-[2019-03-15 12:47:52] [RESPONSE] Should I talk some more about mango?
-[2019-03-15 12:47:53][UTTERANCE] no thanks
-[2019-03-15 12:47:53] [RESPONSE] Why don't you tell me about some of the things you do not like?
-[2019-03-15 12:48:07][UTTERANCE] I like money
-[2019-03-15 12:48:07] [RESPONSE] Ok, I will remember that you like this.
-[2019-03-15 12:48:07] [RESPONSE] It looks like you and Helen both like money
-[2019-03-15 12:48:07] [RESPONSE] Should I talk some more about money?
-[2019-03-15 12:48:11][UTTERANCE] no thanks
-[2019-03-15 12:48:11] [RESPONSE] Can you tell me a bit more about what you like?
-[2019-03-15 12:48:18][UTTERANCE] what do Frasier and I both like
-[2019-03-15 12:48:18] [RESPONSE] It looks like you and Frasier both like money
+[2019-03-15 14:46:30][UTTERANCE] hello
+[2019-03-15 14:46:30] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:46:41][UTTERANCE] Jack and Victor
+[2019-03-15 14:46:41] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:48:32][UTTERANCE] bye
+[2019-03-15 14:48:32] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-15 14:48:38][UTTERANCE] hello
+[2019-03-15 14:48:38] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:48:43][UTTERANCE] Jack and Victor
+[2019-03-15 14:48:43] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:48:55][UTTERANCE] bye
+[2019-03-15 14:48:55] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-15 14:48:57][UTTERANCE] hello
+[2019-03-15 14:48:57] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:49:02][UTTERANCE] Jack and Victor
+[2019-03-15 14:49:02] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:49:27][UTTERANCE] bye
+[2019-03-15 14:49:27] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-15 14:49:29][UTTERANCE] hello
+[2019-03-15 14:49:29] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:49:34][UTTERANCE] my Jack and Victor
+[2019-03-15 14:49:34] [RESPONSE] Ok, Jack and Jack I will be glad to talk to both of you.
+[2019-03-15 14:50:08][UTTERANCE] bye
+[2019-03-15 14:50:08] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-15 14:50:11][UTTERANCE] hello
+[2019-03-15 14:50:11] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:50:13][UTTERANCE] Jack and Victor
+[2019-03-15 14:50:13] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:50:48][UTTERANCE] bye
+[2019-03-15 14:50:48] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-15 14:50:50][UTTERANCE] hello
+[2019-03-15 14:50:50] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:50:53][UTTERANCE] Jack and Victor
+[2019-03-15 14:50:53] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:54:49][UTTERANCE] byye
+[2019-03-15 14:54:49] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:54:51][UTTERANCE] bye
+[2019-03-15 14:54:51] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-15 14:54:52][UTTERANCE] hello
+[2019-03-15 14:54:52] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:54:55][UTTERANCE] Jack and Victor
+[2019-03-15 14:54:55] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:55:08][UTTERANCE] bye
+[2019-03-15 14:55:08] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-15 14:55:14][UTTERANCE] hello
+[2019-03-15 14:55:14] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:55:20][UTTERANCE] Jack and Victor
+[2019-03-15 14:55:20] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:57:52][UTTERANCE] bye
+[2019-03-15 14:57:52] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-15 14:57:54][UTTERANCE] hello
+[2019-03-15 14:57:54] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:57:58][UTTERANCE] Jack and Victor
+[2019-03-15 14:57:58] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:58:02][UTTERANCE] JACK AND VICTOR
+[2019-03-15 14:58:02] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:58:05][UTTERANCE] VICTOR
+[2019-03-15 14:58:05] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:58:11][UTTERANCE] I am Victor
+[2019-03-15 14:58:11] [RESPONSE] Ok, Victor is there anyone else there with you?
+[2019-03-15 14:58:12][UTTERANCE] NO
+[2019-03-15 14:58:12] [RESPONSE] No? Ok, lets see what the two of us can talk about.
+[2019-03-15 14:58:12] [RESPONSE] Why don't you tell me about some of the things you do not like?
+[2019-03-15 14:58:39][UTTERANCE] bye
+[2019-03-15 14:58:39] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-15 14:58:42][UTTERANCE] hello
+[2019-03-15 14:58:42] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 14:58:44][UTTERANCE] Kacl and Victor
+[2019-03-15 14:58:44] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 15:02:08][UTTERANCE] bye
+[2019-03-15 15:02:08] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-15 15:02:09][UTTERANCE] hello
+[2019-03-15 15:02:09] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 15:02:15][UTTERANCE] It's jack and victor
+[2019-03-15 15:02:15] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 15:02:22][UTTERANCE] ITS jack and victor
+[2019-03-15 15:02:22] [RESPONSE] Ok, jack and victor I will be glad to talk to both of you.
+[2019-03-15 15:02:51][UTTERANCE] bye
+[2019-03-15 15:02:51] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-15 15:02:55][UTTERANCE] hello
+[2019-03-15 15:02:55] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 15:02:59][UTTERANCE] My name is Jack
+[2019-03-15 15:02:59] [RESPONSE] Ok, Jack is there anyone else there with you?
+[2019-03-15 15:03:02][UTTERANCE] Yes
+[2019-03-15 15:03:02] [RESPONSE] Ok. Who is it that is with you?
+[2019-03-15 15:03:05][UTTERANCE] Victor is with me
+[2019-03-15 15:03:05] [RESPONSE] Ok. Who is it that is with you?
+[2019-03-15 15:03:50][UTTERANCE] Yes, Victor is with me
+[2019-03-15 15:03:50] [RESPONSE] Ok, I will be glad to talk to you and Victor

@@ -154,6 +154,9 @@ class bot:
     def reset(self):
         self.lock = 0 # 0 directs to initator, -1 will unlock
 
+        response = "Goodbye. Nice talking to you."
+        self.responder.respond(response)
+
         self.interpreter = Interpreter.load('./models/default')
 
         self.matchmaking = matchmaking.matchmaking(self.responder)

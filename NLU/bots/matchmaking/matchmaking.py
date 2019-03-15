@@ -230,7 +230,7 @@ class matchmaking():
 
             for person in people["allPeople"]:
                 for like in person["likesDislikes"]:
-                    if(like["thing"] == self.thing.lower() and person["forename"] != self.forename):
+                    if(like["thing"] == self.thing.lower() and person["forename"] != self.forename_1):
                         friends.append(person["forename"])
                         things.append(like["thing"])
 

@@ -47,6 +47,9 @@ class initiator():
         elif responder == "initiator_get_forename_1":
             self.initiator_get_forename_1()
             return self.lockcode, 0, self.forename_1, self.forename_2
+        elif responder == "initiator_get_forename_1_and_forename_2":
+            self.initiator_get_forename_1_and_forename_2()
+            return -1, 0, self.forename_1, self.forename_2
         elif responder == "initator_enter_individual_mode":
             self.initator_enter_individual_mode()
             return -1, 1, self.forename_1, self.forename_2
@@ -75,6 +78,14 @@ class initiator():
 
         self.checkPerson(self.forename_1)
 
+    def initiator_get_forename_1_and_forename_2(self):
+        self.aiml.respond(self.utterance)
+        self.forename_1 = self.aiml.getPredicate('forename_1')
+        self.forename_2 = self.aiml.getPredicate('forename_2')
+
+        response = "Ok, " + self.forename_1 + " and " + self.forename_2 + " I will be glad to talk to both of you."
+        self.responder.respond(response)
+
     def initator_enter_individual_mode(self):
         response = "No? Ok, lets see what the two of us can talk about."
         self.responder.respond(response)
@@ -87,7 +98,7 @@ class initiator():
         self.aiml.respond(self.utterance)
         self.forename_2 = self.aiml.getPredicate('forename_2')
 
-        response = "'Ok, I will be glad to talk to you and " + self.forename_2
+        response = "Ok, I will be glad to talk to you and " + self.forename_2
         self.responder.respond(response)
 
     def checkPerson(self, forename):
