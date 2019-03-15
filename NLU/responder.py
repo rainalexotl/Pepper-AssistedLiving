@@ -20,6 +20,9 @@ class responder:
         except:
             print('[RESPONDER] Unable to connect to Alana.')
 
+        self.forename_1 = ''
+        self.forename_2 = ''
+
     def respond(self, response):
         try:
             self.sock.sendall(response)
@@ -29,6 +32,13 @@ class responder:
 
     def handoff(self, topic):
         print('[RESPONDER] Handing off topic', topic, 'to Alana...')
+
+    def setNames(self, forename_1, forename_2):
+        self.forename_1 = forename_1
+        self.forename_2 = forename_2
+
+    def getNames(self):
+        return self.forename_1, self.forename_2
 
     def shutdown(self):
         print('[RESPONDER] Shutting down...')

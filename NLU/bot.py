@@ -44,7 +44,7 @@ class bot:
 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-        self.server_address = ('localhost', 3001)
+        self.server_address = ('localhost', 3007)
         print('[PRIMARY BOT] Starting up on %s port %s' % self.server_address)
         self.sock.bind(self.server_address)
 
@@ -123,6 +123,7 @@ class bot:
         if self.init == 1:
             print('[PRIMARY BOT][INIT] Selecting... Bot 0: Initiator')
             self.lock, self.mode, self.forename_1, self.forename_2 = self.initiator.check(intent_name, utterance)
+            self.responder.setNames(self.forename_1, self.forename_2)
             if self.lock == -1 and self.mode == 1:
                 self.init = 0
                 self.routing('init matchmaking', 1)

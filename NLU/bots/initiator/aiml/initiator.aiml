@@ -178,6 +178,13 @@
     </category>
 
     <category>
+        <pattern>NO</pattern>
+        <template>
+            <srai>ENTER INDIVIDUAL MODE</srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>NO ITS JUST ME</pattern>
         <template>
             <srai>ENTER INDIVIDUAL MODE</srai>
@@ -199,6 +206,13 @@
     </category>
 
     <category>
+        <pattern>I AM ALONE</pattern>
+        <template>
+            <srai>ENTER INDIVIDUAL MODE</srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>NO I AM ALONE</pattern>
         <template>
             <srai>ENTER INDIVIDUAL MODE</srai>
@@ -209,6 +223,15 @@
         <pattern>ALONE</pattern>
         <template>
             <srai>ENTER INDIVIDUAL MODE</srai>
+        </template>
+    </category>
+
+    <!-- SYNONYMOUS CASES FOR SECOND PERSON PRESENT -->
+
+    <category>
+        <pattern>YES</pattern>
+        <template>
+            <srai>SECOND PERSON PRESENT</srai>
         </template>
     </category>
 

@@ -36,16 +36,14 @@ class matchmaking():
         self.handoffLike = ''
         self.handoffStatus = 0
 
-        self.forename = 'Frasier'
-        self.forename_1 = self.forename
-        self.forename_2 = 'unknown'
+        self.forename_1, self.forename_2 = self.responder.getNames()
 
         self.lockcode = 1
 
     def check(self, intent, utterance, forename, driver):
         print('[BOTS/MATCHMAKING] Responding...')
 
-        self.forename = forename
+        self.forename_1, self.forename_2 = self.responder.getNames()
         self.utterance = utterance
 
         if self.handoffStatus == 1:
@@ -91,8 +89,7 @@ class matchmaking():
 
         url = "http://localhost:3000/api/person/add/likeDislike"
 
-        payload = "likeDislike=true&thing=" + predicate + "&forename=" + self.forename
-        print(payload)
+        payload = "likeDislike=true&thing=" + predicate + "&forename=" + self.forename_1
         headers = {
             'Content-Type': "application/x-www-form-urlencoded",
             'cache-control': "no-cache",
@@ -122,7 +119,7 @@ class matchmaking():
 
         url = "http://localhost:3000/api/person/add/likeDislike"
 
-        payload = "likeDislike=false&thing=" + predicate + "&forename=" + self.forename
+        payload = "likeDislike=false&thing=" + predicate + "&forename=" + self.forename_1
         headers = {
             'Content-Type': "application/x-www-form-urlencoded",
             'cache-control': "no-cache",
@@ -149,6 +146,8 @@ class matchmaking():
         thing = self.aiml.getPredicate('thing')
         matchmake = self.aiml.getPredicate('matchmake')
 
+        print(matchmake)
+
         sufficientLikes = self.checkLikes()
         if sufficientLikes == False:
             self.promptLikes()
@@ -173,12 +172,12 @@ class matchmaking():
 
             for person in people["allPeople"]:
                 for like in person["likesDislikes"]:
-                    if(person["forename"] == self.forename):
+                    if(person["forename"] == self.forename_1):
                         myLikes.append(like["thing"])
 
             for person in people["allPeople"]:
                 for like in person["likesDislikes"]:
-                    if(like["thing"] in myLikes and person["forename"] != self.forename):
+                    if(like["thing"] in myLikes and person["forename"] != self.forename_1):
                         friends.append(person["forename"])
                         things.append(like["thing"])
 
@@ -268,7 +267,7 @@ class matchmaking():
     def checkLikes(self):
         url = "http://localhost:3000/api/person/likes"
 
-        payload = "forename=" + self.forename
+        payload = "forename=" + self.forename_1
         headers = {
             'Content-Type': "application/x-www-form-urlencoded",
             'cache-control': "no-cache",
@@ -306,12 +305,12 @@ class matchmaking():
 
         for person in people["allPeople"]:
             for like in person["likesDislikes"]:
-                if(person["forename"] == self.forename):
+                if(person["forename"] == self.forename_1):
                     myLikes.append(like["thing"])
 
         for person in people["allPeople"]:
             for like in person["likesDislikes"]:
-                if(like["thing"] in myLikes and person["forename"] != self.forename):
+                if(like["thing"] in myLikes and person["forename"] != self.forename_1):
                     friends.append(person["forename"])
                     things.append(like["thing"])
 
@@ -325,7 +324,7 @@ class matchmaking():
         self.handoffStatus = 1
 
         affirmations = []
-        affirmation = 'Would you like to tell me more about ' + like + '?'
+        affirmation = 'Would you like me to tell you more about ' + like + '?'
         affirmations.append(affirmation)
         affirmation = 'Should I talk some more about ' + like + '?'
         affirmations.append(affirmation)
@@ -344,8 +343,12 @@ class matchmaking():
         elif predicate == "NO":
             print('they do not want to be told any more')
             self.handoffStatus = 0
+            self.drivers()
         else:
+            self.matchmaking_like_process_1(self.handoffLike)
             print('invalid case')
+
+
 
     def matchmaking_like_process_3(self):
         self.handoffStatus = 0

@@ -1,5 +1,5 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-[2019-03-15 10:52:15][SYSTEM] Starting new session... 
+[2019-03-15 12:47:33][SYSTEM] Starting new session... 
 
 System: Darwin
 Machine: x86_64
@@ -7,7 +7,28 @@ Platform: Darwin-18.0.0-x86_64-i386-64bit
 Version: Darwin Kernel Version 18.0.0: Wed Aug 22 20:13:40 PDT 2018; root:xnu-4903.201.2~1/RELEASE_X86_64
 MacVersion: ('10.14', ('', '', ''), 'x86_64')
 
-[2019-03-15 10:52:17][UTTERANCE] hello
-[2019-03-15 10:52:17] [RESPONSE] Hi there, who am I talking with?
-[2019-03-15 10:52:23][UTTERANCE] My name is Ronnie
-[2019-03-15 10:52:23] [RESPONSE] Ok, Ronnie is there anyone else there with you?
+[2019-03-15 12:47:35][UTTERANCE] hello
+[2019-03-15 12:47:35] [RESPONSE] Hi there, who am I talking with?
+[2019-03-15 12:47:41][UTTERANCE] My name is Monica
+[2019-03-15 12:47:41] [RESPONSE] Ok, Monica is there anyone else there with you?
+[2019-03-15 12:47:44][UTTERANCE] No, I am alone
+[2019-03-15 12:47:44] [RESPONSE] No? Ok, lets see what the two of us can talk about.
+[2019-03-15 12:47:44] [RESPONSE] Why don't you tell me about some of the things you like?
+[2019-03-15 12:47:47][UTTERANCE] I like pears
+[2019-03-15 12:47:47] [RESPONSE] Ok, I will remember that you like this.
+[2019-03-15 12:47:47] [RESPONSE] Should I talk some more about pears?
+[2019-03-15 12:47:50][UTTERANCE] no thanks
+[2019-03-15 12:47:50] [RESPONSE] Why don't you tell me about some of the things you like?
+[2019-03-15 12:47:52][UTTERANCE] I like mango
+[2019-03-15 12:47:52] [RESPONSE] Ok, I will remember that you like this.
+[2019-03-15 12:47:52] [RESPONSE] Should I talk some more about mango?
+[2019-03-15 12:47:53][UTTERANCE] no thanks
+[2019-03-15 12:47:53] [RESPONSE] Why don't you tell me about some of the things you do not like?
+[2019-03-15 12:48:07][UTTERANCE] I like money
+[2019-03-15 12:48:07] [RESPONSE] Ok, I will remember that you like this.
+[2019-03-15 12:48:07] [RESPONSE] It looks like you and Helen both like money
+[2019-03-15 12:48:07] [RESPONSE] Should I talk some more about money?
+[2019-03-15 12:48:11][UTTERANCE] no thanks
+[2019-03-15 12:48:11] [RESPONSE] Can you tell me a bit more about what you like?
+[2019-03-15 12:48:18][UTTERANCE] what do Frasier and I both like
+[2019-03-15 12:48:18] [RESPONSE] It looks like you and Frasier both like money
