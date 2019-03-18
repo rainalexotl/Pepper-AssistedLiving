@@ -1,12 +1,16 @@
 import numpy as np
-from responder import responder
-
 
 class matchmaking_responder():
-    def __init__(self):
-        self.responder = responder()
+    def __init__(self, responder):
+        self.responder = responder
+        self.forename_1, self.forename_2 = self.responder.getNames()
+        
+    def updateNames(self):
+        self.forename_1, self.forename_2 = self.responder.getNames()
+
     # matchmaking - initiate_introduction
     def responder_like(self, thing):
+        self.updateNames()
         choices = []
         choices.append("Ok, I will remember that you like this.")
         choices.append("Ok, I will remember that.")
@@ -19,6 +23,7 @@ class matchmaking_responder():
         self.responder.respond(choice)
 
     def responder_dislike(self, thing):
+        self.updateNames()
         choices = []
         choices.append("Ok, I will remember that you dislike this.")
         choices.append("Ok, I will remember that.")
@@ -30,6 +35,7 @@ class matchmaking_responder():
         self.responder.respond(choice)
 
     def responder_forget_like(self):
+        self.updateNames()
         choices = []
         choices.append("Sorry, I am not able to modify your likes and dislikes yet.")
         choices.append("Sorry, I can't modify your likes and dislikes yet.")
@@ -37,6 +43,7 @@ class matchmaking_responder():
         self.responder.respond(choice)
 
     def responder_forget_dislike(self):
+        self.updateNames()
         choices = []
         choices.append("Sorry, I am not able to modify your likes and dislikes yet.")
         choices.append("Sorry, I can't modify your likes and dislikes yet.")
@@ -44,6 +51,7 @@ class matchmaking_responder():
         self.responder.respond(choice)
 
     def responder_matchmake_not_found(self):
+        self.updateNames()
         choices = []
         choices.append("Sorry, I can't find any common interests for you just now. Try telling me more about what you like.")
         choices.append("Sorry, I can't find any common interests for you just now. Tell me more about what you like.")
@@ -65,6 +73,7 @@ class matchmaking_responder():
         self.responder.respond(choice)
 
     def responder_matchmake_found(self, friends, things):
+        self.updateNames()
         choices = []
         choices.append("It looks like you and " + friends + " both like " + things)
         choices.append("Did you know that you and " + friends + " both like " + things)
@@ -77,6 +86,7 @@ class matchmaking_responder():
         self.responder.respond(choice)
 
     def responder_matchmake_found_specific_friend(self, things):
+        self.updateNames()
         choices = []
         choices.append("It looks like you and " + self.forename_2 + " both like " + things)
         choices.append("Did you know that you and " + self.forename_2 + " both like " + things)
@@ -89,6 +99,7 @@ class matchmaking_responder():
         self.responder.respond(choice)
 
     def responder_drivers(self):
+        self.updateNames()
         choices = []
         choices.append("Why don't you tell me about some of the things you like?")
         choices.append("Why don't you tell me about some of the things you do not like?")
@@ -99,6 +110,7 @@ class matchmaking_responder():
         self.responder.respond(choice)
 
     def responder_driversMatchmaking(self):
+        self.updateNames()
         choices = []
         choices.append("You know, I can tell you what you have in common with a specific friend, if you ask.")
         choices.append("I would be happy to tell you which of your friends also likes a certain thing that you like, if you ask.")
@@ -108,6 +120,7 @@ class matchmaking_responder():
         self.responder.respond(choice)
 
     def responder_promptLikes(self):
+        self.updateNames()
         choices = []
         choices.append("Sorry, I don't have enough information about what you like to answer that. Please tell me some things you like.")
         choices.append("Hmm... I need you to tell me a bit more about what you like first.")

@@ -11,7 +11,6 @@ import requests
 import sys
 
 sys.path.append("...")
-from responder import responder
 from matchmaking_responder import matchmaking_responder
 
 matchmaking_strings = {"matchmaking_like", "matchmaking_dislike", "matchmaking_forget_like",
@@ -25,7 +24,7 @@ class matchmaking():
         self.aiml.learn("bots/matchmaking/std-startup.xml")
         self.aiml.respond("load aiml b")
 
-        self.matchmaking_responder = matchmaking_responder()
+        self.matchmaking_responder = matchmaking_responder(responder)
 
         self.aiml_affirm = aiml.Kernel()
         self.aiml_affirm.learn("bots/matchmaking/std-startup-affirm.xml")
@@ -189,6 +188,7 @@ class matchmaking():
 
         elif matchmake == "SPECIFIC FRIEND":
             self.forename_2 = friend.title()
+            self.responder.setNames(self.forename_1, self.forename_2)
 
             url = "http://localhost:3000/api/person/commonlikes"
 

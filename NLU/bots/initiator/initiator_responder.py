@@ -1,12 +1,16 @@
 import numpy as np
-from responder import responder
-
 
 class initiator_responder():
-    def __init__(self):
-        self.responder = responder()
+    def __init__(self, responder):
+        self.responder = responder
+        self.forename_1, self.forename_2 = self.responder.getNames()
+
+    def updateNames(self):
+        self.forename_1, self.forename_2 = self.responder.getNames()
+
     # initiator - request_forename_1
     def responder_request_forename_1(self):
+        self.updateNames()
         choices = []
         choices.append("Hi there, who am I talking with?")
         choices.append("Hello, who am I talking with?")
@@ -23,6 +27,7 @@ class initiator_responder():
 
     # initiator - get_forename_1
     def responder_get_forename_1(self):
+        self.updateNames()
         choices = []
         choices.append("Ok, " + self.forename_1 + " is there anyone else there with you?")
         choices.append(self.forename_1 + " is there anyone else there with you?")
@@ -34,6 +39,7 @@ class initiator_responder():
 
     # initiator - enter_individual_mode
     def responder_enter_individual_mode(self):
+        self.updateNames()
         choices = []
         choices.append("No? Ok, let's see what the two of us can talk about.")
         choices.append("Do you want to talk about music?")
@@ -45,6 +51,7 @@ class initiator_responder():
 
     # initiator - request_forename_2
     def responder_request_forename_2(self):
+        self.updateNames()
         choices = []
         choices.append("Ok. Who is it that is with you?")
         choices.append("Ok. Who is with you?")
@@ -59,6 +66,7 @@ class initiator_responder():
 
     # initiator - get_forename_2
     def responder_get_forename_2(self):
+        self.updateNames()
         choices = []
         choices.append("Ok, I will be glad to talk to you and " + self.forename_2)
         choices.append("Great! I am happy to talk to you and " + self.forename_2)
@@ -69,6 +77,7 @@ class initiator_responder():
         self.responder.respond(choice)
 
     def responder_get_forename_1_and_forename_2(self):
+        self.updateNames()
         choices = []
         choices.append("Ok, " + self.forename_1 + " and " + self.forename_2 + " I will be glad to talk to both of you.")
         choices.append("Hello " + self.forename_1 + " and " + self.forename_2 + " I am glad to speak with you.")

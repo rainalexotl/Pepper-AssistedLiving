@@ -10,7 +10,6 @@ import requests
 import sys
 
 sys.path.append("...")
-from responder import responder
 from initiator_responder import initiator_responder
 
 matchmaking_strings = {"greet", "bye", "thank", "affirm"}
@@ -25,7 +24,7 @@ class initiator():
         self.aiml.learn("bots/initiator/std-startup.xml")
         self.aiml.respond("load aiml b")
 
-        self.initiator_responder = initiator_responder()
+        self.initiator_responder = initiator_responder(responder)
 
         self.utterance = ''
         self.mode = 0
@@ -77,6 +76,8 @@ class initiator():
         self.aiml.respond(self.utterance)
         self.forename_1 = self.aiml.getPredicate('forename_1')
 
+        self.responder.setNames(self.forename_1, self.forename_2)
+
         self.initiator_responder.responder_get_forename_1()
 
         self.checkPerson(self.forename_1)
@@ -85,6 +86,8 @@ class initiator():
         self.aiml.respond(self.utterance)
         self.forename_1 = self.aiml.getPredicate('forename_1')
         self.forename_2 = self.aiml.getPredicate('forename_2')
+
+        self.responder.setNames(self.forename_1, self.forename_2)
 
         self.initiator_responder.responder_get_forename_1_and_forename_2()
 
@@ -99,6 +102,8 @@ class initiator():
     def initiator_get_forename_2(self):
         self.aiml.respond(self.utterance)
         self.forename_2 = self.aiml.getPredicate('forename_2')
+
+        self.responder.setNames(self.forename_1, self.forename_2)
 
         response = "Ok, I will be glad to talk to you and " + self.forename_2
         self.responder.respond(response)

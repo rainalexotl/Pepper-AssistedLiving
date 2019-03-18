@@ -1,5 +1,5 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-[2019-03-18 11:50:12][SYSTEM] Starting new session... 
+[2019-03-18 13:50:35][SYSTEM] Starting new session... 
 
 System: Darwin
 Machine: x86_64
@@ -7,40 +7,7 @@ Platform: Darwin-18.0.0-x86_64-i386-64bit
 Version: Darwin Kernel Version 18.0.0: Wed Aug 22 20:13:40 PDT 2018; root:xnu-4903.201.2~1/RELEASE_X86_64
 MacVersion: ('10.14', ('', '', ''), 'x86_64')
 
-[2019-03-18 11:51:24][UTTERANCE] hello
-[2019-03-18 11:51:24] [RESPONSE] Hi there, who am I talking with?
-[2019-03-18 11:51:50][UTTERANCE] my name is Oliver 
-[2019-03-18 11:51:50] [RESPONSE] Ok, Oliver is there anyone else there with you?
-[2019-03-18 11:52:07][UTTERANCE] No, I am alone
-[2019-03-18 11:52:07] [RESPONSE] No? Ok, lets see what the two of us can talk about.
-[2019-03-18 11:52:07] [RESPONSE] If you tell me a bit about what you like, I can match you up with other people who like the same things.
-[2019-03-18 11:52:26][UTTERANCE] I like video games
-[2019-03-18 11:52:26] [RESPONSE] Ok, I will remember that you like this.
-[2019-03-18 11:52:26] [RESPONSE] Would you like me to tell you more about video games?
-[2019-03-18 11:52:41][UTTERANCE] no thanks
-[2019-03-18 11:52:41] [RESPONSE] Why don't you tell me about some of the things you like?
-[2019-03-18 11:52:45][UTTERANCE] i like music
-[2019-03-18 11:52:45] [RESPONSE] Ok, I will remember that you like this.
-[2019-03-18 11:52:46] [RESPONSE] Would you like me to tell you more about music?
-[2019-03-18 11:52:48][UTTERANCE] no thanks
-[2019-03-18 11:52:48] [RESPONSE] Why don't you tell me about some of the things you like?
-[2019-03-18 11:52:53][UTTERANCE] i like money
-[2019-03-18 11:52:53] [RESPONSE] Ok, I will remember that you like this.
-[2019-03-18 11:52:53] [RESPONSE] It looks like you and Bulldog both like money
-[2019-03-18 11:52:53] [RESPONSE] Should I talk some more about money?
-[2019-03-18 11:52:55][UTTERANCE] no thanks
-[2019-03-18 11:52:55] [RESPONSE] If you tell me a bit about what you like, I can match you up with other people who like the same things.
-[2019-03-18 11:53:06][UTTERANCE] what do Frasier and I have in common
-[2019-03-18 11:53:06] [RESPONSE] It looks like you and Frasier both like money
-[2019-03-18 11:56:06][UTTERANCE] bye 
-[2019-03-18 11:56:06] [RESPONSE] Goodbye. Nice talking to you.
-[2019-03-18 11:56:09][UTTERANCE] hello
-[2019-03-18 11:56:09] [RESPONSE] Hi there, who am I talking with?
-[2019-03-18 11:56:14][UTTERANCE] my name is Jack
-[2019-03-18 11:56:14] [RESPONSE] Ok, Jack is there anyone else there with you?
-[2019-03-18 11:56:25][UTTERANCE] yes
-[2019-03-18 11:56:25] [RESPONSE] Ok. Who is it that is with you?
-[2019-03-18 11:56:32][UTTERANCE] my friend Victor
-[2019-03-18 11:56:32] [RESPONSE] Ok, I will be glad to talk to you and Victor
-[2019-03-18 11:59:11][UTTERANCE] bye 
-[2019-03-18 11:59:11] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-18 13:50:37][UTTERANCE] hello
+[2019-03-18 13:50:37] [RESPONSE] Hello, can you tell me your name?
+[2019-03-18 13:50:39][UTTERANCE] my name is Jack
+[2019-03-18 13:50:39] [RESPONSE] Jack is anyone else there with you?
