@@ -1,5 +1,5 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-[2019-03-18 13:50:35][SYSTEM] Starting new session... 
+[2019-03-18 15:31:15][SYSTEM] Starting new session... 
 
 System: Darwin
 Machine: x86_64
@@ -7,7 +7,5 @@ Platform: Darwin-18.0.0-x86_64-i386-64bit
 Version: Darwin Kernel Version 18.0.0: Wed Aug 22 20:13:40 PDT 2018; root:xnu-4903.201.2~1/RELEASE_X86_64
 MacVersion: ('10.14', ('', '', ''), 'x86_64')
 
-[2019-03-18 13:50:37][UTTERANCE] hello
-[2019-03-18 13:50:37] [RESPONSE] Hello, can you tell me your name?
-[2019-03-18 13:50:39][UTTERANCE] my name is Jack
-[2019-03-18 13:50:39] [RESPONSE] Jack is anyone else there with you?
+[2019-03-18 15:31:18][UTTERANCE] blah blah blah
+[2019-03-18 15:31:18] [RESPONSE] Sorry, I didn't quite get that. Can you repeat that?
