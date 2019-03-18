@@ -11,6 +11,7 @@ import sys
 
 sys.path.append("...")
 from responder import responder
+from initiator_responder import initiator_responder
 
 matchmaking_strings = {"greet", "bye", "thank", "affirm"}
 
@@ -23,6 +24,8 @@ class initiator():
         self.aiml = aiml.Kernel()
         self.aiml.learn("bots/initiator/std-startup.xml")
         self.aiml.respond("load aiml b")
+
+        self.initiator_responder = initiator_responder()
 
         self.utterance = ''
         self.mode = 0
@@ -66,15 +69,13 @@ class initiator():
             return -1, 0, self.forename_1, self.forename_2
 
     def initiator_request_forename_1(self):
-        response = "Hi there, who am I talking with?"
-        self.responder.respond(response)
+        self.initiator_responder.responder_request_forename_1()
 
     def initiator_get_forename_1(self):
         self.aiml.respond(self.utterance)
         self.forename_1 = self.aiml.getPredicate('forename_1')
 
-        response = "Ok, " + self.forename_1 + " is there anyone else there with you?"
-        self.responder.respond(response)
+        self.initiator_responder.responder_get_forename_1()
 
         self.checkPerson(self.forename_1)
 
@@ -83,8 +84,7 @@ class initiator():
         self.forename_1 = self.aiml.getPredicate('forename_1')
         self.forename_2 = self.aiml.getPredicate('forename_2')
 
-        response = "Ok, " + self.forename_1 + " and " + self.forename_2 + " I will be glad to talk to both of you."
-        self.responder.respond(response)
+        self.initiator_responder.responder_get_forename_1_and_forename_2()
 
     def initator_enter_individual_mode(self):
         response = "No? Ok, lets see what the two of us can talk about."
