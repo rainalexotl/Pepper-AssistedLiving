@@ -62,6 +62,8 @@ class initiator():
         elif responder == "initator_unlock_conversation":
             return -1, 0, self.forename_1, self.forename_2
         else:
+            response = "Sorry, I didn't quite get that. Can you repeat that?"
+            self.responder.respond(response)
             print('[BOTS/INITIATOR] Invalid responder value. Check bots/initiator/aiml/initiator.aiml')
             return -1, 0, self.forename_1, self.forename_2
 
