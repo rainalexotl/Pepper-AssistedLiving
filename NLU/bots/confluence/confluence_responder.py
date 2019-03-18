@@ -1,7 +1,6 @@
 import numpy as np
 from responder import responder
 
-
 class confluence_responder():
     def __init__(self):
         self.responder = responder()
