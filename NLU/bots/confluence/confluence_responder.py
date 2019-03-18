@@ -5,8 +5,13 @@ from responder import responder
 class confluence_responder():
     def __init__(self):
         self.responder = responder()
+
+    def updateNames(self):
+        self.forename_1, self.forename_2 = self.responder.getNames()
+
     # confluence - initiate_introduction
     def responder_initiate_introduction(self):
+        self.updateNames()
         choices = []
         choices.append("Hi" + self.forename_1 + "and" + self.forename_2)
         choices.append("Hello" + self.forename_1 + "and" + self.forename_2)
@@ -19,6 +24,7 @@ class confluence_responder():
 
     # confluence - initiate_conversation
     def responder_initiate_conversation(self):
+        self.updateNames()
         choices = []
         choices.append("From my understanding" + self.forename_1 + self.forename_2 + "also likes" + self.common_interest1)
         choices.append(self.forename_1 + "I believe" + self.forename_2 + "also likes" + self.common_interest1)
@@ -30,6 +36,7 @@ class confluence_responder():
 
     # confluence - new_topic_of_conversation
     def responder_new_topic_of_conversation(self):
+        self.updateNames()
         choices = []
         choices.append("I know" + self.forename_2 + "also enjoys" + self.common_interest2 + "like you" + self.forename_1)
         choices.append("I believe" + self.forename_2 + "also enjoys" + self.common_interest2 + "like you" + self.forename_1)
@@ -41,6 +48,7 @@ class confluence_responder():
 
     # confluence - leave_conversation
     def responder_leave_conversation(self):
+        self.updateNames()
         choices = []
         choices.append("I'm leaving for now " + self.forename_1 + self.forename_2 + " bye for now")
         choices.append("I have to leave " + self.forename_1 + self.forename_2 + " bye for now")
