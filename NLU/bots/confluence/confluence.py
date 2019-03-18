@@ -8,6 +8,8 @@ import aiml
 import pkg_resources
 import requests
 
+from confluence_responder import confluence_responder
+
 confluence_strings  = {}
 
 #we should know the forenames of both personel at this point in the program
@@ -20,6 +22,7 @@ class confluence():
         self.aiml.learn("bots/confluence/std-startup.xml")
         self.aiml.respond("load aiml b")
 
+        self.confluence_responder = confluence_responder()
 
         self.utterance = ''
         self.forename_1 = '' #known forenames
@@ -51,17 +54,16 @@ class confluence():
             self.leave_conversation()
 
     def initiate_introduction(self):
-        print("Hi", self.forename_1, "and", self.forename_2)
+        self.confluence_responder.responder_initiate_introduction()
 
     def profile_match_both_people(self):
         pass
 
     def initiate_conversation(self):
-        print("From my understanding", self.forename_1, self.forename_2, "likes the same", self.common_interest1)
+        self.confluence_responder.responder_initiate_conversation()
 
     def new_topic_of_conversation(self):
-        print("I also know", self.forename_2, "enjoys the same", self.common_interest2, "as you", self.forename_2)
+        self.confluence_responder.responder_new_topic_of_conversation()
 
     def leave_conversation(self):
-        print("Im leaving for now", self.forename_1, self.forename_2, "bye for now")
-    
+        self.confluence_responder.responder_leave_conversation()
