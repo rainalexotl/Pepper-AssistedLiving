@@ -103,10 +103,17 @@ class matchmaking():
         self.matchmaking_responder.responder_like(predicate)
 
         # Check if this is a common like, discusses if true
-        self.quickCheck(predicate)
+        commonLikeAvailable, text = self.quickCheck(predicate)
 
-        # Check is user wants to know more
-        self.matchmaking_like_process_1(predicate)
+        test = random.uniform(0, 1)
+
+        if commonLikeAvailable:
+            if test > 0.5:
+                # Check is user wants to know more
+                self.matchmaking_like_process_1(predicate)
+            else:
+                response = text
+                self.responder.respond(response)
 
         sufficientLikes = self.checkLikes()
         if sufficientLikes == True and self.handoffStatus == 0:
@@ -281,6 +288,9 @@ class matchmaking():
         friends = []
         things = []
 
+        resp = 'null'
+        canRespond = False
+
         for person in people["allPeople"]:
             for like in person["likesDislikes"]:
                 if(person["forename"] == self.forename_1):
@@ -295,7 +305,9 @@ class matchmaking():
         if len(friends) > 2:
             rand = random.randint(0, len(friends)-1)
             resp = 'It looks like you and ' + friends[rand] + ' both like ' + things[rand]
-            self.responder.respond(resp)
+            canRespond = True
+        
+        return canRespond, resp
 
     def matchmaking_like_process_1(self, like):
         self.handoffLike = like
