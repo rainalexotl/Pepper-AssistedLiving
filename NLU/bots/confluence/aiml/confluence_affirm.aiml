@@ -1,0 +1,88 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+    <!-- ROOT CASES -->
+
+    <category>
+        <pattern>YES</pattern>
+        <template>
+            <think>
+                <set name="affirm">YES</set>
+            </think>
+        </template>
+    </category>
+
+    <category>
+        <pattern>NO</pattern>
+        <template>
+            <think>
+                <set name="affirm">NO</set>
+            </think>
+        </template>
+    </category>
+
+    <!-- SYNONYMOUS CASES -->
+
+    <category>
+        <pattern> PLEASE </pattern>
+        <template>
+            <srai>YES</srai>
+        </template>
+    </category>
+
+    <!-- <category>
+        <pattern> YES </pattern>
+        <template>
+            <srai>YES</srai>
+        </template>
+    </category> -->
+
+    <category>
+        <pattern> YES PLEASE </pattern>
+        <template>
+            <srai>YES</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern> TELL ME MORE </pattern>
+        <template>
+            <srai>YES</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern> WOULD BE GOOD </pattern>
+        <template>
+            <srai>YES</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>^NO^</pattern>
+        <template>
+            <srai>NO</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern> NO THANKS </pattern>
+        <template>
+            <srai>NO</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern> NO THANK YOU </pattern>
+        <template>
+            <srai>NO</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern> PASS </pattern>
+        <template>
+            <srai>NO</srai>
+        </template>
+    </category>
+
+</aiml>

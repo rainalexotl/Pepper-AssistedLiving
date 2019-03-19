@@ -1,5 +1,5 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-[2019-03-18 15:31:15][SYSTEM] Starting new session... 
+[2019-03-18 19:45:51][SYSTEM] Starting new session... 
 
 System: Darwin
 Machine: x86_64
@@ -7,5 +7,32 @@ Platform: Darwin-18.0.0-x86_64-i386-64bit
 Version: Darwin Kernel Version 18.0.0: Wed Aug 22 20:13:40 PDT 2018; root:xnu-4903.201.2~1/RELEASE_X86_64
 MacVersion: ('10.14', ('', '', ''), 'x86_64')
 
-[2019-03-18 15:31:18][UTTERANCE] blah blah blah
-[2019-03-18 15:31:18] [RESPONSE] Sorry, I didn't quite get that. Can you repeat that?
+[2019-03-18 19:45:52][UTTERANCE] hello
+[2019-03-18 19:45:52] [RESPONSE] Hi, nice to meet you! How do I call you? 
+[2019-03-18 19:45:54][UTTERANCE] my name is Jack
+[2019-03-18 19:45:54] [RESPONSE] Jack is there anyone else there with you?
+[2019-03-18 19:45:56][UTTERANCE] Yes
+[2019-03-18 19:45:56] [RESPONSE] Ok. Who is it that is with you?
+[2019-03-18 19:45:58][UTTERANCE] My friend Frasier
+[2019-03-18 19:45:58] [RESPONSE] Ok, I will be glad to talk to you and Frasier
+[2019-03-18 19:45:58] [RESPONSE] Hello Jack and Frasier. Shall I suggest some things for you to talk about?
+[2019-03-18 19:46:03][UTTERANCE] Yes
+[2019-03-18 19:46:03] [RESPONSE] Jack don't you also like money, just as Frasier does? Woud you like to talk about money?
+[2019-03-18 19:46:04][UTTERANCE] No
+[2019-03-18 19:46:04] [RESPONSE] Jack, I believe Frasier also likes money. Woud you like to talk about money?
+[2019-03-18 19:46:05][UTTERANCE] No
+[2019-03-18 19:46:05] [RESPONSE] From my understanding Jack, Frasier also likes oranges. Woud you like to talk about oranges?
+[2019-03-18 19:46:07][UTTERANCE] No
+[2019-03-18 19:46:07] [RESPONSE] Jack don't you also like oranges, just as Frasier does? Woud you like to talk about oranges?
+[2019-03-18 19:46:08][UTTERANCE] No
+[2019-03-18 19:46:08] [RESPONSE] Jack, I believe Frasier also likes oranges. Woud you like to talk about oranges?
+[2019-03-18 19:46:09][UTTERANCE] No
+[2019-03-18 19:46:09] [RESPONSE] Jack don't you also like oranges, just as Frasier does? Woud you like to talk about oranges?
+[2019-03-18 19:46:10][UTTERANCE] No
+[2019-03-18 19:46:10] [RESPONSE] Jack, I think Frasier also likes oranges. Woud you like to talk about oranges?
+[2019-03-18 19:46:11][UTTERANCE] No
+[2019-03-18 19:46:11] [RESPONSE] Sorry, I can't think of anything else for you to talk about. Try adding more likes to your profiles.
+[2019-03-18 19:46:13][UTTERANCE] No
+[2019-03-18 19:46:13] [RESPONSE] Sorry, I can't think of anything else for you to talk about. Try adding more likes to your profiles.
+[2019-03-18 19:46:14][UTTERANCE] No
+[2019-03-18 19:46:14] [RESPONSE] Sorry, I can't think of anything else for you to talk about. Try adding more likes to your profiles.

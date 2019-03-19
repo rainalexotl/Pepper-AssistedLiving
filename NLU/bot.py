@@ -11,7 +11,7 @@ from bots.initiator import initiator
 from bots.matchmaking import matchmaking
 # from bots.calendar import calendar
 # from bots.recall import recall
-# from bots.confluence import confluence
+from bots.confluence import confluence
 
 from responder import responder
 
@@ -39,12 +39,14 @@ class bot:
 
         self.responder = responder()
 
-        self.matchmaking = matchmaking.matchmaking(self.responder)
+        # Secondary Bots
         self.initiator = initiator.initiator(self.responder)
+        self.matchmaking = matchmaking.matchmaking(self.responder)
+        self.confluence = confluence.confluence(self.responder)
 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-        self.server_address = ('localhost', 3001)
+        self.server_address = ('localhost', 3003)
         print('[PRIMARY BOT] Starting up on %s port %s' % self.server_address)
         self.sock.bind(self.server_address)
 
@@ -127,6 +129,9 @@ class bot:
             if self.lock == -1 and self.mode == 1:
                 self.init = 0
                 self.routing('init matchmaking', 1)
+            elif self.lock == -1 and self.mode == 2:
+                self.init = 0
+                self.routing('init confluence', 1)
         else:
             if self.mode == 1:
                 if self.lock == -1:
@@ -149,8 +154,12 @@ class bot:
                     elif self.lock == 1:
                         self.lock = self.matchmaking.check(intent_name, utterance, self.forename_1, 0)
             elif self.mode == 2:
-                print('[PRIMARY BOT] Selecting... Bot 4: Confluence')
-                #self.lock = self.confluence.check(intent_name, utterance)
+                if utterance == 'init confluence':
+                    print('[PRIMARY BOT] Selecting... Bot 2: Confluence')
+                    self.lock = self.confluence.check(intent_name, utterance, 1)
+                else:
+                    print('[PRIMARY BOT] Selecting... Bot 2: Confluence')
+                    self.lock = self.confluence.check(intent_name, utterance, 0)
 
         print('')
 
@@ -164,6 +173,7 @@ class bot:
 
         self.matchmaking = matchmaking.matchmaking(self.responder)
         self.initiator = initiator.initiator(self.responder)
+        self.confluence = confluence.confluence(self.responder)
 
         self.forename_1 = ''
         self.forename_2 = ''

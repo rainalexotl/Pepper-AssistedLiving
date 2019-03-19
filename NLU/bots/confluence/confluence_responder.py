@@ -2,8 +2,8 @@ import numpy as np
 from responder import responder
 
 class confluence_responder():
-    def __init__(self):
-        self.responder = responder()
+    def __init__(self, responder):
+        self.responder = responder
 
     def updateNames(self):
         self.forename_1, self.forename_2 = self.responder.getNames()
@@ -12,24 +12,20 @@ class confluence_responder():
     def responder_initiate_introduction(self):
         self.updateNames()
         choices = []
-        choices.append("Hi" + self.forename_1 + "and" + self.forename_2)
-        choices.append("Hello" + self.forename_1 + "and" + self.forename_2)
-        choices.append("Hi" + self.forename_1 + "and" + self.forename_2 + "How are you doing?")
-        choices.append("Hello" + self.forename_1 + "and" + self.forename_2 + "How are you doing?")
-        choices.append("Hi" + self.forename_1 + "and" + self.forename_2 + "How are you?")
-        choices.append("Hello" + self.forename_1 + "and" + self.forename_2 + "How are you?")
+        choices.append("Hi " + self.forename_1 + " and " + self.forename_2 + ". Would like me to find some things for you to talk about?")
+        choices.append("Hello " + self.forename_1 + " and " + self.forename_2 + ". Shall I suggest some things for you to talk about?")
         choice = np.random.choice(choices)
         self.responder.respond(choice)
 
     # confluence - initiate_conversation
-    def responder_initiate_conversation(self):
+    def responder_initiate_conversation(self, commonLike):
         self.updateNames()
         choices = []
-        choices.append("From my understanding" + self.forename_1 + self.forename_2 + "also likes" + self.common_interest1)
-        choices.append(self.forename_1 + "I believe" + self.forename_2 + "also likes" + self.common_interest1)
-        choices.append(self.forename_1 + "I think" + self.forename_2 + "also likes" + self.common_interest1)
-        choices.append(self.forename_1 + "don't you also like" + self.common_interest1 + "like" + self.forename_2 + "?")
-        choices.append("What about" + self.common_interest1 + "? it seems like a popular interest, I believe you two like it, don't you? ")
+        choices.append("From my understanding " + self.forename_1 + ", " + self.forename_2 + " also likes " + commonLike + ". Woud you like to talk about " + commonLike + "?")
+        choices.append(self.forename_1 + ", I believe " + self.forename_2 + " also likes " + commonLike+ ". Woud you like to talk about " + commonLike + "?")
+        choices.append(self.forename_1 + ", I think " + self.forename_2 + " also likes " + commonLike+ ". Woud you like to talk about " + commonLike + "?")
+        choices.append(self.forename_1 + " don't you also like " + commonLike + ", just as " + self.forename_2 + " does? Woud you like to talk about " + commonLike + "?")
+        choices.append("What about " + commonLike + "? It seems like a popular interest, I believe you two like it, don't you? Woud you like to talk about " + commonLike + "?")
         choice = np.random.choice(choices)
         self.responder.respond(choice)
 
