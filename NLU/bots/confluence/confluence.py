@@ -73,6 +73,9 @@ class confluence():
         elif responder == "confluence_new_topic_of_conversation":
             self.confluence_new_topic_of_conversation()
             return self.lockcode
+        elif responder == "confluence_topic_end":
+            lock = self.confluence_topic_end()
+            return lock
         elif responder == "confluence_leave_conversation":
             self.confluence_leave_conversation()
             return -1
@@ -135,6 +138,17 @@ class confluence():
         response = "Ok, I will leave you two to chat. Let me know when you are done."
         self.responder.respond(response)
 
+        self.affirmCaller = "confluence_topic_confirmed"
+        self.affirmStatus = 1
+
+    def confluence_topic_end(self):
+        if self.affirm == 1:
+            self.confluence_initiate_conversation()
+            return self.lockcode
+        else:
+            self.confluence_topic_confirmed()
+            return self.lockcode
+
     def confluence_new_topic_of_conversation(self):
         self.confluence_responder.responder_new_topic_of_conversation()
 
@@ -160,6 +174,8 @@ class confluence():
             target = "confluence_initiate_confirm"
         elif self.affirmCaller == "confluence_initiate_conversation":
             target = "confluence_confirm_topic_choice"
+        elif self.affirmCaller == "confluence_topic_confirmed":
+            target = "confluence_topic_end"
         else:
             target = 'null'
 

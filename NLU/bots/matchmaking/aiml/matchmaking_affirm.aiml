@@ -20,7 +20,7 @@
         </template>
     </category>
 
-    <!-- SYNONYMOUS CASES -->
+    <!-- SYNONYMOUS CASES FOR YES -->
 
     <category>
         <pattern> PLEASE </pattern>
@@ -58,6 +58,43 @@
     </category>
 
     <category>
+        <pattern> ARE DONE </pattern>
+        <template>
+            <srai>YES</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern> WERE DONE </pattern>
+        <template>
+            <srai>YES</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern> DONE </pattern>
+        <template>
+            <srai>YES</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern> FINISHED </pattern>
+        <template>
+            <srai>YES</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern> DONE TALKING </pattern>
+        <template>
+            <srai>YES</srai>
+        </template>
+    </category>
+
+    <!-- SYNONYMOUS CASES FOR NO -->
+
+    <category>
         <pattern>^NO^</pattern>
         <template>
             <srai>NO</srai>
@@ -84,5 +121,13 @@
             <srai>NO</srai>
         </template>
     </category>
+
+    <category>
+        <pattern> NOT DONE </pattern>
+        <template>
+            <srai>NO</srai>
+        </template>
+    </category>
+
 
 </aiml>
