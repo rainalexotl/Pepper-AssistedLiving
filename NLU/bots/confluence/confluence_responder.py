@@ -51,3 +51,25 @@ class confluence_responder():
         choices.append("I have to leave " + self.forename_1 + self.forename_2 + " see you later! ")
         choice = np.random.choice(choices)
         self.responder.respond(choice)
+
+    def responder_like(self, thing):
+        self.updateNames()
+        choices = []
+        choices.append("Ok, I will remember that you like this.")
+        choices.append("Ok, I will remember that.")
+        choices.append("Tell me why you like " + thing)
+        choices.append("Ok, it is noted.")
+        choices.append("Why do you like " + thing + "?")
+        choices.append("What do you find good about " + thing + "?")
+        choices.append("Great ! I like it too.")
+        choice = np.random.choice(choices)
+        self.responder.respond(choice)
+
+    def responder_gather_likes(self, name):
+        self.updateNames()
+        choices = []
+        choices.append(name + ", I don't have enough information about what you like. Please tell me something you like.")
+        choices.append("Sorry, " + name + " I don't know much about things you like. Please tell me one now.")
+        choices.append("I don't know much of yours likes, " + name + ". Please tell me something you like just now.")
+        choice = np.random.choice(choices)
+        self.responder.respond(choice)

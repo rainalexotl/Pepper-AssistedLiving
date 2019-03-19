@@ -26,6 +26,10 @@ class confluence():
         self.aiml_affirm = aiml.Kernel()
         self.aiml_affirm.learn("bots/confluence/std-startup-affirm.xml")
         self.aiml_affirm.respond("load aiml b")
+        
+        self.aiml_mm = aiml.Kernel()
+        self.aiml_mm.learn("bots/matchmaking/std-startup.xml")
+        self.aiml_mm.respond("load aiml b")
 
         self.responder = responder
         self.confluence_responder = confluence_responder(responder)
@@ -34,8 +38,11 @@ class confluence():
         self.forename_1, self.forename_2 = self.responder.getNames()
         
         self.affirmStatus = 0
-        self.affirmCaller = ""
+        self.affirmCaller = ''
         self.affirm = 0
+
+        self.likeGatherStatus = 0
+        self.likeGatherName = ''
 
         self.usedCommonLikes = []
         self.stackLikes = []
@@ -58,27 +65,32 @@ class confluence():
         if self.affirmStatus == 1:
             responder = self.affirmCheck()
 
-        if responder == "confluence_initiate_introduction":
-            self.confluence_initiate_introduction()
-            return self.lockcode
-        elif responder == "confluence_initiate_confirm":
-            lock = self.confluence_initiate_confirm()
-            return lock
-        elif responder == "confluence_confirm_topic_choice":
-            lock = self.confluence_confirm_topic_choice()
-            return lock
-        elif responder == "confluence_initiate_conversation":
-            self.confluence_initiate_conversation()
-            return self.lockcode
-        elif responder == "confluence_new_topic_of_conversation":
-            self.confluence_new_topic_of_conversation()
-            return self.lockcode
-        elif responder == "confluence_topic_end":
-            lock = self.confluence_topic_end()
-            return lock
-        elif responder == "confluence_leave_conversation":
-            self.confluence_leave_conversation()
-            return -1
+        if self.likeGatherStatus == 1:
+            responder = self.saveLike()
+
+        ready, responder = self.checkReady()
+        if ready:
+            if responder == "confluence_initiate_introduction":
+                self.confluence_initiate_introduction()
+                return self.lockcode
+            elif responder == "confluence_initiate_confirm":
+                lock = self.confluence_initiate_confirm()
+                return lock
+            elif responder == "confluence_confirm_topic_choice":
+                lock = self.confluence_confirm_topic_choice()
+                return lock
+            elif responder == "confluence_initiate_conversation":
+                self.confluence_initiate_conversation()
+                return self.lockcode
+            elif responder == "confluence_new_topic_of_conversation":
+                self.confluence_new_topic_of_conversation()
+                return self.lockcode
+            elif responder == "confluence_topic_end":
+                lock = self.confluence_topic_end()
+                return lock
+            elif responder == "confluence_leave_conversation":
+                self.confluence_leave_conversation()
+                return -1
 
     def confluence_initiate_introduction(self):
         self.affirmCaller = "confluence_initiate_introduction"
@@ -155,6 +167,8 @@ class confluence():
     def confluence_leave_conversation(self):
         self.confluence_responder.responder_leave_conversation()
 
+    # Assistive Functions
+
     def affirmCheck(self):
         self.aiml_affirm.respond(self.utterance)
         predicate = self.aiml_affirm.getPredicate('affirm')
@@ -183,3 +197,73 @@ class confluence():
         self.affirmStatus = 0
 
         return target
+
+    def checkReady(self):
+        ready_1 = self.checkLikes(self.forename_1)
+        ready_2 = self.checkLikes(self.forename_2)
+
+        ready = False
+        responder = ''
+
+        if ready_1 and ready_2:
+            responder = "confluence_initiate_introduction"
+            ready = True
+        elif not ready_1 and ready_2:
+            self.gatherLikes(self.forename_1)
+            ready = False
+        elif ready_1 and not ready_2:
+            self.gatherLikes(self.forename_2)
+            ready = False
+        else:
+            self.gatherLikes(self.forename_1)
+            ready = False
+
+        return ready, responder
+
+    def checkLikes(self, name):
+        print(name)
+        url = "http://localhost:3000/api/person/likes"
+
+        payload = "forename=" + name
+        headers = {
+            'Content-Type': "application/x-www-form-urlencoded",
+            'cache-control': "no-cache",
+            'Postman-Token': "c29574dd-a784-474d-8c8f-ba83177e0448"
+            }
+
+        likes = requests.request("POST", url, data=payload, headers=headers)
+        likes = json.loads(str(likes.text))
+
+        count = 0
+        for likes in likes["likes"]:
+            count = count + 1
+        
+        if count > 2:
+            return True
+        else:
+            return False
+
+    def gatherLikes(self, name):
+        self.confluence_responder.responder_gather_likes(name)
+
+        self.likeGatherStatus = 1
+        self.likeGatherName = name
+    
+    def saveLike(self):
+        self.aiml_mm.respond(self.utterance)
+        predicate = self.aiml_mm.getPredicate('like')
+
+        url = "http://localhost:3000/api/person/add/likeDislike"
+
+        payload = "likeDislike=true&thing=" + predicate + "&forename=" + self.likeGatherName
+        headers = {
+            'Content-Type': "application/x-www-form-urlencoded",
+            'cache-control': "no-cache",
+            'Postman-Token': "c4a150d4-eb1a-431d-b68a-1fc99aecf28d"
+        }
+
+        response = requests.request("POST", url, data=payload, headers=headers)
+
+        self.likeGatherStatus = 0
+
+        responder = "confluence_initiate_introduction"

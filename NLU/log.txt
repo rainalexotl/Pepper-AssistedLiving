@@ -1,5 +1,5 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-[2019-03-19 11:02:00][SYSTEM] Starting new session... 
+[2019-03-19 13:59:14][SYSTEM] Starting new session... 
 
 System: Darwin
 Machine: x86_64
@@ -7,50 +7,20 @@ Platform: Darwin-18.0.0-x86_64-i386-64bit
 Version: Darwin Kernel Version 18.0.0: Wed Aug 22 20:13:40 PDT 2018; root:xnu-4903.201.2~1/RELEASE_X86_64
 MacVersion: ('10.14', ('', '', ''), 'x86_64')
 
-[2019-03-19 11:02:02][UTTERANCE] hello
-[2019-03-19 11:02:02] [RESPONSE] Hi, what's your name?
-[2019-03-19 11:02:04][UTTERANCE] my name is Jack
-[2019-03-19 11:02:04] [RESPONSE] Jack is anyone else there with you?
-[2019-03-19 11:02:08][UTTERANCE] yes
-[2019-03-19 11:02:08] [RESPONSE] Ok. Who is it that is with you?
-[2019-03-19 11:02:13][UTTERANCE] my friend Frasier
-[2019-03-19 11:02:13] [RESPONSE] Ok, I will be glad to talk to you and Frasier
-[2019-03-19 11:02:13] [RESPONSE] Hello Jack and Frasier. Shall I suggest some things for you to talk about?
-[2019-03-19 11:02:16][UTTERANCE] yes
-[2019-03-19 11:02:16] [RESPONSE] From my understanding Jack, Frasier also likes cheese. Woud you like to talk about cheese?
-[2019-03-19 11:02:18][UTTERANCE] yes
-[2019-03-19 11:02:18] [RESPONSE] Ok, I will leave you two to chat. Let me know when you are done.
-[2019-03-19 11:02:20][UTTERANCE] not done
-[2019-03-19 11:02:20] [RESPONSE] Sorry, I can't think of anything else for you to talk about. Try adding more likes to your profiles.
-[2019-03-19 11:03:03][UTTERANCE] done
-[2019-03-19 11:03:03] [RESPONSE] Ok, I will leave you two to chat. Let me know when you are done.
-[2019-03-19 11:03:07][UTTERANCE] done
-[2019-03-19 11:03:07] [RESPONSE] Sorry, I can't think of anything else for you to talk about. Try adding more likes to your profiles.
-[2019-03-19 11:03:13][UTTERANCE] no
-[2019-03-19 11:03:13] [RESPONSE] Sorry, I can't think of anything else for you to talk about. Try adding more likes to your profiles.
-[2019-03-19 11:03:14][UTTERANCE] no
-[2019-03-19 11:03:14] [RESPONSE] Sorry, I can't think of anything else for you to talk about. Try adding more likes to your profiles.
-[2019-03-19 11:03:15][UTTERANCE] yes
-[2019-03-19 11:03:15] [RESPONSE] Ok, I will leave you two to chat. Let me know when you are done.
-[2019-03-19 11:03:17][UTTERANCE] yes
-[2019-03-19 11:03:17] [RESPONSE] Sorry, I can't think of anything else for you to talk about. Try adding more likes to your profiles.
-[2019-03-19 11:04:21][UTTERANCE] no
-[2019-03-19 11:04:21] [RESPONSE] Sorry, I can't think of anything else for you to talk about. Try adding more likes to your profiles.
-[2019-03-19 11:04:22][UTTERANCE] no
-[2019-03-19 11:04:22] [RESPONSE] Sorry, I can't think of anything else for you to talk about. Try adding more likes to your profiles.
-[2019-03-19 11:04:24][UTTERANCE] yes
-[2019-03-19 11:04:24] [RESPONSE] Ok, I will leave you two to chat. Let me know when you are done.
-[2019-03-19 11:04:32][UTTERANCE] yes
-[2019-03-19 11:04:32] [RESPONSE] Sorry, I can't think of anything else for you to talk about. Try adding more likes to your profiles.
-[2019-03-19 11:04:36][UTTERANCE] no
-[2019-03-19 11:04:36] [RESPONSE] Sorry, I can't think of anything else for you to talk about. Try adding more likes to your profiles.
-[2019-03-19 11:04:39][UTTERANCE] yes
-[2019-03-19 11:04:39] [RESPONSE] Ok, I will leave you two to chat. Let me know when you are done.
-[2019-03-19 11:04:42][UTTERANCE] no
-[2019-03-19 11:04:42] [RESPONSE] Ok, I will leave you two to chat. Let me know when you are done.
-[2019-03-19 11:04:43][UTTERANCE] no
-[2019-03-19 11:04:43] [RESPONSE] Ok, I will leave you two to chat. Let me know when you are done.
-[2019-03-19 11:04:44][UTTERANCE] no
-[2019-03-19 11:04:44] [RESPONSE] Ok, I will leave you two to chat. Let me know when you are done.
-[2019-03-19 11:04:56][UTTERANCE] bye
-[2019-03-19 11:04:56] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-19 13:59:16][UTTERANCE] hello
+[2019-03-19 13:59:16] [RESPONSE] Hello, who am I talking with?
+[2019-03-19 13:59:20][UTTERANCE] my name is Evelyns
+[2019-03-19 13:59:20] [RESPONSE] Evelyns can you tell me if someone else is there with you ?
+[2019-03-19 13:59:23][UTTERANCE] Yes
+[2019-03-19 13:59:23] [RESPONSE] Ok. Who is it that is with you?
+[2019-03-19 13:59:27][UTTERANCE] My friend Frasier
+[2019-03-19 13:59:27] [RESPONSE] Ok, I will be glad to talk to you and Frasier
+[2019-03-19 13:59:27] [RESPONSE] Evelyns, I don't have enough information about what you like. Please tell me something you like.
+[2019-03-19 13:59:30][UTTERANCE] I like grapes
+[2019-03-19 13:59:30] [RESPONSE] Sorry, Evelyns I don't know much about things you like. Please tell me one now.
+[2019-03-19 13:59:33][UTTERANCE] I like money
+[2019-03-19 13:59:33] [RESPONSE] I don't know much of yours likes, Evelyns. Please tell me something you like just now.
+[2019-03-19 13:59:40][UTTERANCE] I like dogs
+[2019-03-19 13:59:40] [RESPONSE] Hi Evelyns and Frasier. Would like me to find some things for you to talk about?
+[2019-03-19 13:59:46][UTTERANCE] bye
+[2019-03-19 13:59:46] [RESPONSE] Goodbye. Nice talking to you.
