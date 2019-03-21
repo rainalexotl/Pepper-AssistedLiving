@@ -36,6 +36,8 @@ class confluence():
 
         self.utterance = ''
         self.forename_1, self.forename_2 = self.responder.getNames()
+
+        self.init = 1
         
         self.affirmStatus = 0
         self.affirmCaller = ''
@@ -68,7 +70,11 @@ class confluence():
         if self.likeGatherStatus == 1:
             responder = self.saveLike()
 
-        ready, responder = self.checkReady()
+        if self.init == 1:
+            ready, responder = self.checkReady()
+        if self.init == 0:
+            ready, discard = self.checkReady()
+
         if ready:
             if responder == "confluence_initiate_introduction":
                 self.confluence_initiate_introduction()
@@ -98,11 +104,14 @@ class confluence():
         self.confluence_responder.responder_initiate_introduction()
 
     def confluence_initiate_confirm(self):
+        print('confluence_initiate_confirm', self.affirm)
         if self.affirm == 1:
+            print('confluence_initiate_confirm true')
             self.populateCommonLikes()
             self.confluence_initiate_conversation()
             return self.lockcode
         else:
+            print('confluence_initiate_confirm false')
             response = "No worries, I will be here if you need me."
             self.responder.respond(response)
             return -1
@@ -122,7 +131,10 @@ class confluence():
         likes = requests.request("POST", url, data=payload, headers=headers)
         likes = json.loads(str(likes.text))
 
-        for i in range(0, len(likes["commonLikes"])-1):
+        print('Populating self.stackLikes')
+        print('# Common Likes:', len(likes["commonLikes"]))
+
+        for i in range(0, len(likes["commonLikes"])):
             self.stackLikes.append(likes["commonLikes"][i])
 
     def confluence_initiate_conversation(self):
@@ -206,7 +218,9 @@ class confluence():
         responder = ''
 
         if ready_1 and ready_2:
-            responder = "confluence_initiate_introduction"
+            if self.init == 1:
+                responder = "confluence_initiate_introduction"
+                self.init = 0
             ready = True
         elif not ready_1 and ready_2:
             self.gatherLikes(self.forename_1)
@@ -221,7 +235,6 @@ class confluence():
         return ready, responder
 
     def checkLikes(self, name):
-        print(name)
         url = "http://localhost:3000/api/person/likes"
 
         payload = "forename=" + name
@@ -250,12 +263,14 @@ class confluence():
         self.likeGatherName = name
     
     def saveLike(self):
+        self.checkPerson(self.likeGatherName)
+
         self.aiml_mm.respond(self.utterance)
         predicate = self.aiml_mm.getPredicate('like')
 
         url = "http://localhost:3000/api/person/add/likeDislike"
 
-        payload = "likeDislike=true&thing=" + predicate + "&forename=" + self.likeGatherName
+        payload = "likeDislike=true&thing=" + predicate + "&forename=" + self.likeGatherName.title()
         headers = {
             'Content-Type': "application/x-www-form-urlencoded",
             'cache-control': "no-cache",
@@ -267,3 +282,16 @@ class confluence():
         self.likeGatherStatus = 0
 
         responder = "confluence_initiate_introduction"
+
+    def checkPerson(self, forename):
+        url = "http://localhost:3000/api/person/add/person"
+
+        payload = "forename=" + forename + "&surname=unknown"
+        headers = {
+            'Content-Type': "application/x-www-form-urlencoded",
+            'cache-control': "no-cache",
+            'Postman-Token': "cb84a184-2e07-4769-b09a-6fd09a1658d3"
+            }
+
+        response = requests.request("POST", url, data=payload, headers=headers)
+        response = json.loads(str(response.text))

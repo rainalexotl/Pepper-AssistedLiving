@@ -7,6 +7,8 @@ class confluence_responder():
 
     def updateNames(self):
         self.forename_1, self.forename_2 = self.responder.getNames()
+        self.forename_1 = self.forename_1.title()
+        self.forename_2 = self.forename_2.title()
 
     # confluence - initiate_introduction
     def responder_initiate_introduction(self):

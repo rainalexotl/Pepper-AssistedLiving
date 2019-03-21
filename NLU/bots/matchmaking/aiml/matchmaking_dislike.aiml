@@ -5,6 +5,7 @@
         <template>
             <think>
                 <set name="dislike"><star/></set>
+                <set name="responder">matchmaking_dislike</set>
             </think>
         </template>
     </category>

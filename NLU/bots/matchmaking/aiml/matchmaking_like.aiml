@@ -5,6 +5,7 @@
         <template>
             <think>
                 <set name="like"><star/></set>
+                <set name="responder">matchmaking_like</set>
             </think>
         </template>
     </category>
@@ -73,7 +74,28 @@
     </category>
 
     <category>
-        <pattern>MY FAVOURITE IS</pattern>
+        <pattern>MY FAVOURITE IS *</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY FAVOURITE MOVIE IS *</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY FAVOURITE BAND IS *</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY FAVOURITE SONG IS *</pattern>
         <template>
             <srai>SAVE LIKE <star index="1"/></srai>
         </template>

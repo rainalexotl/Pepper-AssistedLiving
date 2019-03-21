@@ -48,6 +48,11 @@ class matchmaking():
         self.forename_1, self.forename_2 = self.responder.getNames()
         self.utterance = utterance
 
+        self.aiml.respond(self.utterance)
+        responder = self.aiml.getPredicate('responder')
+
+        print('[BOTS/MATCHMAKING] Routing:', responder)
+
         if self.handoffStatus == 1:
             self.matchmaking_like_process_2()
             return -1
@@ -56,34 +61,34 @@ class matchmaking():
                 self.drivers()
                 return self.lockcode
             else:
-                if intent == "matchmaking_like":
+                if responder == "matchmaking_like":
                     print("[BOTS/MATCHMAKING] matchmaking_like")
                     self.matchmaking_like()
                     return self.lockcode
 
-                elif intent == "matchmaking_dislike":
+                elif responder == "matchmaking_dislike":
                     print("[BOTS/MATCHMAKING] matchmaking_dislike")
                     self.matchmaking_dislike()
-                    return -1
+                    return self.lockcode
 
-                elif intent == "matchmaking_forget_like":
+                elif responder == "matchmaking_forget_like":
                     print("[BOTS/MATCHMAKING] matchmaking_forget_like")
                     self.matchmaking_forget_like()
-                    return -1
+                    return self.lockcode
 
-                elif intent == "matchmaking_forget_dislike":
+                elif responder == "matchmaking_forget_dislike":
                     print("[BOTS/MATCHMAKING] matchmaking_forget_dislike")
                     self.matchmaking_forget_dislike()
-                    return -1
+                    return self.lockcode
 
-                elif intent == "matchmaking_matchmake":
+                elif responder == "matchmaking_matchmake":
                     print("[BOTS/MATCHMAKING] matchmaking_matchmake")
                     self.matchmaking_matchmake()
-                    return -1
+                    return self.lockcode
                 
                 else:
                     self.drivers()
-                    return -1
+                    return self.lockcode
 
     def matchmaking_like(self):
         self.aiml.respond(self.utterance)
@@ -91,7 +96,7 @@ class matchmaking():
 
         url = "http://localhost:3000/api/person/add/likeDislike"
 
-        payload = "likeDislike=true&thing=" + predicate + "&forename=" + self.forename_1
+        payload = "likeDislike=true&thing=" + predicate + "&forename=" + self.forename_1.title()
         headers = {
             'Content-Type': "application/x-www-form-urlencoded",
             'cache-control': "no-cache",
@@ -150,8 +155,6 @@ class matchmaking():
         friend = self.aiml.getPredicate('friend')
         thing = self.aiml.getPredicate('thing')
         matchmake = self.aiml.getPredicate('matchmake')
-
-        print(matchmake)
 
         sufficientLikes = self.checkLikes()
         if sufficientLikes == False:
@@ -232,11 +235,11 @@ class matchmaking():
 
             for person in people["allPeople"]:
                 for like in person["likesDislikes"]:
-                    if(like["thing"] == self.thing.lower() and person["forename"] != self.forename_1):
+                    if(like["thing"].lower() == self.thing.lower() and person["forename"] != self.forename_1):
                         friends.append(person["forename"])
                         things.append(like["thing"])
 
-            rand = random.randint(0, len(friends))
+            rand = random.randint(0, len(friends)-1)
 
             self.matchmaking_responder.responder_matchmake_found(friends[rand], things[rand])
 
@@ -328,21 +331,19 @@ class matchmaking():
         predicate = self.aiml_affirm.getPredicate('affirm')
 
         if predicate == "YES":
-            print('they want to know more')
             self.matchmaking_like_process_3()
         elif predicate == "NO":
-            print('they do not want to be told any more')
             self.handoffStatus = 0
             self.drivers()
         else:
             self.matchmaking_like_process_1(self.handoffLike)
             print('invalid case')
 
-
-
     def matchmaking_like_process_3(self):
         self.handoffStatus = 0
         self.responder.handoff(self.handoffLike)
+
+        print('Handoff to Alana would happen here.')
 
     def promptLikes(self):
         self.matchmaking_responder.responder_promptLikes()

@@ -16,6 +16,7 @@
 - i'm off
 - see you later alligator
 - we'll speak soon
+- help, someone is bleating in my ear about the vietnam war
 
 ## intent:greet
 - Hi

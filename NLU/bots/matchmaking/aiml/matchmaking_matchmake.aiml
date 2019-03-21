@@ -5,6 +5,7 @@
         <template>
             <think>
                 <set name="matchmake">GENERAL</set>
+                <set name="responder">matchmaking_matchmake</set>
             </think>
         </template>
     </category>
@@ -15,6 +16,7 @@
             <think>
                 <set name="matchmake">SPECIFIC FRIEND</set>
                 <set name="friend"><star index="1"/></set>
+                <set name="responder">matchmaking_matchmake</set>
             </think>
         </template>
     </category>
@@ -25,6 +27,7 @@
             <think>
                 <set name="matchmake">SPECIFIC THING</set>
                 <set name="thing"><star index="1"/></set>
+                <set name="responder">matchmaking_matchmake</set>
             </think>
         </template>
     </category>

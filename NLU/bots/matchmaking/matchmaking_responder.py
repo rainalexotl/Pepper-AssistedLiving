@@ -75,13 +75,13 @@ class matchmaking_responder():
     def responder_matchmake_found(self, friends, things):
         self.updateNames()
         choices = []
-        choices.append("It looks like you and " + friends + " both like " + things)
-        choices.append("Did you know that you and " + friends + " both like " + things)
-        choices.append("It appears to me that you and " + friends + " both like " + things)
-        choices.append("It looks like " + friends + " also likes " + things)
-        choices.append("Did you know that " + friends + " also likes " + things)
-        choices.append("It appears to me that " + friends + " also likes " + things)
-        choices.append("Do you know " + friends + "? " + friends + " also likes " + things)
+        choices.append("It looks like you and " + friends + " both like " + things + ".")
+        choices.append("Did you know that you and " + friends + " both like " + things + "?")
+        choices.append("It appears to me that you and " + friends + " both like " + things + ".")
+        choices.append("It looks like " + friends + " also likes " + things + ".")
+        choices.append("Did you know that " + friends + " also likes " + things + "?")
+        choices.append("It appears to me that " + friends + " also likes " + things + ".")
+        choices.append("Do you know " + friends + "? " + friends + " also likes " + things + "?")
         choice = np.random.choice(choices)
         self.responder.respond(choice)
 
