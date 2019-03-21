@@ -1,5 +1,5 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-[2019-03-21 16:39:00][SYSTEM] Starting new session... 
+[2019-03-21 17:43:51][SYSTEM] Starting new session... 
 
 System: Darwin
 Machine: x86_64
@@ -7,43 +7,43 @@ Platform: Darwin-18.0.0-x86_64-i386-64bit
 Version: Darwin Kernel Version 18.0.0: Wed Aug 22 20:13:40 PDT 2018; root:xnu-4903.201.2~1/RELEASE_X86_64
 MacVersion: ('10.14', ('', '', ''), 'x86_64')
 
-[2019-03-21 16:39:04][UTTERANCE] hello
-[2019-03-21 16:39:04] [RESPONSE] Hello, nice to meet you! What is your name?
-[2019-03-21 16:39:11][UTTERANCE] my name Greig
-[2019-03-21 16:39:11] [RESPONSE] Hello, what's your name?
-[2019-03-21 16:39:28][UTTERANCE] my name is Greig
-[2019-03-21 16:39:28] [RESPONSE] Greig is anyone else accompanying you?
-[2019-03-21 16:39:31][UTTERANCE] yes
-[2019-03-21 16:39:31] [RESPONSE] Ok. Who is it that is with you?
-[2019-03-21 16:39:42][UTTERANCE] My friend Mark
-[2019-03-21 16:39:42] [RESPONSE] Ok, I will be glad to talk to you and Mark
-[2019-03-21 16:39:42] [RESPONSE] I don't know much of yours likes, Mark. Please tell me something you like just now.
-[2019-03-21 16:39:46][UTTERANCE] i like oranges
-[2019-03-21 16:39:46] [RESPONSE] Mark, I don't have enough information about what you like. Please tell me something you like.
-[2019-03-21 16:39:51][UTTERANCE] i like mark
-[2019-03-21 16:39:51] [RESPONSE] Mark, I don't have enough information about what you like. Please tell me something you like.
-[2019-03-21 16:39:57][UTTERANCE] i like music
-[2019-03-21 16:39:57] [RESPONSE] Hi Greig and Mark. Would like me to find some things for you to talk about?
-[2019-03-21 16:40:17][UTTERANCE] bye
-[2019-03-21 16:40:17] [RESPONSE] Goodbye. Nice talking to you.
-[2019-03-21 16:40:37][UTTERANCE] hello
-[2019-03-21 16:40:37] [RESPONSE] Hi there, who am I talking with?
-[2019-03-21 16:40:39][UTTERANCE] my name is Greig
-[2019-03-21 16:40:39] [RESPONSE] Greig is anyone else accompanying you?
-[2019-03-21 16:40:42][UTTERANCE] Yes
-[2019-03-21 16:40:42] [RESPONSE] Ok. Who is it that is with you?
-[2019-03-21 16:40:45][UTTERANCE] My friend Mark
-[2019-03-21 16:40:45] [RESPONSE] Ok, I will be glad to talk to you and Mark
-[2019-03-21 16:40:45] [RESPONSE] Sorry, Mark I don't know much about things you like. Please tell me one now.
-[2019-03-21 16:40:52][UTTERANCE] I like cheese
-[2019-03-21 16:40:52] [RESPONSE] Sorry, Mark I don't know much about things you like. Please tell me one now.
-[2019-03-21 16:40:55][UTTERANCE] I like grapes
-[2019-03-21 16:40:55] [RESPONSE] Mark, I don't have enough information about what you like. Please tell me something you like.
-[2019-03-21 16:40:57][UTTERANCE] I like money
-[2019-03-21 16:40:57] [RESPONSE] Hi Greig and Mark. Would like me to find some things for you to talk about?
-[2019-03-21 16:40:59][UTTERANCE] Yes
-[2019-03-21 16:40:59] [RESPONSE] From my understanding Greig, Mark also likes money. Woud you like to talk about money?
-[2019-03-21 16:41:01][UTTERANCE] yes
-[2019-03-21 16:41:01] [RESPONSE] Ok, I will leave you two to chat. Let me know when you are done.
-[2019-03-21 16:41:05][UTTERANCE] we are done
-[2019-03-21 16:41:05] [RESPONSE] Sorry, I can't think of anything else for you to talk about. Try adding more likes to your profiles.
+[2019-03-21 17:43:53][UTTERANCE] hello
+[2019-03-21 17:43:53] [RESPONSE] Hello, who am I talking with?
+[2019-03-21 17:43:56][UTTERANCE] my name is Florence
+[2019-03-21 17:43:56] [RESPONSE] Florence is anyone else accompanying you?
+[2019-03-21 17:44:00][UTTERANCE] no, I am alone
+[2019-03-21 17:44:00] [RESPONSE] No? Ok, lets see what the two of us can talk about.
+[2019-03-21 17:44:00] [RESPONSE] I need to get to know you a bit better. Tell me about something you like or dislike.
+[2019-03-21 17:44:03][UTTERANCE] What does Sophie like
+[2019-03-21 17:44:03] [RESPONSE] Sophie likes Lawrence of Arabia
+[2019-03-21 17:44:07][UTTERANCE] bye
+[2019-03-21 17:44:07] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-21 20:09:51][UTTERANCE] hello
+[2019-03-21 20:09:51] [RESPONSE] Hi, nice to meet you! What is your name?
+[2019-03-21 20:09:57][UTTERANCE] My name is Eve
+[2019-03-21 20:09:57] [RESPONSE] Eve can you tell me if someone else is there with you ?
+[2019-03-21 20:10:06][UTTERANCE] Yes
+[2019-03-21 20:10:06] [RESPONSE] Ok. Who is it that is with you?
+[2019-03-21 20:10:12][UTTERANCE] My friend Ronnie
+[2019-03-21 20:10:12] [RESPONSE] Ok, I will be glad to talk to you and Ronnie
+[2019-03-21 20:10:12] [RESPONSE] Eve, I don't have enough information about what you like. Please tell me something you like.
+[2019-03-21 20:10:53][UTTERANCE] My favourite film is Batman
+[2019-03-21 20:10:53] [RESPONSE] Eve, I don't have enough information about what you like. Please tell me something you like.
+[2019-03-21 20:10:57][UTTERANCE] I like oranges
+[2019-03-21 20:10:57] [RESPONSE] Eve, I don't have enough information about what you like. Please tell me something you like.
+[2019-03-21 20:11:24][UTTERANCE] I like money
+[2019-03-21 20:11:24] [RESPONSE] I don't know much of yours likes, Eve. Please tell me something you like just now.
+[2019-03-21 20:12:19][UTTERANCE] I love chocolate
+[2019-03-21 20:12:19] [RESPONSE] Ronnie, I don't have enough information about what you like. Please tell me something you like.
+[2019-03-21 20:12:27][UTTERANCE] I like money
+[2019-03-21 20:12:27] [RESPONSE] Sorry, Ronnie I don't know much about things you like. Please tell me one now.
+[2019-03-21 20:12:33][UTTERANCE] I love cocao nibs
+[2019-03-21 20:12:33] [RESPONSE] Ronnie, I don't have enough information about what you like. Please tell me something you like.
+[2019-03-21 20:12:38][UTTERANCE] I like tofu
+[2019-03-21 20:12:38] [RESPONSE] Hi Eve and Ronnie. Would like me to find some things for you to talk about?
+[2019-03-21 20:12:46][UTTERANCE] Yes
+[2019-03-21 20:12:46] [RESPONSE] Eve, I believe Ronnie also likes money. Woud you like to talk about money?
+[2019-03-21 20:12:58][UTTERANCE] Yes
+[2019-03-21 20:12:58] [RESPONSE] Ok, I will leave you two to chat. Let me know when you are done.
+[2019-03-21 20:13:04][UTTERANCE] We are done
+[2019-03-21 20:13:04] [RESPONSE] Sorry, I can't think of anything else for you to talk about. Try adding more likes to your profiles.

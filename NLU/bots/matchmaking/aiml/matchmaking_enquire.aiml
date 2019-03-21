@@ -1,0 +1,59 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+    <!-- ROOT CASES -->
+
+    <category>
+        <pattern>MATCHMAKE ENQUIRE FRIEND *</pattern>
+        <template>
+            <think>
+                <set name="friend"><star index="1"/></set>
+                <set name="responder">matchmaking_enquire</set>
+            </think>
+        </template>
+    </category>
+
+    <!-- SYNONYMOUS CASES -->
+
+    <category>
+        <pattern>WHAT ELSE DOES * LIKE</pattern>
+        <template>
+            <srai>MATCHMAKE ENQUIRE FRIEND <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT DOES * LIKE</pattern>
+        <template>
+            <srai>MATCHMAKE ENQUIRE FRIEND <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT THINGS DOES * LIKE</pattern>
+        <template>
+            <srai>MATCHMAKE ENQUIRE FRIEND <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME THINGS THAT * LIKES</pattern>
+        <template>
+            <srai>MATCHMAKE ENQUIRE FRIEND <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME WHAT * LIKES</pattern>
+        <template>
+            <srai>MATCHMAKE ENQUIRE FRIEND <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME ABOUT *'S LIKES</pattern>
+        <template>
+            <srai>MATCHMAKE ENQUIRE FRIEND <star index="1"/></srai>
+        </template>
+    </category>
+
+</aiml>

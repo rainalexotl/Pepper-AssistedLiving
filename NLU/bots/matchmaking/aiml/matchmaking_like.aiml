@@ -88,6 +88,20 @@
     </category>
 
     <category>
+        <pattern>MY FAVOURITE TV SHOW IS *</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY FAVOURITE SHOW IS *</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>MY FAVOURITE BAND IS *</pattern>
         <template>
             <srai>SAVE LIKE <star index="1"/></srai>

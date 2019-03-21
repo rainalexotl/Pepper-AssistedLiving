@@ -72,6 +72,6 @@ class confluence_responder():
         choices = []
         choices.append(name + ", I don't have enough information about what you like. Please tell me something you like.")
         choices.append("Sorry, " + name + " I don't know much about things you like. Please tell me one now.")
-        choices.append("I don't know much of yours likes, " + name + ". Please tell me something you like just now.")
+        choices.append("I don't know much of your likes, " + name + ". Please tell me something you like just now.")
         choice = np.random.choice(choices)
         self.responder.respond(choice)

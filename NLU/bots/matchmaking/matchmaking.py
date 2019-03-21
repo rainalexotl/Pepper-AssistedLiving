@@ -85,6 +85,11 @@ class matchmaking():
                     print("[BOTS/MATCHMAKING] matchmaking_matchmake")
                     self.matchmaking_matchmake()
                     return self.lockcode
+
+                elif responder == "matchmaking_enquire":
+                    print("[BOTS/MATCHMAKING] matchmaking_enquire")
+                    self.matchmaking_enquire()
+                    return self.lockcode
                 
                 else:
                     self.drivers()
@@ -105,8 +110,6 @@ class matchmaking():
 
         response = requests.request("POST", url, data=payload, headers=headers)
 
-        self.matchmaking_responder.responder_like(predicate)
-
         # Check if this is a common like, discusses if true
         commonLikeAvailable, text = self.quickCheck(predicate)
 
@@ -119,6 +122,8 @@ class matchmaking():
             else:
                 response = text
                 self.responder.respond(response)
+        else:
+            self.matchmaking_responder.responder_like(predicate)
 
         sufficientLikes = self.checkLikes()
         if sufficientLikes == True and self.handoffStatus == 0:
@@ -245,6 +250,27 @@ class matchmaking():
 
         else:
             print('[BOTS/MATCHMAKING] Invalid responder value. Check bots/matchmaking/aiml/*.aiml')
+
+    def matchmaking_enquire(self):
+        self.aiml.respond(self.utterance)
+        friend = self.aiml.getPredicate('friend')
+
+        url = "http://localhost:3000/api/person/likes"
+
+        payload = "forename=" + friend.title()
+        headers = {
+            'Content-Type': "application/x-www-form-urlencoded",
+            'cache-control': "no-cache",
+            'Postman-Token': "c29574dd-a784-474d-8c8f-ba83177e0448"
+            }
+
+        likes = requests.request("POST", url, data=payload, headers=headers)
+        likes = json.loads(str(likes.text))
+
+        count = 0
+
+        rand = random.randint(0, len(likes["likes"])-1)
+        self.matchmaking_responder.responder_matchmake_enquire(friend, likes["likes"][rand]["thing"])
 
     def drivers(self):
         self.matchmaking_responder.responder_drivers()

@@ -1,9 +1,12 @@
 import numpy as np
+import time
 
 class matchmaking_responder():
     def __init__(self, responder):
         self.responder = responder
         self.forename_1, self.forename_2 = self.responder.getNames()
+
+        np.random.seed()
         
     def updateNames(self):
         self.forename_1, self.forename_2 = self.responder.getNames()
@@ -14,10 +17,10 @@ class matchmaking_responder():
         choices = []
         choices.append("Ok, I will remember that you like this.")
         choices.append("Ok, I will remember that.")
-        choices.append("Tell me why you like " + thing)
+        # choices.append("Tell me why you like " + thing)
         choices.append("Ok, it is noted.")
-        choices.append("Why do you like " + thing + "?")
-        choices.append("What do you find good about " + thing + "?")
+        # choices.append("Why do you like " + thing + "?")
+        # choices.append("What do you find good about " + thing + "?")
         choices.append("Great ! I like it too.")
         choice = np.random.choice(choices)
         self.responder.respond(choice)
@@ -82,6 +85,16 @@ class matchmaking_responder():
         choices.append("Did you know that " + friends + " also likes " + things + "?")
         choices.append("It appears to me that " + friends + " also likes " + things + ".")
         choices.append("Do you know " + friends + "? " + friends + " also likes " + things + "?")
+        choice = np.random.choice(choices)
+        self.responder.respond(choice)
+
+    def responder_matchmake_enquire(self, friend, thing):
+        self.updateNames()
+        choices = []
+        choices.append(friend + " likes " + thing)
+        choices.append(friend + " is font of " + thing)
+        choices.append("Your friend " + friend + " likes  " + thing)
+        choices.append("I can see that " + friend + " likes " + thing)
         choice = np.random.choice(choices)
         self.responder.respond(choice)
 
