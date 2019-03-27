@@ -69,10 +69,19 @@
         </template>
     </category>
 
+    Do me and John have anything in common
+
     <!-- SPECIFIC CASES: FRIEND -->
 
     <category>
         <pattern>IS THERE ANYTHING * AND I BOTH LIKE</pattern>
+        <template>
+            <srai>MATCHMAKE SPECIFIC FRIEND <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT DO I HAVE IN COMMON WITH *</pattern>
         <template>
             <srai>MATCHMAKE SPECIFIC FRIEND <star index="1"/></srai>
         </template>

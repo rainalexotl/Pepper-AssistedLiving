@@ -13,12 +13,13 @@ class matchmaking_responder():
 
     # matchmaking - initiate_introduction
     def responder_like(self, thing):
+        np.random.seed()
         self.updateNames()
         choices = []
         choices.append("Ok, I will remember that you like this.")
-        choices.append("Ok, I will remember that.")
+        choices.append("Ok, I will remember that you like " + thing)
         # choices.append("Tell me why you like " + thing)
-        choices.append("Ok, it is noted.")
+        choices.append("Ok, it is noted that you like " + thing)
         # choices.append("Why do you like " + thing + "?")
         # choices.append("What do you find good about " + thing + "?")
         choices.append("Great ! I like it too.")
@@ -92,7 +93,7 @@ class matchmaking_responder():
         self.updateNames()
         choices = []
         choices.append(friend + " likes " + thing)
-        choices.append(friend + " is font of " + thing)
+        choices.append(friend + " is fond of " + thing)
         choices.append("Your friend " + friend + " likes  " + thing)
         choices.append("I can see that " + friend + " likes " + thing)
         choice = np.random.choice(choices)
@@ -115,7 +116,8 @@ class matchmaking_responder():
         self.updateNames()
         choices = []
         choices.append("Why don't you tell me about some of the things you like?")
-        choices.append("Why don't you tell me about some of the things you do not like?")
+        choices.append("Why don't you tell me your favourite movie?")
+        # choices.append("Why don't you tell me about some of the things you do not like?")
         choices.append("Can you tell me a bit more about what you like?")
         choices.append("I need to get to know you a bit better. Tell me about something you like or dislike.")
         choices.append("If you tell me a bit about what you like, I can match you up with other people who like the same things.")
@@ -125,10 +127,10 @@ class matchmaking_responder():
     def responder_driversMatchmaking(self):
         self.updateNames()
         choices = []
-        choices.append("You know, I can tell you what you have in common with a specific friend, if you ask.")
-        choices.append("I would be happy to tell you which of your friends also likes a certain thing that you like, if you ask.")
-        choices.append("Why not try asking me about what you and a certain friend both like?")
-        choices.append("You can ask me to tell you what you have in common with one of your friends.")
+        choices.append("You know, I can tell you what you have in common with a specific friend, if you ask. For example, you could say... What do Sophie and I have in common?")
+        choices.append("I would be happy to tell you which of your friends also likes a certain thing that you like, if you ask. For example, you could say... Who else likes chocolate?")
+        choices.append("Why not try asking me about what you and a certain friend both like? For example, you could say... What do Sophie and I both like?")
+        choices.append("You can ask me to tell you what you have in common with one of your friends. For example, you could say... What do Sophie and I have in common?")
         choice = np.random.choice(choices)
         self.responder.respond(choice)
 
@@ -137,7 +139,7 @@ class matchmaking_responder():
         choices = []
         choices.append("Sorry, I don't have enough information about what you like to answer that. Please tell me some things you like.")
         choices.append("Hmm... I need you to tell me a bit more about what you like first.")
-        choices.append("Sorry, I don't know anything about what you like.")
+        choices.append("Sorry, I don't know anything about what you like. Please tell me more about the things you like before asking me that.")
         choices.append("Sorry, you will have to tell me what you like first. I don't know anything about it yet.")
         choice = np.random.choice(choices)
         self.responder.respond(choice)

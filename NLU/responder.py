@@ -6,27 +6,33 @@ import random
 import time
 import datetime
 import os
+import pyttsx
 
 class responder:
     def __init__(self):
         print('[RESPONDER] Responder is starting...')
 
-        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        # self.engine = pyttsx.init()
 
-        self.server_address = ('localhost', 4000) # Change to Alana response input
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.server_address = ('192.168.2.76', 4000) # Change to Alana response input
+        # self.server_address = ('localhost', 4000) # Change to Alana response input
         try:
             self.sock.connect(self.server_address)
             print('[RESPONDER] Successfully connected to Alana.')
-        except:
-            print('[RESPONDER] Unable to connect to Alana.')
+        except Exception as ex:
+            print('[RESPONDER] Unable to connect to Alana.', ex)
 
         self.forename_1 = ''
         self.forename_2 = ''
 
     def respond(self, response):
         try:
+            print('[RESPONDER]', response)
             self.sock.sendall(response)
             self.log(response)
+            # self.engine.say(response)
+            # self.engine.runAndWait()
         except:
             print('[RESPONDER] Socket connection exception. Unable to connect to Alana.')
 

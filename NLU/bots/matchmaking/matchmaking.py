@@ -92,6 +92,8 @@ class matchmaking():
                     return self.lockcode
                 
                 else:
+                    response = "Sorry, I didn't quite get that. Please try a different phrase."
+                    self.responder.respond(response)
                     self.drivers()
                     return self.lockcode
 
@@ -217,8 +219,12 @@ class matchmaking():
             likes = requests.request("POST", url, data=payload, headers=headers)
             likes = json.loads(str(likes.text))
 
-            rand = random.randint(0, len(likes["commonLikes"])-1)
-            self.matchmaking_responder.responder_matchmake_found_specific_friend(likes["commonLikes"][rand])
+            if len(likes["commonLikes"]) > 1:
+                rand = random.randint(0, len(likes["commonLikes"])-1)
+                self.matchmaking_responder.responder_matchmake_found_specific_friend(likes["commonLikes"][rand])
+            else:
+                response = "Sorry, you do not have anything in common with " + self.forename_2
+                self.responder.respond(response)
             
         elif matchmake == "SPECIFIC THING":
             self.thing = thing
@@ -244,9 +250,12 @@ class matchmaking():
                         friends.append(person["forename"])
                         things.append(like["thing"])
 
-            rand = random.randint(0, len(friends)-1)
-
-            self.matchmaking_responder.responder_matchmake_found(friends[rand], things[rand])
+            if len(friends) >= 1:
+                rand = random.randint(0, len(friends)-1)
+                self.matchmaking_responder.responder_matchmake_found(friends[rand], things[rand])
+            else:
+                response = "Sorry, no one else you know likes " + thing
+                self.responder.respond(response)
 
         else:
             print('[BOTS/MATCHMAKING] Invalid responder value. Check bots/matchmaking/aiml/*.aiml')

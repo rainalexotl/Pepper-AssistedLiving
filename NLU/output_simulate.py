@@ -15,7 +15,7 @@ while True:
         print('[OUTPUT_SIMULATE] Connection from: ', client_address)
 
         while True:
-            data = connection.recv(64)
+            data = connection.recv(256)
             if data:
                 print(data)
             else:

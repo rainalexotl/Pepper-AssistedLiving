@@ -116,6 +116,13 @@
     </category>
 
     <category>
+        <pattern>MY FAVOURITE MUSIC GENRE IS *</pattern>
+        <template>
+            <srai>SAVE LIKE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
         <pattern>I REALLY LIKE *</pattern>
         <template>
             <srai>SAVE LIKE <star index="1"/></srai>

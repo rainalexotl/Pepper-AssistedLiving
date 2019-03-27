@@ -20,8 +20,8 @@ class initiator_responder():
         choices.append("Hello, can you tell me your name?")
         choices.append("Hi, nice to meet you! What is your name?")
         choices.append("Hello, nice to meet you! What is your name?")
-        choices.append("Hi, nice to meet you! How do I call you? ")
-        choices.append("Hello, nice to meet you! How do I call you?")
+        choices.append("Hi, nice to meet you! What do I call you? ")
+        choices.append("Hello, nice to meet you! What do I call you?")
         choice = np.random.choice(choices)
         self.responder.respond(choice)
 

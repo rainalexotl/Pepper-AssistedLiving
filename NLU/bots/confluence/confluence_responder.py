@@ -23,11 +23,11 @@ class confluence_responder():
     def responder_initiate_conversation(self, commonLike):
         self.updateNames()
         choices = []
-        choices.append("From my understanding " + self.forename_1 + ", " + self.forename_2 + " also likes " + commonLike + ". Woud you like to talk about " + commonLike + "?")
-        choices.append(self.forename_1 + ", I believe " + self.forename_2 + " also likes " + commonLike+ ". Woud you like to talk about " + commonLike + "?")
-        choices.append(self.forename_1 + ", I think " + self.forename_2 + " also likes " + commonLike+ ". Woud you like to talk about " + commonLike + "?")
-        choices.append(self.forename_1 + " don't you also like " + commonLike + ", just as " + self.forename_2 + " does? Woud you like to talk about " + commonLike + "?")
-        choices.append("What about " + commonLike + "? It seems like a popular interest, I believe you two like it, don't you? Woud you like to talk about " + commonLike + "?")
+        choices.append("From my understanding " + self.forename_1 + ", " + self.forename_2 + " also likes " + commonLike + ". Would you like to talk about " + commonLike + "?")
+        choices.append(self.forename_1 + ", I believe " + self.forename_2 + " also likes " + commonLike+ ". Would you like to talk about " + commonLike + "?")
+        choices.append(self.forename_1 + ", I think " + self.forename_2 + " also likes " + commonLike+ ". Would you like to talk about " + commonLike + "?")
+        choices.append(self.forename_1 + " don't you also like " + commonLike + ", just as " + self.forename_2 + " does? Would you like to talk about " + commonLike + "?")
+        choices.append("What about " + commonLike + "? It seems like a popular interest, I believe you two like it, don't you? Would you like to talk about " + commonLike + "?")
         choice = np.random.choice(choices)
         self.responder.respond(choice)
 
@@ -71,6 +71,7 @@ class confluence_responder():
         self.updateNames()
         choices = []
         choices.append(name + ", I don't have enough information about what you like. Please tell me something you like.")
+        choices.append(name + ", I still don't have enough information about what you like. Please tell me something you like.")
         choices.append("Sorry, " + name + " I don't know much about things you like. Please tell me one now.")
         choices.append("I don't know much of your likes, " + name + ". Please tell me something you like just now.")
         choice = np.random.choice(choices)

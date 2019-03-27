@@ -1,5 +1,5 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-[2019-03-21 17:43:51][SYSTEM] Starting new session... 
+[2019-03-26 15:53:42][SYSTEM] Starting new session... 
 
 System: Darwin
 Machine: x86_64
@@ -7,43 +7,156 @@ Platform: Darwin-18.0.0-x86_64-i386-64bit
 Version: Darwin Kernel Version 18.0.0: Wed Aug 22 20:13:40 PDT 2018; root:xnu-4903.201.2~1/RELEASE_X86_64
 MacVersion: ('10.14', ('', '', ''), 'x86_64')
 
-[2019-03-21 17:43:53][UTTERANCE] hello
-[2019-03-21 17:43:53] [RESPONSE] Hello, who am I talking with?
-[2019-03-21 17:43:56][UTTERANCE] my name is Florence
-[2019-03-21 17:43:56] [RESPONSE] Florence is anyone else accompanying you?
-[2019-03-21 17:44:00][UTTERANCE] no, I am alone
-[2019-03-21 17:44:00] [RESPONSE] No? Ok, lets see what the two of us can talk about.
-[2019-03-21 17:44:00] [RESPONSE] I need to get to know you a bit better. Tell me about something you like or dislike.
-[2019-03-21 17:44:03][UTTERANCE] What does Sophie like
-[2019-03-21 17:44:03] [RESPONSE] Sophie likes Lawrence of Arabia
-[2019-03-21 17:44:07][UTTERANCE] bye
-[2019-03-21 17:44:07] [RESPONSE] Goodbye. Nice talking to you.
-[2019-03-21 20:09:51][UTTERANCE] hello
-[2019-03-21 20:09:51] [RESPONSE] Hi, nice to meet you! What is your name?
-[2019-03-21 20:09:57][UTTERANCE] My name is Eve
-[2019-03-21 20:09:57] [RESPONSE] Eve can you tell me if someone else is there with you ?
-[2019-03-21 20:10:06][UTTERANCE] Yes
-[2019-03-21 20:10:06] [RESPONSE] Ok. Who is it that is with you?
-[2019-03-21 20:10:12][UTTERANCE] My friend Ronnie
-[2019-03-21 20:10:12] [RESPONSE] Ok, I will be glad to talk to you and Ronnie
-[2019-03-21 20:10:12] [RESPONSE] Eve, I don't have enough information about what you like. Please tell me something you like.
-[2019-03-21 20:10:53][UTTERANCE] My favourite film is Batman
-[2019-03-21 20:10:53] [RESPONSE] Eve, I don't have enough information about what you like. Please tell me something you like.
-[2019-03-21 20:10:57][UTTERANCE] I like oranges
-[2019-03-21 20:10:57] [RESPONSE] Eve, I don't have enough information about what you like. Please tell me something you like.
-[2019-03-21 20:11:24][UTTERANCE] I like money
-[2019-03-21 20:11:24] [RESPONSE] I don't know much of yours likes, Eve. Please tell me something you like just now.
-[2019-03-21 20:12:19][UTTERANCE] I love chocolate
-[2019-03-21 20:12:19] [RESPONSE] Ronnie, I don't have enough information about what you like. Please tell me something you like.
-[2019-03-21 20:12:27][UTTERANCE] I like money
-[2019-03-21 20:12:27] [RESPONSE] Sorry, Ronnie I don't know much about things you like. Please tell me one now.
-[2019-03-21 20:12:33][UTTERANCE] I love cocao nibs
-[2019-03-21 20:12:33] [RESPONSE] Ronnie, I don't have enough information about what you like. Please tell me something you like.
-[2019-03-21 20:12:38][UTTERANCE] I like tofu
-[2019-03-21 20:12:38] [RESPONSE] Hi Eve and Ronnie. Would like me to find some things for you to talk about?
-[2019-03-21 20:12:46][UTTERANCE] Yes
-[2019-03-21 20:12:46] [RESPONSE] Eve, I believe Ronnie also likes money. Woud you like to talk about money?
-[2019-03-21 20:12:58][UTTERANCE] Yes
-[2019-03-21 20:12:58] [RESPONSE] Ok, I will leave you two to chat. Let me know when you are done.
-[2019-03-21 20:13:04][UTTERANCE] We are done
-[2019-03-21 20:13:04] [RESPONSE] Sorry, I can't think of anything else for you to talk about. Try adding more likes to your profiles.
+[2019-03-26 15:53:49][UTTERANCE] hello pepper
+[2019-03-26 15:53:49] [RESPONSE] Sorry, I didn't quite get that. Can you repeat that?
+[2019-03-26 15:53:53][UTTERANCE] Hello
+[2019-03-26 15:53:53] [RESPONSE] Hello, who am I talking with?
+[2019-03-26 15:54:03][UTTERANCE] I'm Rilwan
+[2019-03-26 15:54:03] [RESPONSE] Rilwan is there anyone else there with you?
+[2019-03-26 15:54:09][UTTERANCE] No, I am alone
+[2019-03-26 15:54:09] [RESPONSE] No? Ok, lets see what the two of us can talk about.
+[2019-03-26 15:54:09] [RESPONSE] Why don't you tell me your favourite movie?
+[2019-03-26 15:54:33][UTTERANCE] Unfortunately I don't like movies but I watch prison break
+[2019-03-26 15:54:33] [RESPONSE] Sorry, I didn't quite get that. Please try a different phrase.
+[2019-03-26 15:54:33] [RESPONSE] Can you tell me a bit more about what you like?
+[2019-03-26 15:54:44][UTTERANCE] I love football
+[2019-03-26 15:54:44] [RESPONSE] Would you like me to tell you more about football?
+[2019-03-26 15:54:48][UTTERANCE] Yes
+[2019-03-26 15:54:48] [RESPONSE] Should I talk some more about football?
+[2019-03-26 15:54:52][UTTERANCE] Yes please
+[2019-03-26 15:54:52] [RESPONSE] No? Ok, lets see what the two of us can talk about.
+[2019-03-26 15:55:10][UTTERANCE] I'm with you Pepper
+[2019-03-26 15:55:10] [RESPONSE] Should I talk some more about football?
+[2019-03-26 15:55:16][UTTERANCE] Yes please
+[2019-03-26 15:55:16] [RESPONSE] No? Ok, lets see what the two of us can talk about.
+[2019-03-26 15:55:28][UTTERANCE] Let's talk about football
+[2019-03-26 15:55:28] [RESPONSE] Would you like me to tell you more about football?
+[2019-03-26 15:55:33][UTTERANCE] Yes please
+[2019-03-26 15:55:33] [RESPONSE] No? Ok, lets see what the two of us can talk about.
+[2019-03-26 15:55:53][UTTERANCE] Hello
+[2019-03-26 15:55:53] [RESPONSE] Hello, nice to meet you! What do I call you?
+[2019-03-26 15:56:05][UTTERANCE] You can call me Rinwan
+[2019-03-26 15:56:08][UTTERANCE] My name is Rinwan
+[2019-03-26 15:56:10][UTTERANCE] bye
+[2019-03-26 15:56:10] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-26 15:56:13][UTTERANCE] hello
+[2019-03-26 15:56:13] [RESPONSE] Hi, nice to meet you! What do I call you? 
+[2019-03-26 15:56:19][UTTERANCE] My name is Rinwan
+[2019-03-26 15:56:19] [RESPONSE] Rinwan is anyone else there with you?
+[2019-03-26 15:56:24][UTTERANCE] No, I am alone
+[2019-03-26 15:56:24] [RESPONSE] No? Ok, lets see what the two of us can talk about.
+[2019-03-26 15:56:24] [RESPONSE] Why don't you tell me about some of the things you like?
+[2019-03-26 15:56:36][UTTERANCE] I like watching football
+[2019-03-26 15:56:36] [RESPONSE] Ok, I will remember that you like this.
+[2019-03-26 15:56:36] [RESPONSE] Can you tell me a bit more about what you like?
+[2019-03-26 15:56:57][UTTERANCE] I like watching football I support Barcelona FC, they are based in Spain
+[2019-03-26 15:56:57] [RESPONSE] Great ! I like it too.
+[2019-03-26 15:56:57] [RESPONSE] Why don't you tell me your favourite movie?
+[2019-03-26 15:57:07][UTTERANCE] I don't like movies
+[2019-03-26 15:57:07] [RESPONSE] Great ! I like it too.
+[2019-03-26 15:57:07] [RESPONSE] I would be happy to tell you which of your friends also likes a certain thing that you like, if you ask. For example, you could say... Who else likes chocolate?
+[2019-03-26 15:57:12][UTTERANCE] I dislike movies
+[2019-03-26 15:57:12] [RESPONSE] Ok, I will remember that.
+[2019-03-26 15:57:12] [RESPONSE] I need to get to know you a bit better. Tell me about something you like or dislike.
+[2019-03-26 15:57:16][UTTERANCE] I dislike movies
+[2019-03-26 15:57:16] [RESPONSE] Ok, I will remember that you dislike this.
+[2019-03-26 15:57:16] [RESPONSE] Why don't you tell me your favourite movie?
+[2019-03-26 15:57:40][UTTERANCE] I dislike movies
+[2019-03-26 15:57:40] [RESPONSE] What do you find bad about movies?
+[2019-03-26 15:57:40] [RESPONSE] If you tell me a bit about what you like, I can match you up with other people who like the same things.
+[2019-03-26 15:58:11][UTTERANCE] It is time consuming sitting on the spot, but when you watch football you are highly entertained
+[2019-03-26 15:58:11] [RESPONSE] Ok, I will remember that.
+[2019-03-26 15:58:11] [RESPONSE] Can you tell me a bit more about what you like?
+[2019-03-26 15:58:25][UTTERANCE] I love watching football, I play as a striker
+[2019-03-26 15:58:25] [RESPONSE] Ok, I will remember that you like watching football, I play as a striker
+[2019-03-26 15:58:25] [RESPONSE] You can ask me to tell you what you have in common with one of your friends. For example, you could say... What do Sophie and I have in common?
+[2019-03-26 15:58:53][UTTERANCE] Would you like to tell me about Wenger
+[2019-03-26 15:58:53] [RESPONSE] Ok, I will remember that you like this.
+[2019-03-26 15:58:53] [RESPONSE] You can ask me to tell you what you have in common with one of your friends. For example, you could say... What do Sophie and I have in common?
+[2019-03-26 15:59:22][UTTERANCE] Which of my friends do you want me to talk about
+[2019-03-26 15:59:22] [RESPONSE] Ok, I will remember that you like this.
+[2019-03-26 15:59:22] [RESPONSE] I would be happy to tell you which of your friends also likes a certain thing that you like, if you ask. For example, you could say... Who else likes chocolate?
+[2019-03-26 15:59:40][UTTERANCE] Who else likes football
+[2019-03-26 15:59:40] [RESPONSE] Do you know Rilwan? Rilwan also likes football?
+[2019-03-26 15:59:51][UTTERANCE] Who else likes football
+[2019-03-26 15:59:51] [RESPONSE] Do you know Hadeyfa? Hadeyfa also likes football?
+[2019-03-26 16:00:06][UTTERANCE] Wow, great man, he organised our weekly events
+[2019-03-26 16:00:06] [RESPONSE] It appears to me that John also likes football.
+[2019-03-26 16:00:17][UTTERANCE] Which other peson do you think likes football, then I have three
+[2019-03-26 16:00:17] [RESPONSE] It appears to me that Ali also likes football.
+[2019-03-26 16:00:23][UTTERANCE] Who
+[2019-03-26 16:00:23] [RESPONSE] Did you know that Issa also likes football?
+[2019-03-26 16:00:29][UTTERANCE] Good
+[2019-03-26 16:00:29] [RESPONSE] Do you know Mamta? Mamta also likes football?
+[2019-03-26 16:00:49][UTTERANCE] I don't know Mamta, if it is a masculine name, men are naturally born to love football
+[2019-03-26 16:00:49] [RESPONSE] It appears to me that Rilwan also likes football.
+[2019-03-26 16:00:59][UTTERANCE] Rilwan is crazy about football
+[2019-03-26 16:00:59] [RESPONSE] It appears to me that Ali also likes football.
+[2019-03-26 16:01:05][UTTERANCE] Yes please
+[2019-03-26 16:01:06] [RESPONSE] It appears to me that you and Mamta both like football.
+[2019-03-26 16:01:12][UTTERANCE] Good
+[2019-03-26 16:01:12] [RESPONSE] Did you know that Hadeyfa also likes football?
+[2019-03-26 16:01:25][UTTERANCE] Yeah he is crazy about football
+[2019-03-26 16:01:25] [RESPONSE] It appears to me that you and John both like football.
+[2019-03-26 16:01:39][UTTERANCE] I don't know John, but if he is a guy he should love football
+[2019-03-26 16:01:39] [RESPONSE] It looks like you and Mamta both like football.
+[2019-03-26 16:01:54][UTTERANCE] Let's talk about those things I don't like
+[2019-03-26 16:01:54] [RESPONSE] It appears to me that you and Hadeyfa both like football.
+[2019-03-26 16:02:08][UTTERANCE] Who does not like movies
+[2019-03-26 16:02:08] [RESPONSE] Did you know that Hadeyfa also likes football?
+[2019-03-26 16:02:20][UTTERANCE] I dislike movies
+[2019-03-26 16:02:20] [RESPONSE] Why do you dislike movies?
+[2019-03-26 16:02:20] [RESPONSE] I need to get to know you a bit better. Tell me about something you like or dislike.
+[2019-03-26 16:02:37][UTTERANCE] I dislike movies because it is time consuming, meant for the ladies
+[2019-03-26 16:02:37] [RESPONSE] Ok, it is noted.
+[2019-03-26 16:02:37] [RESPONSE] If you tell me a bit about what you like, I can match you up with other people who like the same things.
+[2019-03-26 16:02:58][UTTERANCE] I just told you I love football, but I hate movies, so tell me who else hates movies
+[2019-03-26 16:02:58] [RESPONSE] Tell me why you dislike movies because it is time consuming, meant for the ladies
+[2019-03-26 16:02:58] [RESPONSE] I need to get to know you a bit better. Tell me about something you like or dislike.
+[2019-03-26 16:03:14][UTTERANCE] I like football, hate movies
+[2019-03-26 16:03:14] [RESPONSE] Ok, I will remember that you like this.
+[2019-03-26 16:03:14] [RESPONSE] I would be happy to tell you which of your friends also likes a certain thing that you like, if you ask. For example, you could say... Who else likes chocolate?
+[2019-03-26 16:03:34][UTTERANCE] Who else hates movies
+[2019-03-26 16:03:34] [RESPONSE] Great ! I like it too.
+[2019-03-26 16:03:34] [RESPONSE] You can ask me to tell you what you have in common with one of your friends. For example, you could say... What do Sophie and I have in common?
+[2019-03-26 16:03:55][UTTERANCE] Do you think Sophie hates movies
+[2019-03-26 16:03:55] [RESPONSE] Ok, I will remember that you like this.
+[2019-03-26 16:03:55] [RESPONSE] You can ask me to tell you what you have in common with one of your friends. For example, you could say... What do Sophie and I have in common?
+[2019-03-26 16:04:12][UTTERANCE] I just asked you about Sophie
+[2019-03-26 16:04:12] [RESPONSE] Great ! I like it too.
+[2019-03-26 16:04:12] [RESPONSE] Why not try asking me about what you and a certain friend both like? For example, you could say... What do Sophie and I both like?
+[2019-03-26 16:04:29][UTTERANCE] What do Sophie and I both like
+[2019-03-26 16:04:29] [RESPONSE] Sorry, you do not have anything in common with Sophie
+[2019-03-26 16:04:41][UTTERANCE] So you think Sophie doesn't hate movies
+[2019-03-26 16:04:41] [RESPONSE] Sorry, you do not have anything in common with Sophie
+[2019-03-26 16:04:58][UTTERANCE] I will need to ask Sophie if she likes movies or not
+[2019-03-26 16:04:58] [RESPONSE] Sorry, you do not have anything in common with Sophie
+[2019-03-26 16:05:08][UTTERANCE] Hmm, so what about Hydafa
+[2019-03-26 16:05:08] [RESPONSE] Sorry, you do not have anything in common with Sophie
+[2019-03-26 16:05:11][UTTERANCE] Does Hydafa like movies
+[2019-03-26 16:05:11] [RESPONSE] Sorry, you do not have anything in common with Sophie
+[2019-03-26 16:05:22][UTTERANCE] What does Sophie like
+[2019-03-26 16:05:22] [RESPONSE] Sophie is fond of reading
+[2019-03-26 16:05:39][UTTERANCE] The fact that he likes books doesn't mean he likes movies as well, I also read
+[2019-03-26 16:05:39] [RESPONSE] Your friend Sophie likes  reading
+[2019-03-26 16:05:55][UTTERANCE] I also like reading but I don't think he watches movies
+[2019-03-26 16:05:55] [RESPONSE] Sophie is fond of Lawrence of Arabia
+[2019-03-26 16:06:03][UTTERANCE] I am from Niegeria
+[2019-03-26 16:06:03] [RESPONSE] Your friend Sophie likes  reading
+[2019-03-26 16:06:11][UTTERANCE] I also like reading
+[2019-03-26 16:06:11] [RESPONSE] I can see that Sophie likes reading
+[2019-03-26 16:06:15][UTTERANCE] I like reading
+[2019-03-26 16:06:15] [RESPONSE] It looks like you and Mamta both like reading
+[2019-03-26 16:06:15] [RESPONSE] You know, I can tell you what you have in common with a specific friend, if you ask. For example, you could say... What do Sophie and I have in common?
+[2019-03-26 16:06:34][UTTERANCE] What do Sophie and I have in common
+[2019-03-26 16:06:35] [RESPONSE] Sorry, you do not have anything in common with Sophie
+[2019-03-26 16:06:47][UTTERANCE] What do Hydafa and I have in common
+[2019-03-26 16:06:48] [RESPONSE] Sorry, you do not have anything in common with Hydafa
+[2019-03-26 16:07:03][UTTERANCE] You told me earlier that we both love playing football
+[2019-03-26 16:07:03] [RESPONSE] Sorry, you do not have anything in common with Hydafa
+[2019-03-26 16:07:08][UTTERANCE] bye
+[2019-03-26 16:07:08] [RESPONSE] Goodbye. Nice talking to you.
+[2019-03-26 16:07:18][UTTERANCE] hello
+[2019-03-26 16:07:18] [RESPONSE] Hi there, who am I talking with?
+[2019-03-26 16:07:23][UTTERANCE] bye
+[2019-03-26 16:07:23] [RESPONSE] Goodbye. Nice talking to you.

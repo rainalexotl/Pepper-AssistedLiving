@@ -29,6 +29,28 @@
     </category>
 
     <category>
+        <pattern>WHATE ELSE DOES * LIKE</pattern>
+        <template>
+            <srai>MATCHMAKE ENQUIRE FRIEND <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* SOMETHING ELSE * LIKES</pattern>
+        <template>
+            <srai>MATCHMAKE ENQUIRE FRIEND <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>DOES ANYONE LIKE *</pattern>
+        <template>
+            <srai>MATCHMAKE ENQUIRE FRIEND <star index="1"/></srai>
+        </template>
+    </category>
+
+
+    <category>
         <pattern>WHAT THINGS DOES * LIKE</pattern>
         <template>
             <srai>MATCHMAKE ENQUIRE FRIEND <star index="1"/></srai>

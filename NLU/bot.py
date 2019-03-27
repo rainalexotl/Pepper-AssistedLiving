@@ -46,7 +46,7 @@ class bot:
 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-        self.server_address = ('localhost', 3001)
+        self.server_address = ('localhost', 3008)
         print('[PRIMARY BOT] Starting up on %s port %s' % self.server_address)
         self.sock.bind(self.server_address)
 
@@ -56,6 +56,9 @@ class bot:
         self.mode = 0
 
         self.init = 1
+
+        response = "TEST. READY TO CHAT."
+        self.responder.respond(response)
 
     def train (self, data, config_file, model_dir):
         training_data = load_data(data)
@@ -118,7 +121,11 @@ class bot:
             print('[PRIMARY BOT] Conversation is locked. Intent ignored.')
         print('')
             
-        if intent_name in reset_strings:
+        # if intent_name in reset_strings:
+        #     self.reset()
+        #     return
+
+        if utterance == "bye":
             self.reset()
             return
 
